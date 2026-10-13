@@ -59,7 +59,7 @@ export default function Guidelines({ onOpenModal }) {
                           aria-hidden="true"
                           className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                         />
-                        <span className="text-justify">{item}</span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -92,7 +92,7 @@ export default function Guidelines({ onOpenModal }) {
                           aria-hidden="true"
                           className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                         />
-                        <span className="text-justify">{item}</span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>

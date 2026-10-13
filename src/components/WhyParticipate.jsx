@@ -112,9 +112,7 @@ export default function WhyParticipate() {
                         {item.title}
                       </h3>
 
-                      <p className="w-full text-justify text-small leading-relaxed text-graphite">
-                        {item.desc}
-                      </p>
+                      <p className="w-full text-small leading-relaxed text-graphite">{item.desc}</p>
                     </div>
 
                     <div className="mt-6 flex justify-start pt-6">

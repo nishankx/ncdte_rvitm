@@ -40,7 +40,7 @@ export default function SubmissionProcess({ onOpenModal }) {
 
                 <h3 className="font-sans text-h3 leading-tight text-ink">{stepItem.title}</h3>
 
-                <p className="mx-auto max-w-[38ch] text-justify text-small leading-relaxed text-graphite">
+                <p className="mx-auto max-w-[38ch] text-small leading-relaxed text-graphite">
                   {stepItem.desc}
                 </p>
 

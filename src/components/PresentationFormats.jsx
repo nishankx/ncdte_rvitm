@@ -19,9 +19,7 @@ export default function PresentationFormats() {
               <h3 className="mb-4 text-left font-serif text-[clamp(1.75rem,2.8vw,2.5rem)] leading-tight text-ink">
                 {format.title}
               </h3>
-              <p className="mb-8 w-full text-justify text-small leading-relaxed text-graphite">
-                {format.desc}
-              </p>
+              <p className="mb-8 w-full text-small leading-relaxed text-graphite">{format.desc}</p>
 
               <ul className="w-full list-none">
                 {format.bullets.map((bullet, bIdx) => (
@@ -30,7 +28,7 @@ export default function PresentationFormats() {
                       aria-hidden="true"
                       className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                     />
-                    <span className="text-justify">{bullet.text}</span>
+                    <span>{bullet.text}</span>
                   </li>
                 ))}
               </ul>

@@ -61,7 +61,7 @@ export default function Institution() {
             {/* Right Column (5 cols): Description, Facts, Vision/Mission, Map Link */}
             <div className="flex flex-col items-start space-y-8 py-4 text-left lg:col-span-5">
               <Reveal delay={0.1} className="w-full">
-                <p className="w-full text-justify text-lead font-normal leading-relaxed text-ink/85">
+                <p className="w-full text-lead font-normal leading-relaxed text-ink/85">
                   {INSTITUTION_DATA.description}
                 </p>
               </Reveal>
@@ -87,7 +87,7 @@ export default function Institution() {
                     <h3 className="text-left font-serif text-2xl italic text-ink">
                       Institution Vision
                     </h3>
-                    <p className="w-full text-justify text-small leading-relaxed text-graphite">
+                    <p className="w-full text-small leading-relaxed text-graphite">
                       {INSTITUTION_DATA.vision}
                     </p>
                   </div>
@@ -98,7 +98,7 @@ export default function Institution() {
                     <h3 className="text-left font-serif text-2xl italic text-ink">
                       Institution Mission
                     </h3>
-                    <p className="w-full text-justify text-small leading-relaxed text-graphite">
+                    <p className="w-full text-small leading-relaxed text-graphite">
                       {INSTITUTION_DATA.mission}
                     </p>
                   </div>

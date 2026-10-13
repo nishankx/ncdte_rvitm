@@ -70,8 +70,8 @@ export default function FAQ() {
                           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                           className="overflow-hidden"
                         >
-                          <div className="w-full whitespace-pre-line pt-4 text-justify text-body font-normal text-graphite">
-                            <p className="text-justify">{faq.answer}</p>
+                          <div className="w-full whitespace-pre-line pt-4 text-body font-normal text-graphite">
+                            <p>{faq.answer}</p>
                             {faq.hasMapLink && (
                               <div className="mt-3 flex justify-start">
                                 <a

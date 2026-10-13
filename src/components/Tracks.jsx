@@ -15,8 +15,8 @@ export default function Tracks() {
             Call for <em className="font-serif font-normal italic text-ink">papers</em>
           </SectionHeading>
 
-          <Reveal delay={0.08} className="mx-auto mb-5 max-w-[68ch] text-justify sm:mb-6">
-            <p className="text-justify text-small font-normal leading-relaxed text-ink/85 sm:text-[15px]">
+          <Reveal delay={0.08} className="mx-auto mb-5 max-w-[68ch] sm:mb-6">
+            <p className="text-small font-normal leading-relaxed text-ink/85 sm:text-[15px]">
               Authors are invited to contribute to the conference by submitting original research
               papers that present significant research findings, project outcomes, experimental
               studies, and industrial experiences in the following areas, but not limited to:
@@ -42,7 +42,7 @@ export default function Tracks() {
                       <h3 className="text-left font-sans text-[15px] font-semibold leading-snug tracking-tight text-ink sm:text-[16px] md:text-[17px]">
                         {track.title}
                       </h3>
-                      <p className="text-justify text-[13px] leading-relaxed text-graphite sm:text-[13.5px]">
+                      <p className="text-[13px] leading-relaxed text-graphite sm:text-[13.5px]">
                         {track.description}
                       </p>
                     </div>

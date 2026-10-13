@@ -33,7 +33,7 @@ export default function InstitutionsMarquee() {
     <section
       role="region"
       aria-label="Participating institutions"
-      className="relative w-full bg-mist py-2.5 sm:py-3.5"
+      className="relative w-full bg-white py-2.5 sm:py-3.5"
     >
       <Container>
         <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-1 md:gap-1 lg:gap-1">

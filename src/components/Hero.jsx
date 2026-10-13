@@ -59,7 +59,9 @@ export default function Hero({ onOpenModal }) {
       />
 
       <Container>
-        <h1 className="text-2xl font-bold text-center mb-6 text-gray-700">DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</h1>
+        <h1 className="mb-6 text-center text-2xl font-bold text-gray-700">
+          DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
+        </h1>
         <div className="flex flex-col items-center text-center">
           {/* Accessible Headline */}
           <motion.h1

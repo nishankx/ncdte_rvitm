@@ -41,9 +41,9 @@ export default function Fees({ onOpenModal }) {
               </p>
 
               {/* Kit Note & Deadline Note */}
-              <div className="mx-auto max-w-[54ch] space-y-2 pt-6 text-justify text-small text-graphite">
-                <p className="text-justify">{FEES_DATA.note}</p>
-                <p className="text-justify font-medium text-ink">{FEES_DATA.deadlineNotice}</p>
+              <div className="mx-auto max-w-[54ch] space-y-2 pt-6 text-small text-graphite">
+                <p>{FEES_DATA.note}</p>
+                <p className="font-medium text-ink">{FEES_DATA.deadlineNotice}</p>
               </div>
             </Reveal>
 
@@ -72,7 +72,7 @@ export default function Fees({ onOpenModal }) {
                         aria-hidden="true"
                         className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                       />
-                      <span className="text-justify">{item.text}</span>
+                      <span>{item.text}</span>
                     </li>
                   ))}
                 </ul>

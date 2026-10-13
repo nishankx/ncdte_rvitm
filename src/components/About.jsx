@@ -64,9 +64,7 @@ export default function About() {
                       {item.title}
                     </h4>
                   </div>
-                  <p className="text-justify text-small leading-relaxed text-graphite">
-                    {item.desc}
-                  </p>
+                  <p className="text-small leading-relaxed text-graphite">{item.desc}</p>
                 </div>
               ))}
             </div>

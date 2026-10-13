@@ -65,7 +65,7 @@ export default function ImportantDates() {
                         {item.title}
                       </h3>
                       {item.description && (
-                        <p className="mx-auto max-w-[44ch] text-justify text-small leading-relaxed text-graphite">
+                        <p className="mx-auto max-w-[44ch] text-small leading-relaxed text-graphite">
                           {item.description}
                         </p>
                       )}

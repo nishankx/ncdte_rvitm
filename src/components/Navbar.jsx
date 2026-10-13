@@ -67,8 +67,16 @@ export default function Navbar({ onOpenModal }) {
     };
   }, [isOpen]);
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (e, targetId) => {
+    e.preventDefault();
     setIsOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", `#${targetId}`);
+      }
+    }, 100);
   };
 
   return (
@@ -192,7 +200,7 @@ export default function Navbar({ onOpenModal }) {
                     <a
                       key={link.id}
                       href={`#${link.id}`}
-                      onClick={handleLinkClick}
+                      onClick={(e) => handleLinkClick(e, link.id)}
                       className={`w-full py-2.5 font-sans text-[18px] font-medium transition-colors sm:text-[20px] ${
                         isActive ? "text-aurora font-semibold" : "text-ink hover:text-ink/70"
                       }`}

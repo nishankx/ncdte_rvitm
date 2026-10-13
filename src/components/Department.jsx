@@ -32,7 +32,7 @@ export default function Department() {
                   <h3 className="mb-6 text-left font-serif text-[32px] italic leading-tight text-ink">
                     {department.hod}
                   </h3>
-                  <p className="mb-8 w-full text-justify text-body leading-relaxed text-ink/85">
+                  <p className="mb-8 w-full text-body leading-relaxed text-ink/85">
                     {department.desc}
                   </p>
                 </div>
@@ -69,7 +69,7 @@ export default function Department() {
                   <h4 className="mb-3 text-left font-serif text-2xl italic text-ink">
                     Department Vision
                   </h4>
-                  <p className="w-full text-justify text-body leading-relaxed text-ink/85">
+                  <p className="w-full text-body leading-relaxed text-ink/85">
                     {department.vision}
                   </p>
                 </Card>
@@ -98,7 +98,7 @@ export default function Department() {
                           aria-hidden="true"
                           className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                         />
-                        <span className="text-justify">{m}</span>
+                        <span>{m}</span>
                       </li>
                     ))}
                   </ul>
