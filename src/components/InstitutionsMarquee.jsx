@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Container from "./Container";
 import { AFFILIATIONS_DATA } from "../data/affiliations";
 
 function StaticLogoItem({ aff }) {
@@ -8,7 +7,7 @@ function StaticLogoItem({ aff }) {
   return (
     <div
       title={aff.fullName}
-      className="flex h-[56px] w-[150px] shrink-0 cursor-default select-none items-center justify-center"
+      className="flex h-[46px] w-full min-w-0 cursor-default select-none items-center justify-center sm:h-[56px] md:h-[64px]"
     >
       {!error ? (
         <img
@@ -19,10 +18,12 @@ function StaticLogoItem({ aff }) {
           decoding="async"
           loading="eager"
           onError={() => setError(true)}
-          className="h-auto max-h-[52px] w-auto max-w-[145px] object-contain mix-blend-multiply transition-transform hover:scale-105 sm:max-h-[60px] sm:max-w-[175px] md:max-h-[68px] md:max-w-[210px]"
+          className="h-auto max-h-[42px] w-auto max-w-full object-contain mix-blend-multiply transition-transform hover:scale-105 sm:max-h-[52px] md:max-h-[60px]"
         />
       ) : (
-        <span className="font-sans text-sm font-bold tracking-wider text-graphite">{aff.name}</span>
+        <span className="truncate text-center font-sans text-xs font-bold tracking-wider text-graphite sm:text-sm">
+          {aff.name}
+        </span>
       )}
     </div>
   );
@@ -33,15 +34,15 @@ export default function InstitutionsMarquee() {
     <section
       role="region"
       aria-label="Participating institutions"
-      className="relative w-full bg-white py-2.5 sm:py-3.5"
+      className="relative w-full bg-white py-1 sm:py-1.5 md:py-2"
     >
-      <Container>
-        <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-1 md:gap-1 lg:gap-1">
+      <div className="mx-auto w-full max-w-2xl px-2 sm:px-4">
+        <div className="grid grid-cols-4 items-center justify-items-center gap-1.5 sm:gap-3 md:gap-5">
           {AFFILIATIONS_DATA.map((aff) => (
             <StaticLogoItem key={aff.name} aff={aff} />
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
