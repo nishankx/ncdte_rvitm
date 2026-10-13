@@ -1,67 +1,61 @@
 import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import Container from './Container';
 import SectionLabel from './SectionLabel';
 import Reveal from './Reveal';
-import { BookOpen, Share2, Building2 } from 'lucide-react';
+import Button from './Button';
+import { CONFIG } from '../config';
 
 export default function About() {
-  const shouldReduceMotion = useReducedMotion();
-
-  const chips = [
+  const highlights = [
     {
       title: "Exchange Knowledge",
       desc: "Share innovative ideas and emerging developments across digital technology and engineering domains.",
-      icon: BookOpen,
     },
     {
       title: "Interdisciplinary Collaboration",
       desc: "Foster cross-domain partnerships to address modern engineering and technological challenges.",
-      icon: Share2,
     },
     {
       title: "Academia-Industry Interaction",
       desc: "Encourage meaningful dialogue between researchers, faculty, industry leaders, and students.",
-      icon: Building2,
     },
   ];
 
-  const chipsContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const chipItem = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  };
-
   return (
-    <section id="about" className="py-16 md:py-24 bg-white bg-dots-pattern scroll-mt-20 border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-4">
-        <Reveal>
-          <SectionLabel>About NCDTE-2026</SectionLabel>
-        </Reveal>
-
-        <div className="mt-4 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Main Copy */}
-          <div className="lg:col-span-7">
-            <Reveal delay={0.1}>
-              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-ink tracking-tight leading-tight">
-                Empowering Innovation Through Collaborative Research & Engineering
+    <section id="about" className="py-20 md:py-32 bg-mist scroll-mt-20">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column (5 cols): Label & Heading */}
+          <div className="lg:col-span-5">
+            <Reveal>
+              <div className="flex justify-start mb-5">
+                <span className="inline-flex items-center text-eyebrow uppercase px-3 py-2 rounded-pill tracking-widest bg-white text-ink shadow-pill">
+                  About NCDTE-2026
+                </span>
+              </div>
+              <h2 className="font-sans text-h2 text-ink leading-tight tracking-tight">
+                About <em className="font-serif italic font-normal text-aurora">NCDTE-2026</em>
               </h2>
             </Reveal>
 
-            <Reveal delay={0.2}>
-              <div className="mt-6 text-slate-700 text-base sm:text-lg leading-relaxed space-y-4">
+            {/* Brochure Button */}
+            {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
+              <Reveal delay={0.2} className="mt-8">
+                <Button
+                  variant="primary"
+                  href={CONFIG.BROCHURE_URL}
+                  target="_blank"
+                >
+                  Download Conference Brochure
+                </Button>
+              </Reveal>
+            )}
+          </div>
+
+          {/* Right Column (7 cols): Editorial Typography */}
+          <div className="lg:col-span-7 space-y-8">
+            <Reveal delay={0.1}>
+              <div className="text-lead text-ink/85 max-w-[62ch] space-y-6 font-normal">
                 <p>
                   The National Conference on Digital Technology and Engineering (NCDTE-2026) serves as a platform for researchers, academicians, industry professionals, and students to exchange knowledge, share innovative ideas, and discuss emerging developments in digital technology and engineering.
                 </p>
@@ -70,44 +64,31 @@ export default function About() {
                 </p>
               </div>
             </Reveal>
-          </div>
 
-          {/* 3 Highlight Chips */}
-          <div className="lg:col-span-5">
-            <motion.div
-              variants={chipsContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              className="flex flex-col gap-4"
-            >
-              {chips.map((chip, index) => {
-                const Icon = chip.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    variants={chipItem}
-                    whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.01 }}
-                    className="p-5 rounded-2xl bg-slate-50 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-royal/40 transition-all flex items-start gap-4"
-                  >
-                    <div className="p-3 rounded-xl bg-royal/10 text-royal shrink-0">
-                      <Icon className="w-6 h-6" />
-                    </div>
+            {/* Three Plain Highlight Items with Aurora Gradient Dots, No borders */}
+            <Reveal delay={0.25}>
+              <div className="pt-6 space-y-6">
+                {highlights.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <span
+                      aria-hidden="true"
+                      className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet mt-2 shrink-0"
+                    />
                     <div>
-                      <h3 className="font-heading font-bold text-ink text-base">
-                        {chip.title}
-                      </h3>
-                      <p className="text-muted text-xs sm:text-sm mt-1 leading-relaxed">
-                        {chip.desc}
+                      <h4 className="font-sans font-semibold text-[17px] text-ink">
+                        {item.title}
+                      </h4>
+                      <p className="text-small text-graphite mt-1 leading-relaxed max-w-[56ch]">
+                        {item.desc}
                       </p>
                     </div>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

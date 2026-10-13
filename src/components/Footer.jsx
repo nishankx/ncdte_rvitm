@@ -1,151 +1,151 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Container from './Container';
 import { CONFIG } from '../config';
 import { CONTACT_DETAILS } from '../data/dates';
-import { MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
+import { AFFILIATIONS_DATA } from '../data/affiliations';
 
 export default function Footer() {
-  const [imgError, setImgError] = useState(false);
-
-  const quickLinks = [
-    { name: "About", href: "#about" },
-    { name: "Tracks", href: "#tracks" },
-    { name: "Guidelines", href: "#guidelines" },
-    { name: "Important Dates", href: "#dates" },
-    { name: "Committee", href: "#committee" },
-    { name: "FAQ", href: "#faq" },
+  const importantLinks = [
+    { name: "About Conference", href: "#about" },
+    { name: "Department", href: "#department" },
+    { name: "Research Tracks", href: "#tracks" },
+    { name: "Timeline & Deadlines", href: "#dates" },
+    { name: "Registration", href: "#registration" },
   ];
 
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    "RV Institute of Technology and Management Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India"
-  )}`;
-
   return (
-    <footer className="bg-slate-900 text-slate-300">
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-          {/* Column 1 (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-3">
-              {!imgError ? (
-                <img
-                  src="/images/rvitm-logo.png"
-                  alt="RVITM Logo"
-                  className="w-12 h-12 object-contain bg-white rounded-xl p-1 shadow"
-                  onError={() => setImgError(true)}
-                />
-              ) : (
-                <div className="w-12 h-12 rounded-xl bg-royal flex items-center justify-center font-bold text-white text-base">
-                  RV
-                </div>
-              )}
-              <div>
-                <span className="font-heading font-black text-xl text-white tracking-wide block">
-                  NCDTE-2026
-                </span>
-                <span className="text-xs text-sky font-medium">
-                  National Conference on Digital Technology & Engineering
-                </span>
-              </div>
+    <footer className="bg-ink text-white pt-20 pb-12 overflow-hidden">
+      <Container>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 pb-16 items-start">
+          {/* Column 1: Description, Organiser address & White Affiliation Logos */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2.5">
+              <span className="font-sans font-bold text-2xl text-white tracking-tight">
+                NCDTE
+              </span>
+              <span className="font-serif italic font-normal text-aurora text-2xl">
+                2026
+              </span>
             </div>
 
-            <p className="mt-4 text-slate-400 text-sm leading-relaxed max-w-sm">
-              NCDTE-2026 is hosted by RV Institute of Technology and Management, Bengaluru.
-            </p>
+            <div className="space-y-2 text-small text-white/70 leading-relaxed max-w-[42ch]">
+              <p className="font-medium text-white/90">
+                Organised by RV Institute of Technology and Management
+              </p>
+              <p>
+                Department of Computer Science and Engineering
+              </p>
+              <p className="text-caption text-white/60">
+                Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India
+              </p>
+            </div>
 
-            <div className="mt-4 text-xs text-slate-400">
-              Department of Computer Science and Engineering
+            {/* Institution Logos in white (brightness-0 invert opacity-70) */}
+            <div className="pt-2 space-y-3">
+              <span className="text-eyebrow uppercase text-white/40 tracking-widest block">
+                Recognised & Governed By
+              </span>
+              <div className="flex flex-wrap items-center gap-4">
+                {AFFILIATIONS_DATA.map((aff) => (
+                  <div
+                    key={aff.name}
+                    className="h-8 px-2 flex items-center justify-center filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
+                    title={aff.fullName}
+                  >
+                    <img
+                      src={aff.img}
+                      alt={aff.name}
+                      className="max-h-6 w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Column 2 "Quick Links" (3 cols) */}
-          <div className="lg:col-span-3">
-            <h3 className="font-heading font-bold text-white text-base uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
-              Quick Links
-            </h3>
-            <ul className="space-y-2.5 text-sm">
-              {quickLinks.map((link) => (
+          {/* Column 2: Important Links */}
+          <div className="space-y-4">
+            <span className="text-eyebrow uppercase text-white/40 tracking-widest block">
+              Important Links
+            </span>
+            <ul className="space-y-3 text-small text-white/70">
+              {importantLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="hover:text-sky transition-colors flex items-center gap-1.5"
+                    className="hover:text-white transition-colors block"
                   >
-                    <span className="text-sky/60">›</span>
-                    <span>{link.name}</span>
+                    {link.name}
                   </a>
                 </li>
               ))}
+              {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
+                <li>
+                  <a
+                    href={CONFIG.BROCHURE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-aurora-cyan hover:text-white transition-colors block"
+                  >
+                    Download Brochure ↗
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
 
-          {/* Column 3 "Contact Us" (4 cols) */}
-          <div className="lg:col-span-4">
-            <h3 className="font-heading font-bold text-white text-base uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
+          {/* Column 3: Contact Us */}
+          <div className="space-y-4 text-small text-white/70">
+            <span className="text-eyebrow uppercase text-white/40 tracking-widest block">
               Contact Us
-            </h3>
-            <div className="space-y-3.5 text-sm">
-              {/* Address */}
+            </span>
+            <div className="space-y-3 leading-relaxed">
               <a
-                href={mapUrl}
+                href={CONFIG.MAP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2.5 hover:text-white transition-colors group"
+                className="hover:text-white transition-colors block text-white/80"
               >
-                <MapPin className="w-4 h-4 text-sky shrink-0 mt-1 group-hover:scale-110 transition-transform" />
-                <span className="leading-snug">
-                  {CONTACT_DETAILS.address}
-                </span>
+                {CONTACT_DETAILS.address}
               </a>
 
-              {/* Email */}
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-sky shrink-0" />
+              <div>
                 <a
                   href={`mailto:${CONFIG.EMAIL}`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors block text-white font-medium break-all"
                 >
                   {CONFIG.EMAIL}
                 </a>
               </div>
 
-              {/* Phones */}
-              <div className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-sky shrink-0 mt-1" />
-                <div className="flex flex-wrap gap-x-3 gap-y-1">
-                  {CONTACT_DETAILS.phones.map((phone, idx) => (
-                    <a
-                      key={idx}
-                      href={`tel:+91${phone.number}`}
-                      className="hover:text-white font-mono text-xs text-slate-300"
-                    >
-                      {phone.number}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Conference Website link (hidden if CONFIG.CONFERENCE_WEBSITE is empty) */}
-              {CONFIG.CONFERENCE_WEBSITE && CONFIG.CONFERENCE_WEBSITE.trim() !== "" && (
-                <div className="pt-2">
+              <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-caption font-mono text-white/60 pt-1">
+                {CONFIG.CONTACT_PHONES.map((phone, idx) => (
                   <a
-                    href={CONFIG.CONFERENCE_WEBSITE}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sky hover:underline text-xs font-semibold uppercase tracking-wider"
+                    key={idx}
+                    href={`tel:+91${phone}`}
+                    className="hover:text-white transition-colors tabular-nums"
                   >
-                    <span>Conference Website</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    +91 {phone}
                   </a>
-                </div>
-              )}
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom strip in bg-plum */}
-      <div className="bg-plum text-white py-4 px-4 text-center text-xs sm:text-sm font-medium">
-        © 2026 RV Institute of Technology and Management. All Rights Reserved.
-      </div>
+        {/* Giant Cropped Wordmark "NCDTE-2026" centered */}
+        <div className="relative overflow-hidden select-none -mb-8 sm:-mb-16 pointer-events-none text-center">
+          <div className="font-sans font-bold text-[22vw] leading-none text-white/[0.06] tracking-tighter uppercase whitespace-nowrap">
+            NCDTE-2026
+          </div>
+        </div>
+
+        {/* Copyright Line */}
+        <div className="pt-8 text-center text-caption text-white/40 font-normal">
+          © 2026 RV Institute of Technology and Management. All Rights Reserved.
+        </div>
+      </Container>
     </footer>
   );
 }

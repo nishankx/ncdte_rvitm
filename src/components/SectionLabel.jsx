@@ -1,12 +1,15 @@
 import React from 'react';
 
-export default function SectionLabel({ children, className = "" }) {
+export default function SectionLabel({ children, onWhite = false, className = "" }) {
   return (
-    <div className={`inline-flex items-center gap-2 mb-3 ${className}`}>
-      <span className="bg-gradient-to-r from-royal to-transparent text-white px-4 py-1 text-sm font-semibold tracking-wide uppercase rounded-l-md shadow-sm">
+    <div className={`flex justify-center mb-5 ${className}`}>
+      <span
+        className={`inline-flex items-center text-eyebrow uppercase px-3 py-2 rounded-pill tracking-widest ${
+          onWhite ? "bg-mist-50 text-ink shadow-none" : "bg-white text-ink shadow-pill"
+        }`}
+      >
         {children}
       </span>
-      <span className="w-2 h-2 rounded-full bg-royal/80 animate-pulse hidden sm:inline-block"></span>
     </div>
   );
 }

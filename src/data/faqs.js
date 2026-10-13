@@ -34,4 +34,31 @@ export const FAQS_DATA = [
     question: "How will I know if my paper is accepted?",
     answer: "The acceptance status of submitted papers will be communicated to the authors via email following the peer-review process.",
   },
+  // New additions:
+  {
+    id: "faq-8",
+    question: "How do I submit my paper?",
+    answer: "Email your full paper to conference.rvitm@rvei.edu.in on or before 2 November 2026, following the conference template.",
+  },
+  {
+    id: "faq-9",
+    question: "What are the presentation formats?",
+    answer: "Paper presentations and poster presentations. At least one author of each accepted paper or poster must register by 20 November 2026.",
+  },
+  {
+    id: "faq-10",
+    question: "Does the registration fee include a kit?",
+    answer: "A registration kit is provided to participants who register by paying the full fee of Rs. 1300.",
+  },
+  {
+    id: "faq-11",
+    question: "Where is the conference held?",
+    answer: "RV Institute of Technology and Management, Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076.",
+    hasMapLink: true,
+  },
+  {
+    id: "faq-12",
+    question: "Who should I contact for help?",
+    answer: "For any assistance or queries, contact our conference coordinators:\n• Helpline Numbers: 9655523276, 9902028279, 7200575617, 9739981676\n• Email: conference.rvitm@rvei.edu.in",
+  },
 ];

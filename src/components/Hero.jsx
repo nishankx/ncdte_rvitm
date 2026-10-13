@@ -1,235 +1,205 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import Container from './Container';
 import Countdown from './Countdown';
 import Button from './Button';
-import { Calendar, MapPin, Layers, Clock } from 'lucide-react';
+import Blob from './Blob';
 
 export default function Hero({ onOpenModal }) {
-  const [imgError, setImgError] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
-  const quickFacts = [
-    {
-      icon: Calendar,
-      primary: "4 DEC 2026",
-      secondary: "CONFERENCE DATE",
-    },
-    {
-      icon: MapPin,
-      primary: "RVITM, BENGALURU",
-      secondary: "VENUE",
-    },
-    {
-      icon: Layers,
-      primary: "05",
-      secondary: "TRACKS",
-    },
-    {
-      icon: Clock,
-      primary: "2 NOV 2026",
-      secondary: "SUBMISSION DEADLINE",
-    },
+  const tagChips = [
+    "Artificial Intelligence",
+    "IoT & Robotics",
+    "Cybersecurity",
+    "Sustainable Engineering",
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  const quickStats = [
+    { number: "04", suffix: "DEC", label: "Conference Date 2026" },
+    { number: "RVITM", suffix: "", label: "Bengaluru Campus Venue" },
+    { number: "05", suffix: "", label: "Research Tracks" },
+    { number: "02", suffix: "NOV", label: "Submission Deadline 2026" },
+  ];
+
+  const lineVariants = {
+    hidden: { y: "110%" },
     visible: {
-      opacity: 1,
+      y: 0,
+      transition: { duration: 0.95, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
+
+  const headerContainer = {
+    hidden: {},
+    visible: {
       transition: {
-        staggerChildren: 0.08,
+        staggerChildren: 0.12,
       },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-
   return (
-    <section id="home" className="relative scroll-mt-20 overflow-hidden bg-white">
-      {/* 5.1 Identity strip */}
-      <div className="bg-royal text-white border-b border-white/10 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs md:text-sm">
-          <div className="flex items-center gap-2.5">
-            {!imgError ? (
-              <img
-                src="/images/rvitm-logo.png"
-                alt="RVITM Logo"
-                className="w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-full bg-white p-0.5 shadow-sm"
-                onError={() => setImgError(true)}
-              />
-            ) : (
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-md bg-white/20 border border-white/40 flex items-center justify-center font-bold text-xs text-sky">
-                RV
-              </div>
-            )}
-            <span className="font-heading font-semibold tracking-wide">
-              RV Institute of Technology and Management®
+    <section
+      id="home"
+      className="relative min-h-[100svh] overflow-hidden bg-white grain pt-[calc(72px+6rem)] pb-20 md:pb-28"
+    >
+      {/* Background Aurora Layers */}
+      <Blob className="absolute -top-28 -right-44 w-[78vw] max-w-[1000px] -z-10" />
+
+      {/* Top-left soft glow: radial-gradient lavender/ice, blur-3xl, opacity .7 */}
+      <div
+        aria-hidden="true"
+        className="absolute top-10 left-0 w-[420px] h-[420px] rounded-full bg-gradient-to-br from-aurora-lavender/40 to-aurora-ice/30 blur-3xl opacity-70 pointer-events-none -z-10"
+      />
+
+      {/* Pale lavender haze under headline right side */}
+      <div
+        aria-hidden="true"
+        className="absolute top-48 left-1/3 w-[600px] h-[300px] rounded-full bg-aurora-lavender/20 blur-[100px] pointer-events-none -z-10"
+      />
+
+      <Container>
+        {/* Tag chips row */}
+        <div className="fade-r mb-8 max-w-xl overflow-hidden">
+          <div className="flex items-center gap-3">
+            {tagChips.map((chip, idx) => (
+              <span
+                key={idx}
+                className="inline-flex bg-white shadow-pill rounded-pill text-[14px] font-semibold text-ink px-4 py-2 whitespace-nowrap"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Accessible Headline */}
+        <motion.h1
+          aria-label="National Conference on Digital Technology and Engineering, NCDTE-2026"
+          variants={headerContainer}
+          initial={shouldReduceMotion ? "visible" : "hidden"}
+          animate="visible"
+          className="select-none"
+        >
+          {/* Eyebrow: text-ink font-bold uppercase text-[clamp(1.05rem,1.7vw,1.4rem)] tracking-[0.2em], preceded by 40x3px aurora bar */}
+          <div className="flex items-center gap-3 mb-8">
+            <span
+              aria-hidden="true"
+              className="w-10 h-[3px] rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet shrink-0"
+            />
+            <span className="text-ink font-bold uppercase text-[clamp(1.05rem,1.7vw,1.4rem)] tracking-[0.2em]">
+              National Conference on
             </span>
           </div>
-          <div className="text-center sm:text-right text-[11px] sm:text-xs text-sky/90 flex items-center gap-1.5">
-            <MapPin className="w-3.5 h-3.5 inline text-sky shrink-0" />
-            <span>Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India</span>
+
+          {/* Line 1: Serif text */}
+          <span className="block overflow-hidden pb-[0.12em]">
+            <motion.span
+              variants={lineVariants}
+              className="block font-serif text-serifxl text-ink"
+            >
+              Digital Technology <em className="font-serif italic font-normal">and</em> Engineering
+            </motion.span>
+          </span>
+
+          {/* Line 2: Mega Sans NCDTE with optical alignment */}
+          <span className="block overflow-hidden pb-[0.04em] mt-2 sm:mt-4">
+            <motion.span
+              variants={lineVariants}
+              className="block font-sans text-mega text-ink -ml-[0.045em]"
+            >
+              NCDTE
+              <em className="font-serif italic font-normal text-aurora text-[0.24em] tracking-normal align-top ml-3">
+                2026
+              </em>
+            </motion.span>
+          </span>
+        </motion.h1>
+
+        {/* Date and Venue: Two Stacked Lines */}
+        <div className="mt-10 space-y-3">
+          <div className="inline-flex items-center gap-3">
+            <svg
+              className="w-6 h-6 text-ink shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span className="font-sans font-bold text-[clamp(2rem,3.8vw,3.5rem)] tracking-tight text-aurora bg-[linear-gradient(transparent_60%,rgba(139,61,255,0.16)_60%)] px-1 -mx-1">
+              4th December 2026
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 text-ink font-medium text-[20px] md:text-[22px]">
+            <svg
+              className="w-5 h-5 text-ink shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>RV Institute of Technology and Management, Bengaluru</span>
           </div>
         </div>
-      </div>
 
-      {/* Background Dots + Animated Gradient Blobs */}
-      <div className="relative bg-dots-pattern pt-8 pb-16 md:pt-12 md:pb-20">
-        {!shouldReduceMotion && (
-          <>
-            <motion.div
-              animate={{
-                x: [0, 40, 0],
-                y: [0, -30, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 12,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut",
-              }}
-              className="absolute -top-16 -left-16 w-80 h-80 rounded-full bg-royal/10 blur-3xl pointer-events-none"
-            />
-            <motion.div
-              animate={{
-                x: [0, -30, 0],
-                y: [0, 40, 0],
-                scale: [1, 1.15, 1],
-              }}
-              transition={{
-                duration: 15,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut",
-              }}
-              className="absolute -bottom-16 -right-16 w-96 h-96 rounded-full bg-sky/30 blur-3xl pointer-events-none"
-            />
-          </>
-        )}
+        {/* Lower Hero Row: Countdown & Action buttons */}
+        <div className="mt-12 md:mt-16 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+          <Countdown />
 
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Hero Banner with Chevron Cut */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -40 }}
-            animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative mx-auto my-4 max-w-4xl"
-          >
-            <div className="relative [clip-path:polygon(0_0,100%_0,calc(100%-24px)_100%,24px_100%)] sm:[clip-path:polygon(0_0,100%_0,calc(100%-36px)_100%,36px_100%)] bg-gradient-to-r from-banner to-banner-light text-white px-6 sm:px-14 py-10 sm:py-14 text-center shadow-xl">
-              {/* College Subheading / Crest Wordmark */}
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-                className="inline-flex items-center gap-2 mb-3 bg-white/10 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/20"
-              >
-                <span className="w-2 h-2 rounded-full bg-sky animate-ping" />
-                <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-sky">
-                  Department of Computer Science and Engineering Presents
-                </span>
-              </motion.div>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 shrink-0">
+            <Button
+              variant="primary"
+              onClick={() => onOpenModal("registration")}
+              className="h-12 text-[15px]"
+            >
+              Register Now
+            </Button>
 
-              {/* H1 Heading with sequential fade-up */}
-              <motion.h1
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="font-heading font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-5xl uppercase tracking-tight leading-tight sm:leading-snug"
-              >
-                NATIONAL CONFERENCE ON <br className="hidden sm:inline" />
-                DIGITAL TECHNOLOGY AND ENGINEERING
-              </motion.h1>
+            <button
+              type="button"
+              onClick={() => onOpenModal("submission")}
+              className="font-sans font-bold text-[15px] tracking-wide text-ink cursor-pointer bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_2px] transition-[background-size] duration-300 pb-0.5"
+            >
+              SUBMIT YOUR PAPERS HERE
+            </button>
+          </div>
+        </div>
 
-              {/* Highlight Tag & Date Line */}
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.5 }}
-                className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6"
-              >
-                <span className="font-heading font-black text-2xl sm:text-3xl text-sky tracking-wider drop-shadow-sm">
-                  NCDTE-2026
-                </span>
-                <span className="hidden sm:inline text-white/40 font-bold">•</span>
-                <span className="text-base sm:text-xl font-medium text-white/95 tracking-wide flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-sky" />
-                  4th December 2026
-                </span>
-              </motion.div>
-
-              {/* CTAs */}
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
-              >
-                <Button
-                  variant="filled"
-                  onClick={() => onOpenModal("submission")}
-                  className="w-full sm:w-auto font-heading font-bold tracking-wide uppercase shadow-lg shadow-black/20"
-                >
-                  SUBMIT YOUR PAPERS HERE
-                </Button>
-                <Button
-                  variant="outlined"
-                  onClick={() => onOpenModal("registration")}
-                  className="w-full sm:w-auto font-heading font-semibold tracking-wide uppercase"
-                >
-                  Register Now
-                </Button>
-              </motion.div>
+        {/* Quick Facts Stats Row: Clean 4-column row, whitespace separated, no borders */}
+        <div className="mt-20 md:mt-24 pt-8 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
+          {quickStats.map((stat, idx) => (
+            <div key={idx} className="space-y-1">
+              <div className="font-sans font-bold text-5xl md:text-7xl text-ink tracking-tight flex items-baseline gap-1.5">
+                <span>{stat.number}</span>
+                {stat.suffix && (
+                  <span className="text-2xl font-medium text-graphite">
+                    {stat.suffix}
+                  </span>
+                )}
+              </div>
+              <p className="text-[16px] md:text-[17px] font-medium text-ink/80">
+                {stat.label}
+              </p>
             </div>
-
-            {/* Thin dark bar beneath chevron banner */}
-            <div className="h-2 w-3/4 mx-auto bg-ink/80 rounded-b-md shadow-sm" />
-          </motion.div>
-
-          {/* Countdown timer */}
-          <div className="mt-8 sm:mt-12 max-w-xl mx-auto bg-indigoDeep rounded-2xl p-6 sm:p-8 text-white shadow-card border border-white/10">
-            <Countdown />
-          </div>
-
-          {/* Quick-facts strip (4 stat cards) */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
-          >
-            {quickFacts.map((fact, idx) => {
-              const Icon = fact.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  whileHover={shouldReduceMotion ? {} : { y: -6 }}
-                  whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                  className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm hover:shadow-card transition-all duration-200 flex flex-col items-center text-center justify-center group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-sky/30 text-banner flex items-center justify-center mb-2.5 group-hover:bg-banner group-hover:text-white transition-colors">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div className="font-heading font-extrabold text-sm sm:text-base text-ink tracking-tight">
-                    {fact.primary}
-                  </div>
-                  <div className="text-[11px] sm:text-xs font-semibold text-muted tracking-wider uppercase mt-0.5">
-                    {fact.secondary}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+          ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

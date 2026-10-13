@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import InstitutionsMarquee from './components/InstitutionsMarquee';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Institution from './components/Institution';
+import Department from './components/Department';
 import Tracks from './components/Tracks';
-import Fees from './components/Fees';
 import Guidelines from './components/Guidelines';
+import WhyParticipate from './components/WhyParticipate';
+import SubmissionProcess from './components/SubmissionProcess';
 import ImportantDates from './components/ImportantDates';
+import Fees from './components/Fees';
 import Committee from './components/Committee';
 import FAQ from './components/FAQ';
 import CtaBand from './components/CtaBand';
@@ -33,44 +38,59 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col text-ink selection:bg-sky selection:text-banner">
-      {/* Top Sticky Navigation */}
+    <div className="min-h-screen bg-white flex flex-col text-ink font-sans antialiased selection:bg-aurora-ice overflow-x-clip">
+      {/* 1. Institutions Marquee (First element, full-bleed strip at top of page) */}
+      <InstitutionsMarquee />
+
+      {/* 2. Sticky Navbar with negative bottom margin to overlay hero canvas */}
       <Navbar onOpenModal={handleOpenModal} />
 
-      {/* Main Content Sections */}
+      {/* Main Content Sections (Strict Alternating White/Mist Rhythm) */}
       <main className="flex-1">
-        {/* 5.1 Identity strip + Hero */}
+        {/* 3. Hero (#home, White) */}
         <Hero onOpenModal={handleOpenModal} />
 
-        {/* 5.2 About */}
+        {/* 4. About (#about, Mist) */}
         <About />
 
-        {/* 5.3 Call for Papers & Tracks */}
+        {/* 5. About RVITM (#institution, White) */}
+        <Institution />
+
+        {/* 6. Department (#department, Mist) */}
+        <Department />
+
+        {/* 7. Research Tracks (#tracks, White) */}
         <Tracks />
 
-        {/* 5.4 Registration Fee */}
-        <Fees onOpenModal={handleOpenModal} />
-
-        {/* 5.5 Guidelines for Submission */}
+        {/* 8. Guidelines & Presentation Formats (#guidelines, Mist) */}
         <Guidelines onOpenModal={handleOpenModal} />
 
-        {/* 5.6 Important Dates */}
+        {/* 9. Why Participate (#why, White) */}
+        <WhyParticipate />
+
+        {/* 10. Submission Process (#process, Mist) */}
+        <SubmissionProcess onOpenModal={handleOpenModal} />
+
+        {/* 11. Important Dates (#dates, White) */}
         <ImportantDates />
 
-        {/* 5.7 Committee */}
+        {/* 12. Registration Fee (#registration, Mist) */}
+        <Fees onOpenModal={handleOpenModal} />
+
+        {/* 13. Committee & Helpdesk (#committee, White) */}
         <Committee />
 
-        {/* 5.8 FAQ */}
+        {/* 14. Frequently Asked Questions (#faq, Mist) */}
         <FAQ />
 
-        {/* 5.9 CTA band */}
+        {/* 15. CTA Band (Ink) */}
         <CtaBand onOpenModal={handleOpenModal} />
       </main>
 
-      {/* 5.10 Footer */}
+      {/* 16. Footer (Ink) */}
       <Footer />
 
-      {/* Global Interactive Modal */}
+      {/* 17. Registration Modal */}
       <RegistrationModal
         isOpen={modalState.isOpen}
         onClose={handleCloseModal}

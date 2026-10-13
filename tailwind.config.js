@@ -7,23 +7,49 @@ export default {
   theme: {
     extend: {
       colors: {
-        royal: "#3f5bd1",        // header / ribbons
-        banner: {
-          DEFAULT: "#06428f",
-          light: "#0a56b8",
+        ink: "#0A0A0A",
+        graphite: "#5F5F66",
+        paper: "#FFFFFF",
+        mist: {
+          DEFAULT: "#EFEFEF",
+          50: "#F6F6F7",
         },
-        indigoDeep: "#2b2870",   // info panels
-        sky: "#b9d0ff",          // accent light blue
-        plum: "#b03a7a",         // footer bottom bar
-        ink: "#0f172a",
-        muted: "#5b6b84",
+        aurora: {
+          cyan: "#00D4FF",
+          azure: "#1F6BFF",
+          violet: "#8B3DFF",
+          lavender: "#D9D3FF",
+          ice: "#CDE7FF",
+        },
       },
       fontFamily: {
-        heading: ["Poppins", "system-ui", "sans-serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Satoshi", "Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
+        serif: ["Instrument Serif", "Cormorant Garamond", "Georgia", "serif"],
+      },
+      borderRadius: {
+        DEFAULT: "6px",
+        md: "8px",
+        lg: "10px",
+        pill: "9999px",
       },
       boxShadow: {
-        card: "0 10px 30px -12px rgba(15,23,42,.25)",
+        soft: "0 1px 2px rgba(10,10,10,.04), 0 16px 40px -16px rgba(10,10,10,.10)",
+        lift: "0 2px 4px rgba(10,10,10,.04), 0 30px 60px -22px rgba(70,70,180,.25)",
+        pill: "0 4px 24px -8px rgba(90,80,220,.30)",
+      },
+      backgroundImage: {
+        aurora: "linear-gradient(120deg,#00D4FF 0%,#1F6BFF 45%,#8B3DFF 100%)",
+      },
+      fontSize: {
+        mega:   ["clamp(6.5rem,22vw,20rem)", { lineHeight: ".82", letterSpacing: "-0.055em", fontWeight: "700" }],
+        serifxl:["clamp(2.5rem,5.6vw,5.5rem)", { lineHeight: "1", letterSpacing: "-0.02em", fontWeight: "400" }],
+        h2:     ["clamp(2.25rem,5vw,4.5rem)", { lineHeight: "1.04", letterSpacing: "-0.035em", fontWeight: "500" }],
+        h3:     ["clamp(1.5rem,2.4vw,2rem)", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "600" }],
+        body:    ["1.1875rem", { lineHeight: "1.75" }],  // 19px, was 17px
+        lead:    ["1.3125rem", { lineHeight: "1.7" }],   // 21px, for About/Institution lead paragraphs (was 19-20px)
+        small:   ["1rem",      { lineHeight: "1.65" }],  // 16px, card descriptions, captions (was 14px)
+        caption: ["0.9375rem", { lineHeight: "1.6" }],   // 15px, minimum for any readable text
+        eyebrow: ["0.75rem",   { lineHeight: "1", letterSpacing: "0.16em", fontWeight: "700" }], // 12px, was 11px
       },
     },
   },

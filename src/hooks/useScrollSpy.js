@@ -1,6 +1,21 @@
 import { useState, useEffect } from 'react';
 
-export function useScrollSpy(sectionIds = [], offset = 100) {
+const DEFAULT_SECTIONS = [
+  'home',
+  'about',
+  'institution',
+  'department',
+  'tracks',
+  'guidelines',
+  'why',
+  'process',
+  'dates',
+  'registration',
+  'committee',
+  'faq',
+];
+
+export function useScrollSpy(sectionIds = DEFAULT_SECTIONS, offset = 140) {
   const [activeId, setActiveId] = useState('');
 
   useEffect(() => {

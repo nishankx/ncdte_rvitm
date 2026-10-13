@@ -43,6 +43,9 @@ export const CONFIG = {
   PAPER_TEMPLATE_URL: "",   // Downloadable paper template (e.g. Word / LaTeX format link)
   CONFERENCE_WEBSITE: "",   // Official college conference subdomain link
   EMAIL: "conference.rvitm@rvei.edu.in",
+  BROCHURE_URL: "",         // Download Conference Brochure (button hidden if empty)
+  MAP_URL: "https://www.google.com/maps/search/?api=1&query=RV+Institute+of+Technology+and+Management+Kothanur+JP+Nagar+Bengaluru+560076",
+  CONTACT_PHONES: ["9655523276", "9902028279", "7200575617", "9739981676"],
 };
 ```
 
@@ -51,17 +54,18 @@ export const CONFIG = {
   `mailto:conference.rvitm@rvei.edu.in?subject=NCDTE-2026%20Paper%20Submission`
 - When `REGISTRATION_URL` is empty (`""`), the registration button falls back to:
   `mailto:conference.rvitm@rvei.edu.in?subject=NCDTE-2026%20Registration`
-- When `PAPER_TEMPLATE_URL` or `CONFERENCE_WEBSITE` is empty, those optional buttons/links are hidden automatically.
+- When `BROCHURE_URL` or `PAPER_TEMPLATE_URL` is empty, those optional buttons/links are hidden automatically.
 
 ---
 
-## 🖼️ Images & Brand Assets
+## 🖼️ Committee Photo Specifications & Assets
 
-- **RVITM Official Logo / Shield**: [public/images/rvitm-logo.png](file:///c:/Users/nisha/Desktop/csedept/public/images/rvitm-logo.png)
-  - Displayed in the header navigation, identity strip, and footer.
-  - Implements an `onError` fallback that renders an institutional CSS shield badge with the official name `"RV Institute of Technology and Management®"` if the file is missing or blocked.
-- **Committee Avatars**:
-  - Dynamically generated initials circle avatars with rich gradient backgrounds, stripping titles (`Dr.`, `Sri.`, `Ms.`, `Mr.`).
+### Committee Portraits (`/public/images/committee/<slug>.jpg`):
+- **Dimensions**: 800 × 1000 px (4:5 aspect ratio).
+- **Format**: JPG or WebP.
+- **Composition**: Face centered in the upper half of the frame with a consistent neutral background.
+- **File size**: Under 150 KB each for optimal web performance.
+- **Note**: Do not generate or invent portraits. When an image file is absent or fails to load, `PersonCard` displays a fallback gradient tile (`from-aurora-ice via-aurora-lavender to-white`) containing the member's initials in Instrument Serif at 72px.
 
 ---
 
@@ -77,37 +81,61 @@ csedept/
 ├── README.md
 ├── public/
 │   └── images/
-│       └── rvitm-logo.png
+│       ├── rvitm-logo.png
+│       ├── rvitm-campus.webp
+│       ├── rsst.png
+│       ├── vtu.png
+│       ├── aicte.png
+│       ├── qr-submission.png
+│       ├── qr-payment.png
+│       └── committee/
 └── src/
     ├── App.jsx
     ├── config.js
     ├── index.css
     ├── main.jsx
     ├── components/
-    │   ├── About.jsx
-    │   ├── Button.jsx
-    │   ├── Committee.jsx
-    │   ├── Countdown.jsx
-    │   ├── CtaBand.jsx
-    │   ├── FAQ.jsx
-    │   ├── Fees.jsx
-    │   ├── Footer.jsx
-    │   ├── Guidelines.jsx
-    │   ├── Hero.jsx
-    │   ├── ImportantDates.jsx
-    │   ├── MobileDrawer.jsx
+    │   ├── Container.jsx
+    │   ├── InstitutionsMarquee.jsx
     │   ├── Navbar.jsx
-    │   ├── PersonCard.jsx
-    │   ├── RegistrationModal.jsx
+    │   ├── Hero.jsx
+    │   ├── Countdown.jsx
+    │   ├── Blob.jsx
+    │   ├── Glow.jsx
     │   ├── Reveal.jsx
-    │   ├── SectionLabel.jsx
-    │   └── Tracks.jsx
+    │   ├── About.jsx
+    │   ├── Institution.jsx
+    │   ├── Department.jsx
+    │   ├── Tracks.jsx
+    │   ├── Guidelines.jsx
+    │   ├── PresentationFormats.jsx
+    │   ├── WhyParticipate.jsx
+    │   ├── SubmissionProcess.jsx
+    │   ├── ImportantDates.jsx
+    │   ├── Fees.jsx
+    │   ├── Committee.jsx
+    │   ├── PersonCard.jsx
+    │   ├── ContactDesk.jsx
+    │   ├── FAQ.jsx
+    │   ├── CtaBand.jsx
+    │   ├── Footer.jsx
+    │   ├── RegistrationModal.jsx
+    │   ├── Button.jsx
+    │   ├── Card.jsx
+    │   ├── SectionHeading.jsx
+    │   └── SectionLabel.jsx
     ├── data/
+    │   ├── affiliations.js
     │   ├── committee.js
     │   ├── dates.js
+    │   ├── departments.js
     │   ├── faqs.js
     │   ├── fees.js
-    │   └── tracks.js
+    │   ├── formats.js
+    │   ├── institution.js
+    │   ├── process.js
+    │   ├── tracks.js
+    │   └── why.js
     └── hooks/
         ├── useCountdown.js
         ├── useLockBodyScroll.js

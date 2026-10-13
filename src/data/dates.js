@@ -1,3 +1,5 @@
+// DRAFT items marked below: verify with organisers before publishing
+
 export const IMPORTANT_DATES = [
   {
     id: "submission",
@@ -5,6 +7,7 @@ export const IMPORTANT_DATES = [
     dateDisplay: "2nd November, 2026",
     isoDate: "2026-11-02T23:59:59+05:30",
     description: "Final date for full research paper submissions through the online portal.",
+    visible: true,
   },
   {
     id: "notification",
@@ -12,6 +15,17 @@ export const IMPORTANT_DATES = [
     dateDisplay: "10th November, 2026",
     isoDate: "2026-11-10T23:59:59+05:30",
     description: "Peer-review results and acceptance letters sent via email.",
+    visible: true,
+  },
+  {
+    id: "camera-ready",
+    title: "Camera Ready Paper",
+    dateDisplay: "15th November, 2026",
+    isoDate: "2026-11-15T23:59:59+05:30",
+    description: "Final revised paper submission incorporating reviewer feedback.",
+    isDraft: true, // DRAFT: verify with organisers before publishing
+    badgeOverride: "TBC",
+    visible: true,
   },
   {
     id: "registration",
@@ -19,6 +33,7 @@ export const IMPORTANT_DATES = [
     dateDisplay: "20th November, 2026",
     isoDate: "2026-11-20T23:59:59+05:30",
     description: "Mandatory fee payment and registration completion for accepted papers.",
+    visible: true,
   },
   {
     id: "conference",
@@ -27,6 +42,7 @@ export const IMPORTANT_DATES = [
     isoDate: "2026-12-04T00:00:00+05:30",
     description: "Inauguration, keynote sessions, and oral track presentations at RVITM.",
     highlight: true,
+    visible: true,
   },
 ];
 

@@ -1,93 +1,135 @@
-import React, { useState } from 'react';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent, useReducedMotion } from 'framer-motion';
+import Container from './Container';
+import Button from './Button';
 import { useScrollSpy } from '../hooks/useScrollSpy';
-import MobileDrawer from './MobileDrawer';
-import { Menu } from 'lucide-react';
 
 export default function Navbar({ onOpenModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [imgError, setImgError] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [hoveredId, setHoveredId] = useState(null);
+  const navRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
 
-  const { scrollY, scrollYProgress } = useScroll();
+  const activeId = useScrollSpy();
+  const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 40);
   });
 
   const navLinks = [
-    { id: "about", href: "#about", label: "About" },
-    { id: "tracks", href: "#tracks", label: "Tracks" },
-    { id: "guidelines", href: "#guidelines", label: "Guidelines" },
-    { id: "dates", href: "#dates", label: "Dates" },
-    { id: "committee", href: "#committee", label: "Committee" },
-    { id: "faq", href: "#faq", label: "FAQ" },
+    { id: "about", label: "About" },
+    { id: "department", label: "Department" },
+    { id: "tracks", label: "Tracks" },
+    { id: "guidelines", label: "Guidelines" },
+    { id: "dates", label: "Dates" },
+    { id: "committee", label: "Committee" },
+    { id: "faq", label: "FAQ" },
   ];
 
-  const sectionIds = navLinks.map((l) => l.id);
-  const activeId = useScrollSpy(sectionIds, 120);
+  // Close mobile dropdown on outside click or Esc
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth >= 1280) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isOpen]);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
-    <>
-      <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md py-2.5 border-b border-slate-200/80"
-            : "bg-white/90 backdrop-blur-sm py-4 border-b border-slate-100"
-        }`}
-      >
-        {/* Top reading progress bar */}
-        <motion.div
-          style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
-          className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-royal via-banner to-plum"
-        />
-
-        <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
-          {/* Left: RVITM logo / wordmark + small NCDTE-2026 brand */}
-          <a
-            href="#home"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-royal rounded-lg p-1"
-          >
-            {!imgError ? (
-              <img
-                src="/images/rvitm-logo.png"
-                alt="RVITM Logo"
-                className="w-9 h-9 sm:w-10 sm:h-10 object-contain rounded-md"
-                onError={() => setImgError(true)}
-              />
-            ) : (
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-md bg-banner flex items-center justify-center font-heading font-black text-white text-xs sm:text-sm shadow">
-                RV
-              </div>
-            )}
-            <div className="flex flex-col">
-              <span className="font-heading font-black text-base sm:text-lg text-ink tracking-tight group-hover:text-royal transition-colors leading-tight">
-                NCDTE-2026
+    <header
+      ref={navRef}
+      className={`sticky top-0 z-50 h-[72px] -mb-[72px] transition-all duration-300 ${
+        isScrolled || isOpen
+          ? "bg-white/75 backdrop-blur-xl shadow-soft"
+          : "bg-transparent"
+      }`}
+    >
+      <Container className="h-full">
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center h-full">
+          {/* Left: Wordmark linking to #home */}
+          <div className="flex items-center justify-start">
+            <a
+              href="#home"
+              className="group inline-flex items-center gap-1.5 text-ink select-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure"
+            >
+              <span className="font-sans font-bold text-[22px] tracking-tight">
+                NCDTE
               </span>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-muted tracking-wide truncate max-w-[170px] sm:max-w-none">
-                RVITM, Bengaluru
+              <span className="font-serif italic font-normal text-aurora text-[22px]">
+                2026
               </span>
-            </div>
-          </a>
+            </a>
+          </div>
 
-          {/* Desktop Navigation Links with animated underline */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          {/* Center (visible from xl): Desktop Links mathematically centered */}
+          <nav className="hidden xl:flex items-center gap-8">
             {navLinks.map((link) => {
               const isActive = activeId === link.id;
+              const isHovered = hoveredId === link.id;
+
               return (
                 <a
                   key={link.id}
-                  href={link.href}
-                  className={`relative px-3.5 py-1.5 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-royal rounded-md ${
-                    isActive ? "text-royal font-semibold" : "text-slate-600 hover:text-ink"
+                  href={`#${link.id}`}
+                  onMouseEnter={() => setHoveredId(link.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  className={`relative py-1 text-[15px] font-sans transition-colors cursor-pointer select-none ${
+                    isActive
+                      ? "font-semibold text-ink"
+                      : "font-medium text-ink hover:text-ink"
                   }`}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+
+                  {/* Active Indicator Bar: layoutId="nav-indicator" */}
                   {isActive && (
-                    <motion.div
-                      layoutId="nav-underline"
-                      className="absolute bottom-0 left-2 right-2 h-0.5 bg-royal rounded-full"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute -bottom-1.5 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet pointer-events-none"
+                      transition={
+                        shouldReduceMotion
+                          ? { duration: 0 }
+                          : { type: "spring", stiffness: 380, damping: 30 }
+                      }
+                    />
+                  )}
+
+                  {/* Hover Preview Bar at 40% opacity */}
+                  {!isActive && isHovered && (
+                    <motion.span
+                      layoutId="nav-hover-bar"
+                      className="absolute -bottom-1.5 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet opacity-40 pointer-events-none"
+                      transition={{ duration: 0.15 }}
                     />
                   )}
                 </a>
@@ -95,38 +137,84 @@ export default function Navbar({ onOpenModal }) {
             })}
           </nav>
 
-          {/* Right Action: Pill button "Register" + Hamburger */}
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
+          {/* Right: Register Button + Mobile Hamburger (below xl) */}
+          <div className="flex items-center justify-end gap-3">
+            <Button
+              variant="primary"
               onClick={() => onOpenModal("registration")}
-              className="bg-gradient-to-r from-royal to-banner hover:from-royal/90 hover:to-banner/90 text-white font-heading font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-md shadow-royal/20 transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-royal cursor-pointer"
+              className="text-sm font-medium"
             >
               Register
-            </button>
+            </Button>
 
-            {/* Hamburger Button for Mobile/Tablet */}
+            {/* Hamburger button (below xl) */}
             <button
               type="button"
-              aria-label="Toggle navigation menu"
-              aria-expanded={isDrawerOpen}
-              onClick={() => setIsDrawerOpen(true)}
-              className="lg:hidden w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-ink flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-royal cursor-pointer"
+              onClick={() => setIsOpen((prev) => !prev)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              className="xl:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-pill bg-white/70 backdrop-blur-xl shadow-pill text-ink hover:bg-white transition-colors cursor-pointer select-none"
             >
-              <Menu className="w-5 h-5" />
+              <span
+                className={`w-5 h-[2px] bg-ink rounded-full transition-all duration-300 origin-center ${
+                  isOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+              />
+              <span
+                className={`w-5 h-[2px] bg-ink rounded-full transition-all duration-300 origin-center ${
+                  isOpen ? "-rotate-45 -translate-y-0" : ""
+                }`}
+              />
             </button>
           </div>
         </div>
-      </header>
+      </Container>
 
-      {/* Mobile Drawer */}
-      <MobileDrawer
-        isOpen={isDrawerOpen}
-        onClose={() => setIsDrawerOpen(false)}
-        navLinks={navLinks}
-        activeId={activeId}
-        onRegisterClick={onOpenModal}
-      />
-    </>
+      {/* Mobile/Tablet Dropdown Panel (< xl) */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            animate={shouldReduceMotion ? { opacity: 1 } : { height: "auto", opacity: 1 }}
+            exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="xl:hidden absolute top-[72px] left-0 right-0 bg-white shadow-lift rounded-b-lg overflow-hidden z-40"
+          >
+            <div className="max-w-sm mx-auto px-6 py-8 text-center flex flex-col items-center">
+              <nav className="w-full flex flex-col items-center space-y-1 mb-6">
+                {navLinks.map((link) => {
+                  const isActive = activeId === link.id;
+                  return (
+                    <a
+                      key={link.id}
+                      href={`#${link.id}`}
+                      onClick={handleLinkClick}
+                      className={`w-full py-3 text-[24px] font-sans font-medium transition-colors ${
+                        isActive
+                          ? "text-aurora font-semibold"
+                          : "text-ink hover:text-ink/70"
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  );
+                })}
+              </nav>
+
+              <Button
+                variant="primary"
+                onClick={() => {
+                  setIsOpen(false);
+                  onOpenModal("registration");
+                }}
+                className="w-full h-12 text-[15px]"
+              >
+                Register
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 }
