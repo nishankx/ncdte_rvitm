@@ -37,12 +37,6 @@ export default function Institution() {
         className="from-[#00545f]/14 via-[#ecffb6]/26 pointer-events-none absolute -left-28 bottom-10 -z-0 h-[520px] w-[520px] rounded-full bg-gradient-to-tr to-transparent blur-[140px]"
       />
 
-      {/* Decorative Geometric Ring */}
-      <div
-        aria-hidden="true"
-        className="border-[#00545f]/8 pointer-events-none absolute -left-12 top-1/4 -z-0 h-96 w-96 rounded-full border border-dashed"
-      />
-
       {/* Seamless Edge Fades */}
       <div
         aria-hidden="true"

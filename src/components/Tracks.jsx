@@ -21,12 +21,6 @@ export default function Tracks() {
         className="from-[#d6fb00]/16 pointer-events-none absolute -right-24 bottom-0 -z-0 h-[500px] w-[500px] rounded-full bg-gradient-to-tl via-[#ecffb6]/25 to-transparent blur-[140px]"
       />
 
-      {/* Decorative Geometric Ring */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-12 top-10 -z-0 h-72 w-72 rounded-full border border-[#d6fb00]/15"
-      />
-
       {/* Seamless Edge Fades */}
       <div
         aria-hidden="true"

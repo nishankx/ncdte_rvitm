@@ -49,12 +49,6 @@ export default function ImportantDates() {
         className="from-[#d6fb00]/16 via-[#ecffb6]/26 pointer-events-none absolute -right-28 bottom-16 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-tl to-transparent blur-[140px]"
       />
 
-      {/* Decorative Geometric Ring Accent */}
-      <div
-        aria-hidden="true"
-        className="border-[#00545f]/8 pointer-events-none absolute -right-20 top-1/3 -z-0 h-96 w-96 rounded-full border"
-      />
-
       {/* Seamless Edge Fades */}
       <div
         aria-hidden="true"

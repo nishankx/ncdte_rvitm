@@ -98,16 +98,6 @@ export default function Hero({ onOpenModal }) {
         className="from-[#d6fb00]/18 pointer-events-none absolute -bottom-14 -right-24 z-0 h-[520px] w-[520px] rounded-full bg-gradient-to-tl via-[#ecffb6]/30 to-transparent blur-[140px]"
       />
 
-      {/* Decorative Subtle Orbit Rings */}
-      <div
-        aria-hidden="true"
-        className="border-[#00545f]/8 pointer-events-none absolute left-1/2 top-1/2 z-0 h-[680px] w-[680px] -translate-x-1/2 -translate-y-1/2 rounded-full border"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[920px] w-[920px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#d6fb00]/20"
-      />
-
       {/* Seamless Edge Fades */}
       <div
         aria-hidden="true"

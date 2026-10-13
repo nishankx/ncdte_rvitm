@@ -95,12 +95,6 @@ export default function WhyParticipate() {
         className="from-[#d6fb00]/16 pointer-events-none absolute -right-28 bottom-16 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-tl via-[#ecffb6]/25 to-transparent blur-[140px]"
       />
 
-      {/* Decorative Geometric Ring Accent */}
-      <div
-        aria-hidden="true"
-        className="border-[#00545f]/8 pointer-events-none absolute -right-16 top-1/4 -z-0 h-80 w-80 rounded-full border"
-      />
-
       {/* Seamless Edge Fades */}
       <div
         aria-hidden="true"
