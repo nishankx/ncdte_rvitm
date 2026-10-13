@@ -51,7 +51,7 @@ export default function Navbar({ onOpenModal }) {
     };
 
     const handleResize = () => {
-      if (window.innerWidth >= 1280) {
+      if (window.innerWidth >= 1024) {
         setIsOpen(false);
       }
     };
@@ -78,21 +78,25 @@ export default function Navbar({ onOpenModal }) {
         isScrolled || isOpen ? "shadow-soft" : ""
       }`}
     >
-      <Container className="h-full">
-        <div className="grid h-full grid-cols-[1fr_auto_1fr] items-center">
+      <Container className="h-full !px-4 sm:!px-6 md:!px-12">
+        <div className="flex h-full items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr]">
           {/* Left: Wordmark linking to #home */}
           <div className="flex items-center justify-start">
             <a
               href="#home"
               className="group inline-flex select-none items-center gap-1.5 text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure"
             >
-              <span className="font-sans text-[22px] font-bold tracking-tight">NCDTE</span>
-              <span className="text-aurora font-serif text-[22px] font-normal italic">2026</span>
+              <span className="font-sans text-[20px] font-bold tracking-tight sm:text-[22px]">
+                NCDTE
+              </span>
+              <span className="text-aurora font-serif text-[20px] font-normal italic sm:text-[22px]">
+                2026
+              </span>
             </a>
           </div>
 
-          {/* Center (visible from xl): Desktop Links mathematically centered */}
-          <nav className="hidden items-center gap-8 xl:flex">
+          {/* Center (visible from lg): Desktop Links */}
+          <nav className="hidden items-center gap-3.5 lg:flex xl:gap-7 2xl:gap-8">
             {navLinks.map((link) => {
               const isActive = activeId === link.id;
               const isHovered = hoveredId === link.id;
@@ -103,7 +107,7 @@ export default function Navbar({ onOpenModal }) {
                   href={`#${link.id}`}
                   onMouseEnter={() => setHoveredId(link.id)}
                   onMouseLeave={() => setHoveredId(null)}
-                  className={`relative cursor-pointer select-none py-1 font-sans text-[15px] transition-colors ${
+                  className={`relative cursor-pointer select-none whitespace-nowrap py-1 font-sans text-[13.5px] transition-colors xl:text-[15px] ${
                     isActive ? "font-semibold text-ink" : "font-medium text-ink hover:text-ink"
                   }`}
                 >
@@ -135,40 +139,42 @@ export default function Navbar({ onOpenModal }) {
             })}
           </nav>
 
-          {/* Right: Register Button + Mobile Hamburger (below xl) */}
-          <div className="flex items-center justify-end gap-3">
+          {/* Right: Register Button + Mobile Hamburger (below lg) */}
+          <div className="flex items-center justify-end gap-2 sm:gap-3">
             <Button
               variant="primary"
               onClick={() => onOpenModal("registration")}
-              className="text-sm font-medium"
+              className="inline-flex h-9 px-3 text-xs font-medium sm:h-10 sm:px-5 sm:text-sm"
             >
               Register
             </Button>
 
-            {/* Hamburger button (below xl) */}
+            {/* Hamburger button (below lg) */}
             <button
               type="button"
               onClick={() => setIsOpen((prev) => !prev)}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
-              className="flex h-11 w-11 cursor-pointer select-none flex-col items-center justify-center gap-1.5 rounded-pill bg-white/70 text-ink shadow-pill backdrop-blur-xl transition-colors hover:bg-white xl:hidden"
+              className="flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-pill bg-white/80 text-ink shadow-pill backdrop-blur-xl transition-colors hover:bg-white sm:h-11 sm:w-11 lg:hidden"
             >
-              <span
-                className={`h-[2px] w-5 origin-center rounded-full bg-ink transition-all duration-300 ${
-                  isOpen ? "translate-y-2 rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`h-[2px] w-5 origin-center rounded-full bg-ink transition-all duration-300 ${
-                  isOpen ? "-translate-y-0 -rotate-45" : ""
-                }`}
-              />
+              <div className="relative flex h-3.5 w-5 flex-col justify-between">
+                <span
+                  className={`h-[2px] w-5 rounded-full bg-ink transition-all duration-300 ${
+                    isOpen ? "translate-y-[6px] rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`h-[2px] w-5 rounded-full bg-ink transition-all duration-300 ${
+                    isOpen ? "-translate-y-[6px] -rotate-45" : ""
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
       </Container>
 
-      {/* Mobile/Tablet Dropdown Panel (< xl) */}
+      {/* Mobile/Tablet Dropdown Panel (< lg) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -176,9 +182,9 @@ export default function Navbar({ onOpenModal }) {
             animate={shouldReduceMotion ? { opacity: 1 } : { height: "auto", opacity: 1 }}
             exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 right-0 top-[72px] z-40 overflow-hidden rounded-b-lg bg-white shadow-lift xl:hidden"
+            className="absolute left-0 right-0 top-[72px] z-40 max-h-[calc(100vh-72px)] overflow-y-auto rounded-b-xl border-t border-slate-100 bg-white shadow-lift lg:hidden"
           >
-            <div className="mx-auto flex max-w-sm flex-col items-center px-6 py-8 text-center">
+            <div className="mx-auto flex max-w-sm flex-col items-center px-6 py-6 text-center">
               <nav className="mb-6 flex w-full flex-col items-center space-y-1">
                 {navLinks.map((link) => {
                   const isActive = activeId === link.id;
@@ -187,7 +193,7 @@ export default function Navbar({ onOpenModal }) {
                       key={link.id}
                       href={`#${link.id}`}
                       onClick={handleLinkClick}
-                      className={`w-full py-3 font-sans text-[24px] font-medium transition-colors ${
+                      className={`w-full py-2.5 font-sans text-[18px] font-medium transition-colors sm:text-[20px] ${
                         isActive ? "text-aurora font-semibold" : "text-ink hover:text-ink/70"
                       }`}
                     >
@@ -203,9 +209,9 @@ export default function Navbar({ onOpenModal }) {
                   setIsOpen(false);
                   onOpenModal("registration");
                 }}
-                className="h-12 w-full text-[15px]"
+                className="h-11 w-full text-[15px]"
               >
-                Register
+                Register Now
               </Button>
             </div>
           </motion.div>

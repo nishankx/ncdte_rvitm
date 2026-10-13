@@ -59,8 +59,8 @@ export default function Hero({ onOpenModal }) {
       />
 
       <Container>
+        <h1 className="text-2xl font-bold text-center mb-6 text-gray-700">DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</h1>
         <div className="flex flex-col items-center text-center">
-
           {/* Accessible Headline */}
           <motion.h1
             aria-label="National Conference on Digital Technology and Engineering, NCDTE-2026"
@@ -84,8 +84,11 @@ export default function Hero({ onOpenModal }) {
             <span className="block overflow-hidden pb-[0.08em]">
               <motion.span
                 variants={lineVariants}
-                className="mx-auto block max-w-[18ch] font-serif text-[clamp(1.75rem,3vw,3.25rem)] leading-tight text-ink "
-              > Digital Technology <em className="font-serif font-normal italic">and</em>{" "}Engineering
+                className="mx-auto block max-w-[18ch] font-serif text-[clamp(1.75rem,3vw,3.25rem)] leading-tight text-ink"
+              >
+                {" "}
+                Digital Technology <em className="font-serif font-normal italic">and</em>{" "}
+                Engineering
               </motion.span>
             </span>
 
@@ -93,7 +96,7 @@ export default function Hero({ onOpenModal }) {
             <span className="mt-1 block overflow-hidden pb-[0.04em] sm:mt-2">
               <motion.span
                 variants={lineVariants}
-                className="relative inline-block font-sans text-[clamp(3.75rem,90vw,15rem)] font-bold leading-[0.88] tracking-tighter text-ink"
+                className="relative inline-block font-sans text-[clamp(3.5rem,30vw,15rem)] font-bold leading-[0.88] tracking-tighter text-ink"
               >
                 NCDTE
               </motion.span>
@@ -101,7 +104,7 @@ export default function Hero({ onOpenModal }) {
           </motion.h1>
 
           {/* Date and Venue: Two Stacked Lines */}
-          <div className="mt-10 flex flex-col items-center gap-1.5 text-center sm:gap-2">
+          <div className="mt-5 flex flex-col items-center gap-1.5 text-center sm:mt-6 sm:gap-2">
             <div className="inline-flex items-center justify-center gap-2.5 leading-none">
               <svg
                 className="h-5 w-5 shrink-0 text-ink sm:h-6 sm:w-6"
@@ -118,12 +121,12 @@ export default function Hero({ onOpenModal }) {
                 <line x1="8" y1="2" x2="8" y2="6" />
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
-              <span className="text-aurora -mx-1 bg-[linear-gradient(transparent_60%,rgba(139,61,255,0.16)_60%)] px-1 font-sans text-[clamp(1.5rem,2.8vw,2.5rem)] font-bold tracking-tight">
+              <span className="text-aurora -mx-1 bg-[linear-gradient(transparent_60%,rgba(139,61,255,0.16)_60%)] px-1 font-sans text-[clamp(1.35rem,2.4vw,2.2rem)] font-bold tracking-tight">
                 4th December 2026
               </span>
             </div>
 
-            <div className="inline-flex items-center justify-center gap-2 text-[15px] font-medium leading-none text-ink sm:text-[17px] md:text-[19px]">
+            <div className="inline-flex items-center justify-center gap-2 text-[14px] font-medium leading-none text-ink sm:text-[16px] md:text-[18px]">
               <svg
                 className="h-4 w-4 shrink-0 text-ink sm:h-5 sm:w-5"
                 viewBox="0 0 24 24"
@@ -142,7 +145,7 @@ export default function Hero({ onOpenModal }) {
           </div>
 
           {/* Lower Hero: Centered Countdown */}
-          <div className="mt-20 flex justify-center">
+          <div className="mt-24 flex justify-center">
             <Countdown />
           </div>
 
@@ -166,7 +169,7 @@ export default function Hero({ onOpenModal }) {
           </div>
 
           {/* Quick Facts Stats Row */}
-          <div className="mt-6 grid w-full max-w-4xl grid-cols-2 gap-x-6 gap-y-6 pt-4 sm:mt-8 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-4">
+          <div className="mt-5 grid w-full max-w-4xl grid-cols-2 gap-x-6 gap-y-4 pt-2 sm:mt-6 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-4 sm:pt-4">
             {quickStats.map((stat, idx) => (
               <div key={idx} className="flex flex-col items-center space-y-0.5 text-center">
                 <div className="flex items-baseline justify-center gap-1 font-sans text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-5xl">

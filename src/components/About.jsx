@@ -25,15 +25,15 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-20 bg-mist py-20 md:py-32">
       <Container>
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center">
           <SectionLabel onWhite={false}>About NCDTE-2026</SectionLabel>
           <SectionHeading>
             About <em className="text-aurora font-serif font-normal italic">NCDTE-2026</em>
           </SectionHeading>
 
-          {/* Centered Editorial Paragraphs */}
-          <Reveal delay={0.1} className="mx-auto max-w-[62ch]">
-            <div className="space-y-6 text-lead font-normal text-ink/85">
+          {/* Justified Editorial Paragraphs */}
+          <Reveal delay={0.1} className="mx-auto w-full max-w-[62ch]">
+            <div className="space-y-6 text-center text-lead font-normal leading-relaxed text-ink/85">
               <p>
                 The National Conference on Digital Technology and Engineering (NCDTE-2026) serves as
                 a platform for researchers, academicians, industry professionals, and students to
@@ -50,17 +50,21 @@ export default function About() {
             </div>
           </Reveal>
 
-          {/* Three Highlight Items in a centered row */}
+          {/* Three Highlight Items: subheadings to the left, content justified */}
           <Reveal delay={0.2} className="mt-14 w-full">
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
               {highlights.map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center space-y-3 text-center">
-                  <span
-                    aria-hidden="true"
-                    className="h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
-                  />
-                  <h4 className="font-sans text-[17px] font-semibold text-ink">{item.title}</h4>
-                  <p className="max-w-[42ch] text-small leading-relaxed text-graphite">
+                <div key={idx} className="flex flex-col items-start space-y-2.5 text-left">
+                  <div className="flex items-center gap-2.5">
+                    <span
+                      aria-hidden="true"
+                      className="h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
+                    />
+                    <h4 className="text-left font-sans text-[17px] font-semibold text-ink">
+                      {item.title}
+                    </h4>
+                  </div>
+                  <p className="text-justify text-small leading-relaxed text-graphite">
                     {item.desc}
                   </p>
                 </div>
@@ -68,7 +72,7 @@ export default function About() {
             </div>
           </Reveal>
 
-          {/* Brochure Button centered */}
+          {/* Brochure Button */}
           {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
             <Reveal delay={0.25} className="mt-12 flex justify-center">
               <Button variant="primary" href={CONFIG.BROCHURE_URL} target="_blank">

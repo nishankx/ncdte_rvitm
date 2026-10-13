@@ -101,21 +101,23 @@ export default function WhyParticipate() {
                 <Reveal key={item.id} delay={idx * 0.08} className="h-full w-full">
                   <Card
                     onWhite={true}
-                    className="flex h-full w-full flex-col items-center justify-between text-center"
+                    className="flex h-full w-full flex-col items-start justify-between text-left"
                   >
-                    <div className="flex flex-col items-center space-y-4 text-center">
+                    <div className="flex w-full flex-col items-start space-y-4 text-left">
                       <div className="flex h-10 w-10 items-center justify-center">
                         <CleanLineIcon type={item.icon} />
                       </div>
 
-                      <h3 className="font-sans text-[18px] font-semibold leading-snug text-ink">
+                      <h3 className="text-left font-sans text-[18px] font-semibold leading-snug text-ink">
                         {item.title}
                       </h3>
 
-                      <p className="text-small leading-relaxed text-graphite">{item.desc}</p>
+                      <p className="w-full text-justify text-small leading-relaxed text-graphite">
+                        {item.desc}
+                      </p>
                     </div>
 
-                    <div className="mt-6 flex justify-center pt-6">
+                    <div className="mt-6 flex justify-start pt-6">
                       <span className="text-caption font-semibold text-ink transition-colors group-hover:text-aurora-azure">
                         Learn more →
                       </span>

@@ -41,9 +41,9 @@ export default function Fees({ onOpenModal }) {
               </p>
 
               {/* Kit Note & Deadline Note */}
-              <div className="mx-auto max-w-[54ch] space-y-2 pt-6 text-small text-graphite">
-                <p>{FEES_DATA.note}</p>
-                <p className="text-small font-medium text-ink">{FEES_DATA.deadlineNotice}</p>
+              <div className="mx-auto max-w-[54ch] space-y-2 pt-6 text-justify text-small text-graphite">
+                <p className="text-justify">{FEES_DATA.note}</p>
+                <p className="text-justify font-medium text-ink">{FEES_DATA.deadlineNotice}</p>
               </div>
             </Reveal>
 
@@ -53,16 +53,16 @@ export default function Fees({ onOpenModal }) {
                 onWhite={false}
                 className="flex w-full flex-col items-center space-y-8 !p-8 text-center sm:!p-10"
               >
-                <div>
-                  <span className="mb-2 block text-eyebrow uppercase tracking-widest text-graphite">
+                <div className="w-full text-left">
+                  <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
                     Delegate Inclusions
                   </span>
-                  <h4 className="font-serif text-2xl italic text-ink">
+                  <h4 className="text-left font-serif text-2xl italic text-ink">
                     What the registration includes
                   </h4>
                 </div>
 
-                <ul className="mx-auto w-fit max-w-full list-none space-y-3">
+                <ul className="w-full list-none space-y-3">
                   {FEES_DATA.inclusions.map((item, idx) => (
                     <li
                       key={idx}
@@ -72,7 +72,7 @@ export default function Fees({ onOpenModal }) {
                         aria-hidden="true"
                         className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                       />
-                      <span>{item.text}</span>
+                      <span className="text-justify">{item.text}</span>
                     </li>
                   ))}
                 </ul>

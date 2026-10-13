@@ -19,7 +19,7 @@ export const AFFILIATIONS_DATA = [
     alt: "All India Council for Technical Education",
     img: "/images/logos/aicte.png",
   },
-    {
+  {
     name: "RVITM",
     fullName: "RV Institute of Technology and Management",
     alt: "RV Institute of Technology and Management",

@@ -37,17 +37,17 @@ export default function FAQ() {
                       aria-controls={`faq-answer-${faq.id}`}
                       id={`faq-question-${faq.id}`}
                       onClick={() => toggleItem(faq.id)}
-                      className="relative w-full cursor-pointer px-14 py-1 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure"
+                      className="relative flex w-full cursor-pointer items-center justify-between gap-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure"
                     >
-                      <span className="block font-sans text-lead font-medium leading-snug text-ink">
+                      <span className="block text-left font-sans text-lead font-medium leading-snug text-ink">
                         {faq.question}
                       </span>
 
-                      {/* +/- icon absolutely positioned at the right */}
+                      {/* +/- icon */}
                       <motion.span
                         animate={{ rotate: isOpen ? 45 : 0 }}
                         transition={{ duration: 0.2 }}
-                        className={`absolute right-6 top-1/2 -translate-y-1/2 text-2xl font-light transition-colors ${
+                        className={`shrink-0 text-2xl font-light transition-colors ${
                           isOpen ? "text-aurora font-medium" : "text-graphite"
                         }`}
                         aria-hidden="true"
@@ -70,10 +70,10 @@ export default function FAQ() {
                           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                           className="overflow-hidden"
                         >
-                          <div className="mx-auto max-w-[62ch] whitespace-pre-line pt-4 text-center text-body font-normal text-graphite">
-                            <p>{faq.answer}</p>
+                          <div className="w-full whitespace-pre-line pt-4 text-justify text-body font-normal text-graphite">
+                            <p className="text-justify">{faq.answer}</p>
                             {faq.hasMapLink && (
-                              <div className="mt-3 flex justify-center">
+                              <div className="mt-3 flex justify-start">
                                 <a
                                   href={CONFIG.MAP_URL}
                                   target="_blank"

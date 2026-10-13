@@ -131,7 +131,7 @@ export default function Footer() {
         {/* Giant Cropped Wordmark "NCDTE-2026" centered */}
         <div className="pointer-events-none relative -mb-8 select-none overflow-hidden text-center sm:-mb-16">
           {/*Make it fit the container*/}
-          <div className="mx-auto  whitespace-nowrap font-sans text-[22vw] font-bold uppercase leading-none tracking-tighter text-white/[0.06]">
+          <div className="mx-auto whitespace-nowrap font-sans text-[22vw] font-bold uppercase leading-none tracking-tighter text-white/[0.06]">
             NCDTE.
           </div>
         </div>

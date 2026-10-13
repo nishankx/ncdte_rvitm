@@ -19,29 +19,29 @@ export default function Department() {
 
           {/* Two-column grid of equal-height cards */}
           <div className="grid w-full grid-cols-1 items-stretch gap-6 md:grid-cols-2">
-            {/* Left Card: HoD, description, focus areas - all centered */}
+            {/* Left Card: HoD, description, focus areas */}
             <Reveal className="h-full">
               <Card
                 onWhite={false}
-                className="flex h-full flex-col items-center justify-between text-center"
+                className="flex h-full flex-col items-start justify-between text-left"
               >
-                <div>
-                  <span className="mb-2 block text-eyebrow uppercase tracking-widest text-graphite">
+                <div className="w-full">
+                  <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
                     Head of Department
                   </span>
-                  <h3 className="mb-6 font-serif text-[32px] italic leading-tight text-ink">
+                  <h3 className="mb-6 text-left font-serif text-[32px] italic leading-tight text-ink">
                     {department.hod}
                   </h3>
-                  <p className="mx-auto mb-8 max-w-[50ch] text-body leading-relaxed text-ink/85">
+                  <p className="mb-8 w-full text-justify text-body leading-relaxed text-ink/85">
                     {department.desc}
                   </p>
                 </div>
 
                 <div className="w-full">
-                  <span className="mb-3 block text-eyebrow uppercase tracking-widest text-graphite">
+                  <span className="mb-3 block text-left text-eyebrow uppercase tracking-widest text-graphite">
                     Focus Areas
                   </span>
-                  <div className="flex flex-wrap justify-center gap-2.5">
+                  <div className="flex flex-wrap gap-2.5">
                     {department.focus.map((area, idx) => (
                       <span
                         key={idx}
@@ -61,13 +61,15 @@ export default function Department() {
               <Reveal delay={0.1} className="flex-1">
                 <Card
                   onWhite={false}
-                  className="flex h-full flex-col items-center justify-center text-center"
+                  className="flex h-full flex-col items-start justify-center text-left"
                 >
-                  <span className="mb-2 block text-eyebrow uppercase tracking-widest text-graphite">
+                  <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
                     Strategic Direction
                   </span>
-                  <h4 className="mb-3 font-serif text-2xl italic text-ink">Department Vision</h4>
-                  <p className="mx-auto max-w-[50ch] text-body leading-relaxed text-ink/85">
+                  <h4 className="mb-3 text-left font-serif text-2xl italic text-ink">
+                    Department Vision
+                  </h4>
+                  <p className="w-full text-justify text-body leading-relaxed text-ink/85">
                     {department.vision}
                   </p>
                 </Card>
@@ -77,14 +79,16 @@ export default function Department() {
               <Reveal delay={0.15} className="flex-1">
                 <Card
                   onWhite={false}
-                  className="flex h-full flex-col items-center justify-center text-center"
+                  className="flex h-full flex-col items-start justify-center text-left"
                 >
-                  <span className="mb-2 block text-eyebrow uppercase tracking-widest text-graphite">
+                  <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
                     Commitment to Excellence
                   </span>
-                  <h4 className="mb-3 font-serif text-2xl italic text-ink">Department Mission</h4>
-                  {/* Bullet list per Part 4 rules */}
-                  <ul className="mx-auto w-fit max-w-full list-none space-y-3">
+                  <h4 className="mb-3 text-left font-serif text-2xl italic text-ink">
+                    Department Mission
+                  </h4>
+                  {/* Bullet list */}
+                  <ul className="w-full list-none space-y-3">
                     {department.mission.map((m, idx) => (
                       <li
                         key={idx}
@@ -94,7 +98,7 @@ export default function Department() {
                           aria-hidden="true"
                           className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                         />
-                        <span>{m}</span>
+                        <span className="text-justify">{m}</span>
                       </li>
                     ))}
                   </ul>

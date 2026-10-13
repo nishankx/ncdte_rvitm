@@ -41,15 +41,15 @@ export default function Guidelines({ onOpenModal }) {
             <Card onWhite={false} className="w-full !p-10 md:!p-14">
               <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
                 {/* Column 1: Paper Presentation */}
-                <div className="flex flex-col items-center space-y-6 text-center">
-                  <span className="block text-eyebrow uppercase tracking-widest text-graphite">
+                <div className="flex flex-col items-start space-y-6 text-left">
+                  <span className="block text-left text-eyebrow uppercase tracking-widest text-graphite">
                     Author Protocol
                   </span>
-                  <h3 className="font-serif text-[28px] italic leading-tight text-ink">
+                  <h3 className="text-left font-serif text-[28px] italic leading-tight text-ink">
                     Paper Presentation
                   </h3>
 
-                  <ul className="mx-auto w-fit max-w-full list-none space-y-3">
+                  <ul className="w-full list-none">
                     {paperGuidelines.map((item, idx) => (
                       <li
                         key={idx}
@@ -59,13 +59,13 @@ export default function Guidelines({ onOpenModal }) {
                           aria-hidden="true"
                           className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                         />
-                        <span>{item}</span>
+                        <span className="text-justify">{item}</span>
                       </li>
                     ))}
                   </ul>
 
                   {CONFIG.PAPER_TEMPLATE_URL && CONFIG.PAPER_TEMPLATE_URL.trim() !== "" && (
-                    <div className="flex justify-center pt-4">
+                    <div className="pt-4">
                       <Button variant="primary" href={CONFIG.PAPER_TEMPLATE_URL} target="_blank">
                         Download Paper Template
                       </Button>
@@ -74,15 +74,15 @@ export default function Guidelines({ onOpenModal }) {
                 </div>
 
                 {/* Column 2: Important Note */}
-                <div className="flex flex-col items-center space-y-6 text-center">
-                  <span className="block text-eyebrow uppercase tracking-widest text-graphite">
+                <div className="flex flex-col items-start space-y-6 text-left">
+                  <span className="block text-left text-eyebrow uppercase tracking-widest text-graphite">
                     Review & Publication
                   </span>
-                  <h3 className="font-serif text-[28px] italic leading-tight text-ink">
+                  <h3 className="text-left font-serif text-[28px] italic leading-tight text-ink">
                     Important Note
                   </h3>
 
-                  <ul className="mx-auto w-fit max-w-full list-none space-y-3">
+                  <ul className="w-full list-none">
                     {importantNotes.map((item, idx) => (
                       <li
                         key={idx}
@@ -92,7 +92,7 @@ export default function Guidelines({ onOpenModal }) {
                           aria-hidden="true"
                           className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                         />
-                        <span>{item}</span>
+                        <span className="text-justify">{item}</span>
                       </li>
                     ))}
                   </ul>

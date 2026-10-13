@@ -58,17 +58,17 @@ export default function Institution() {
               </Reveal>
             </div>
 
-            {/* Right Column (5 cols): Description, Facts, Vision/Mission, Map Link - Centered */}
-            <div className="flex flex-col items-center space-y-8 py-4 text-center lg:col-span-5">
-              <Reveal delay={0.1}>
-                <p className="mx-auto max-w-[62ch] text-lead font-normal leading-relaxed text-ink/85">
+            {/* Right Column (5 cols): Description, Facts, Vision/Mission, Map Link */}
+            <div className="flex flex-col items-start space-y-8 py-4 text-left lg:col-span-5">
+              <Reveal delay={0.1} className="w-full">
+                <p className="w-full text-justify text-lead font-normal leading-relaxed text-ink/85">
                   {INSTITUTION_DATA.description}
                 </p>
               </Reveal>
 
               {/* Fact Chips */}
-              <Reveal delay={0.15}>
-                <div className="flex flex-wrap justify-center gap-2.5">
+              <Reveal delay={0.15} className="w-full">
+                <div className="flex flex-wrap gap-2.5">
                   {INSTITUTION_DATA.facts.map((fact, idx) => (
                     <span
                       key={idx}
@@ -80,21 +80,25 @@ export default function Institution() {
                 </div>
               </Reveal>
 
-              {/* Vision and Mission as Two Plain Text Blocks with Serif Italic Subheadings */}
+              {/* Vision and Mission as Two Plain Text Blocks with Serif Italic Subheadings to the left */}
               <div className="w-full space-y-6 pt-2">
-                <Reveal delay={0.2}>
-                  <div className="space-y-2">
-                    <h3 className="font-serif text-2xl italic text-ink">Institution Vision</h3>
-                    <p className="mx-auto max-w-[50ch] text-small leading-relaxed text-graphite">
+                <Reveal delay={0.2} className="w-full">
+                  <div className="space-y-2 text-left">
+                    <h3 className="text-left font-serif text-2xl italic text-ink">
+                      Institution Vision
+                    </h3>
+                    <p className="w-full text-justify text-small leading-relaxed text-graphite">
                       {INSTITUTION_DATA.vision}
                     </p>
                   </div>
                 </Reveal>
 
-                <Reveal delay={0.25}>
-                  <div className="space-y-2">
-                    <h3 className="font-serif text-2xl italic text-ink">Institution Mission</h3>
-                    <p className="mx-auto max-w-[50ch] text-small leading-relaxed text-graphite">
+                <Reveal delay={0.25} className="w-full">
+                  <div className="space-y-2 text-left">
+                    <h3 className="text-left font-serif text-2xl italic text-ink">
+                      Institution Mission
+                    </h3>
+                    <p className="w-full text-justify text-small leading-relaxed text-graphite">
                       {INSTITUTION_DATA.mission}
                     </p>
                   </div>
@@ -102,7 +106,7 @@ export default function Institution() {
               </div>
 
               {/* View College on Map Button */}
-              <Reveal delay={0.3} className="flex justify-center pt-2">
+              <Reveal delay={0.3} className="pt-2">
                 <Button variant="primary" href={CONFIG.MAP_URL} target="_blank">
                   <svg
                     className="-mt-0.5 mr-1 inline-block h-4 w-4 shrink-0 text-white"

@@ -30,7 +30,7 @@ export default function ContactDesk() {
             <h4 className="font-serif text-3xl italic text-white sm:text-4xl">
               Conference Helpdesk
             </h4>
-            <p className="mx-auto mt-2 max-w-[50ch] text-small leading-relaxed text-white/70">
+            <p className="mx-auto mt-2 max-w-[50ch] text-justify text-small leading-relaxed text-white/70">
               Contact our helpline for direct assistance with paper submissions, author
               registrations, or local guidance.
             </p>

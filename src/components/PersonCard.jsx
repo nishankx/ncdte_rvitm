@@ -27,7 +27,7 @@ export default function PersonCard({ member, isChief = false }) {
             alt={member.name}
             loading="lazy"
             onError={() => setImgError(true)}
-            className="absolute inset-0 h-full w-full object-cover object-top grayscale transition duration-500 group-hover:scale-[1.04] group-hover:grayscale-0"
+            className="absolute inset-0 h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.04] group-hover:grayscale-0"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-aurora-ice via-aurora-lavender to-white">
