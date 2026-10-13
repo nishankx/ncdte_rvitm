@@ -6,22 +6,22 @@ function DigitItem({ value, label }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="flex min-w-[4.5rem] flex-col items-center">
-      <div className="relative flex h-16 items-center overflow-hidden sm:h-20">
+    <div className="flex min-w-[3.5rem] flex-col items-center sm:min-w-[4rem]">
+      <div className="sm:h-13 relative flex h-11 items-center overflow-hidden">
         <AnimatePresence mode="popLayout">
           <motion.span
             key={value}
-            initial={shouldReduceMotion ? { opacity: 0 } : { y: 28, opacity: 0 }}
+            initial={shouldReduceMotion ? { opacity: 0 } : { y: 20, opacity: 0 }}
             animate={shouldReduceMotion ? { opacity: 1 } : { y: 0, opacity: 1 }}
-            exit={shouldReduceMotion ? { opacity: 0 } : { y: -28, opacity: 0 }}
+            exit={shouldReduceMotion ? { opacity: 0 } : { y: -20, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="font-sans text-6xl font-light tabular-nums tracking-tight text-ink md:text-7xl"
+            className="font-sans text-3xl font-light tabular-nums tracking-tight text-ink sm:text-4xl md:text-5xl"
           >
             {value}
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="mt-1 text-[13px] font-semibold uppercase tracking-[0.14em] text-ink/70">
+      <span className="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/70 sm:text-[12px]">
         {label}
       </span>
     </div>
@@ -32,7 +32,7 @@ export default function Countdown() {
   const { days, hours, minutes, seconds } = useCountdown("2026-12-04T00:00:00+05:30");
 
   return (
-    <div className="flex select-none flex-wrap items-center justify-center gap-8 md:gap-12">
+    <div className="flex select-none flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-10">
       <DigitItem value={days} label="Days" />
       <DigitItem value={hours} label="Hours" />
       <DigitItem value={minutes} label="Minutes" />

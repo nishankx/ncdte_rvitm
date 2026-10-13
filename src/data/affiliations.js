@@ -6,12 +6,7 @@ export const AFFILIATIONS_DATA = [
     alt: "Rashtreeya Sikshana Samithi Trust (RSST)",
     img: "/images/logos/rsst.png",
   },
-  {
-    name: "RVITM",
-    fullName: "RV Institute of Technology and Management",
-    alt: "RV Institute of Technology and Management",
-    img: "/images/logos/rvitm.png",
-  },
+
   {
     name: "VTU",
     fullName: "Visvesvaraya Technological University",
@@ -23,5 +18,11 @@ export const AFFILIATIONS_DATA = [
     fullName: "All India Council for Technical Education",
     alt: "All India Council for Technical Education",
     img: "/images/logos/aicte.png",
+  },
+    {
+    name: "RVITM",
+    fullName: "RV Institute of Technology and Management",
+    alt: "RV Institute of Technology and Management",
+    img: "/images/logos/rvitm.png",
   },
 ];

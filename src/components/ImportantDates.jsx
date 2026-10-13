@@ -86,53 +86,6 @@ export default function ImportantDates() {
               );
             })}
           </ol>
-
-          {/* Contact Numbers Card: moves BELOW the list, mt-16 mx-auto w-full max-w-3xl */}
-          <div className="relative mt-16 w-full max-w-3xl">
-            <Reveal delay={0.2}>
-              <Card onWhite={true} className="flex flex-col items-center space-y-6 text-center">
-                <div>
-                  <span className="mb-2 block text-eyebrow uppercase tracking-widest text-graphite">
-                    Inquiries & Helpline
-                  </span>
-                  <h3 className="font-serif text-2xl italic text-ink">Contact Numbers</h3>
-                  <p className="mt-1 text-caption text-graphite">
-                    Direct assistance for paper submission and author inquiries.
-                  </p>
-                </div>
-
-                {/* Tel links as centered wrapped row */}
-                <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-                  {CONTACT_DETAILS.phones.map((phone, pIdx) => (
-                    <a
-                      key={pIdx}
-                      href={`tel:+91${phone.number}`}
-                      className="group flex flex-col items-center rounded-md bg-white p-3.5 text-center shadow-sm transition-colors hover:bg-mist"
-                    >
-                      <span className="block text-[11px] font-medium uppercase tracking-wider text-graphite">
-                        {phone.label}
-                      </span>
-                      <span className="font-sans text-lg font-medium tabular-nums text-ink transition-colors group-hover:text-aurora-azure sm:text-[20px]">
-                        +91 {phone.number}
-                      </span>
-                    </a>
-                  ))}
-                </div>
-
-                <div className="pt-2">
-                  <span className="mb-1 block text-[11px] font-medium uppercase tracking-wider text-graphite">
-                    Email Correspondence
-                  </span>
-                  <a
-                    href={`mailto:${CONFIG.EMAIL}`}
-                    className="break-all font-sans text-small text-ink transition-colors hover:text-aurora-azure"
-                  >
-                    {CONFIG.EMAIL}
-                  </a>
-                </div>
-              </Card>
-            </Reveal>
-          </div>
         </div>
       </Container>
     </section>

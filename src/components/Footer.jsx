@@ -131,13 +131,13 @@ export default function Footer() {
         {/* Giant Cropped Wordmark "NCDTE-2026" centered */}
         <div className="pointer-events-none relative -mb-8 select-none overflow-hidden text-center sm:-mb-16">
           {/*Make it fit the container*/}
-          <div className="whitespace-nowrap font-sans text-[22vw] font-bold uppercase leading-none tracking-tighter text-white/[0.06] w-[100vw] mx-auto">
-            NCDTE-2026
+          <div className="mx-auto  whitespace-nowrap font-sans text-[22vw] font-bold uppercase leading-none tracking-tighter text-white/[0.06]">
+            NCDTE.
           </div>
         </div>
 
         {/* Copyright Line */}
-        <div className="pt-8 text-center text-caption font-normal text-white/40">
+        <div className="pt-[100px] text-center text-caption font-normal text-white/40">
           © 2026 RV Institute of Technology and Management. All Rights Reserved.
         </div>
       </Container>
