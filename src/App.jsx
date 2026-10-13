@@ -39,6 +39,20 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen flex-col overflow-x-clip bg-white font-sans text-ink antialiased selection:bg-aurora-ice">
+      {/* Site-wide Ambient Aurora Mesh & Subtle Geometric Grids */}
+      <div
+        aria-hidden="true"
+        className="bg-aurora-mesh pointer-events-none fixed inset-0 -z-30 opacity-60"
+      />
+      <div
+        aria-hidden="true"
+        className="bg-tech-grid pointer-events-none fixed inset-0 -z-20 opacity-35"
+      />
+      <div
+        aria-hidden="true"
+        className="bg-tech-lines pointer-events-none fixed inset-0 -z-10 opacity-20"
+      />
+
       {/* 1. Sticky Navbar */}
       <Navbar onOpenModal={handleOpenModal} />
 

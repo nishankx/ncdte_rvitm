@@ -34,7 +34,7 @@ export default function InstitutionsMarquee() {
     <section
       role="region"
       aria-label="Participating institutions"
-      className="relative w-full bg-white py-1 sm:py-1.5 md:py-2"
+      className="relative w-full border-b border-[#00545f]/10 bg-white py-1 sm:py-1.5 md:py-2"
     >
       <div className="mx-auto w-full max-w-2xl px-2 sm:px-4">
         <div className="grid grid-cols-4 items-center justify-items-center gap-1.5 sm:gap-3 md:gap-5">

@@ -7,8 +7,37 @@ import { TRACKS_DATA } from "../data/tracks";
 
 export default function Tracks() {
   return (
-    <section id="tracks" className="scroll-mt-20 bg-white py-10 sm:py-12 md:py-14">
-      <Container>
+    <section
+      id="tracks"
+      className="relative scroll-mt-20 overflow-hidden bg-gradient-to-b from-[#ecffb6]/15 via-white/85 to-[#d6fb00]/10 py-10 sm:py-12 md:py-14"
+    >
+      {/* Dispersed Background Gradient Blobs */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-24 top-0 -z-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#00545f]/15 via-[#ecffb6]/25 to-transparent blur-[140px]"
+      />
+      <div
+        aria-hidden="true"
+        className="from-[#d6fb00]/16 pointer-events-none absolute -right-24 bottom-0 -z-0 h-[500px] w-[500px] rounded-full bg-gradient-to-tl via-[#ecffb6]/25 to-transparent blur-[140px]"
+      />
+
+      {/* Decorative Geometric Ring */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-12 top-10 -z-0 h-72 w-72 rounded-full border border-[#d6fb00]/15"
+      />
+
+      {/* Seamless Edge Fades */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-10 bg-gradient-to-b from-white/60 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-10 bg-gradient-to-t from-white/60 to-transparent"
+      />
+
+      <Container className="relative z-10">
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={true}>Call for papers</SectionLabel>
           <SectionHeading className="!mb-3 sm:!mb-4">

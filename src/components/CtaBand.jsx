@@ -10,7 +10,15 @@ export default function CtaBand({ onOpenModal }) {
       {/* Blurred Aurora Blob Behind */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 m-auto h-[400px] w-[600px] rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet opacity-40 blur-[120px] sm:w-[800px]"
+        className="pointer-events-none absolute inset-0 m-auto h-[360px] w-[520px] rounded-full bg-gradient-to-r from-[#00545f]/80 via-[#007a87]/70 to-[#d6fb00]/40 opacity-20 blur-[130px] sm:w-[720px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#d6fb00]/20 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#007a87]/20 to-transparent"
       />
 
       <Container>

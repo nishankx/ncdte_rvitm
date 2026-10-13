@@ -22,8 +22,38 @@ export default function Institution() {
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   return (
-    <section id="institution" ref={sectionRef} className="scroll-mt-20 bg-white py-20 md:py-32">
-      <Container>
+    <section
+      id="institution"
+      ref={sectionRef}
+      className="from-[#d6fb00]/12 to-[#ecffb6]/18 relative scroll-mt-20 overflow-hidden bg-gradient-to-bl via-white/85 py-20 md:py-32"
+    >
+      {/* Dispersed Background Gradient Blobs */}
+      <div
+        aria-hidden="true"
+        className="from-[#ecffb6]/28 via-[#d6fb00]/16 pointer-events-none absolute -right-28 top-1/4 -z-0 h-[560px] w-[560px] rounded-full bg-gradient-to-l to-transparent blur-[140px]"
+      />
+      <div
+        aria-hidden="true"
+        className="from-[#00545f]/14 via-[#ecffb6]/26 pointer-events-none absolute -left-28 bottom-10 -z-0 h-[520px] w-[520px] rounded-full bg-gradient-to-tr to-transparent blur-[140px]"
+      />
+
+      {/* Decorative Geometric Ring */}
+      <div
+        aria-hidden="true"
+        className="border-[#00545f]/8 pointer-events-none absolute -left-12 top-1/4 -z-0 h-96 w-96 rounded-full border border-dashed"
+      />
+
+      {/* Seamless Edge Fades */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-14 bg-gradient-to-b from-white/60 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 bg-gradient-to-t from-white/60 to-transparent"
+      />
+
+      <Container className="relative z-10">
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={true}>About RVITM</SectionLabel>
           <SectionHeading>

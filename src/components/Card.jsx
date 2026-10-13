@@ -10,10 +10,10 @@ export default function Card({
 }) {
   const shouldReduceMotion = useReducedMotion();
 
-  const baseStyles = "rounded-lg p-7 md:p-9 transition-shadow duration-300";
+  const baseStyles = "rounded-lg p-7 md:p-9 transition-all duration-300 backdrop-blur-md";
   const bgStyles = onWhite
-    ? "bg-mist-50 shadow-none hover:shadow-soft"
-    : "bg-white shadow-soft hover:shadow-lift";
+    ? "bg-white/85 border border-[#00545f]/10 shadow-soft hover:shadow-lift hover:border-[#00545f]/20"
+    : "bg-white/95 border border-[#00545f]/10 shadow-soft hover:shadow-lift hover:border-[#00545f]/20";
 
   const hoverMotion = !shouldReduceMotion && hoverLift ? { y: -4 } : {};
 

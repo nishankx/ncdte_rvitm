@@ -20,7 +20,7 @@ export default function PersonCard({ member, isChief = false }) {
       whileHover={shouldReduceMotion ? {} : { y: -4 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
     >
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-mist-50">
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md border border-[#00545f]/10 bg-mist-50 shadow-soft">
         {!imgError && member.photo ? (
           <img
             src={member.photo}

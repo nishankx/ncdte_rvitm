@@ -9,8 +9,37 @@ import { COMMITTEE_GROUPS } from "../data/committee";
 
 export default function Committee() {
   return (
-    <section id="committee" className="scroll-mt-20 bg-white py-20 md:py-32">
-      <Container>
+    <section
+      id="committee"
+      className="from-[#ecffb6]/18 to-[#00545f]/8 relative scroll-mt-20 overflow-hidden bg-gradient-to-tr via-white/85 py-20 md:py-32"
+    >
+      {/* Dispersed Background Gradient Blobs */}
+      <div
+        aria-hidden="true"
+        className="from-[#ecffb6]/28 pointer-events-none absolute -left-28 top-16 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-br via-[#00545f]/15 to-transparent blur-[140px]"
+      />
+      <div
+        aria-hidden="true"
+        className="from-[#d6fb00]/16 via-[#ecffb6]/26 pointer-events-none absolute -right-28 bottom-16 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-tl to-transparent blur-[140px]"
+      />
+
+      {/* Decorative Geometric Ring Accent */}
+      <div
+        aria-hidden="true"
+        className="border-[#00545f]/8 pointer-events-none absolute -right-20 top-1/4 -z-0 h-96 w-96 rounded-full border"
+      />
+
+      {/* Seamless Edge Fades */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-14 bg-gradient-to-b from-white/60 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 bg-gradient-to-t from-white/60 to-transparent"
+      />
+
+      <Container className="relative z-10">
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={true}>Organizing Leadership</SectionLabel>
           <SectionHeading>

@@ -8,8 +8,37 @@ import { department } from "../data/departments";
 
 export default function Department() {
   return (
-    <section id="department" className="scroll-mt-20 bg-mist py-20 md:py-32">
-      <Container>
+    <section
+      id="department"
+      className="from-[#00545f]/8 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-tr via-white/85 py-20 md:py-32"
+    >
+      {/* Dispersed Background Gradient Blobs */}
+      <div
+        aria-hidden="true"
+        className="via-[#ecffb6]/26 pointer-events-none absolute -left-28 top-16 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-br from-[#00545f]/15 to-transparent blur-[140px]"
+      />
+      <div
+        aria-hidden="true"
+        className="from-[#d6fb00]/16 via-[#ecffb6]/26 pointer-events-none absolute -right-28 bottom-16 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-tl to-transparent blur-[140px]"
+      />
+
+      {/* Decorative Geometric Ring Accent */}
+      <div
+        aria-hidden="true"
+        className="border-[#00545f]/8 pointer-events-none absolute -left-16 bottom-1/4 -z-0 h-80 w-80 rounded-full border"
+      />
+
+      {/* Seamless Edge Fades */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-14 bg-gradient-to-b from-white/60 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 bg-gradient-to-t from-white/60 to-transparent"
+      />
+
+      <Container className="relative z-10">
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={false}>Department</SectionLabel>
           <SectionHeading>

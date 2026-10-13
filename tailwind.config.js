@@ -12,11 +12,19 @@ export default {
           50: "#F6F6F7",
         },
         aurora: {
-          cyan: "#00D4FF",
-          azure: "#1F6BFF",
-          violet: "#8B3DFF",
-          lavender: "#D9D3FF",
-          ice: "#CDE7FF",
+          cyan: "#00545f",
+          azure: "#007a87",
+          violet: "#d6fb00",
+          lavender: "#ecffb6",
+          ice: "#ecffb6",
+          teal: "#00545f",
+          lime: "#d6fb00",
+          pale: "#ecffb6",
+        },
+        brand: {
+          teal: "#00545f",
+          lime: "#d6fb00",
+          pale: "#ecffb6",
         },
       },
       fontFamily: {
@@ -35,7 +43,7 @@ export default {
         pill: "0 4px 24px -8px rgba(90,80,220,.30)",
       },
       backgroundImage: {
-        aurora: "linear-gradient(120deg,#00D4FF 0%,#1F6BFF 45%,#8B3DFF 100%)",
+        aurora: "linear-gradient(120deg, #00545f 0%, #007a87 45%, #d6fb00 100%)",
       },
       fontSize: {
         mega: [

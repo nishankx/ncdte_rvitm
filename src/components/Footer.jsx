@@ -14,8 +14,19 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="overflow-hidden bg-ink pb-12 pt-20 text-white">
-      <Container>
+    <footer className="relative overflow-hidden bg-ink pb-12 pt-20 text-white">
+      {/* Top Ambient Border Accent */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#007a87]/40 via-[#d6fb00]/30 to-transparent"
+      />
+      {/* Ambient Dark Glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#00545f]/25 to-transparent blur-[120px]"
+      />
+
+      <Container className="relative z-10">
         {/* Three Columns, each flex flex-col items-center text-center */}
         <div className="grid grid-cols-1 items-start gap-12 pb-16 md:grid-cols-3 lg:gap-16">
           {/* Column 1: Description, Organiser address & Original-Color Logo Chips */}
@@ -80,7 +91,7 @@ export default function Footer() {
                     href={CONFIG.BROCHURE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-aurora-cyan transition-colors hover:text-white"
+                    className="block text-[#d6fb00] transition-colors hover:text-white"
                   >
                     Download Brochure ↗
                   </a>

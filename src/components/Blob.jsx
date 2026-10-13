@@ -33,9 +33,9 @@ export default function Blob({ className = "" }) {
       >
         <defs>
           <linearGradient id="aG" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#00E0FF" />
-            <stop offset="45%" stopColor="#1F6BFF" />
-            <stop offset="100%" stopColor="#9B4DFF" />
+            <stop offset="0%" stopColor="#ecffb6" />
+            <stop offset="50%" stopColor="#d6fb00" />
+            <stop offset="100%" stopColor="#00545f" />
           </linearGradient>
           <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="30" />

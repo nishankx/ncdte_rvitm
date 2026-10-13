@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Container from "./Container";
 import Countdown from "./Countdown";
 import Button from "./Button";
@@ -7,6 +7,9 @@ import Blob from "./Blob";
 
 export default function Hero({ onOpenModal }) {
   const shouldReduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const campusY = useTransform(scrollY, [0, 600], [0, 45]);
+  const campusScale = useTransform(scrollY, [0, 600], [1, 1.04]);
 
   const quickStats = [
     { number: "04", suffix: "DEC", label: "Conference Date 2026" },
@@ -35,30 +38,87 @@ export default function Hero({ onOpenModal }) {
   return (
     <section
       id="home"
-      className="grain relative overflow-hidden bg-white pb-6 pt-5 sm:pb-8 sm:pt-6 md:pb-10 md:pt-8"
+      className="grain relative isolate overflow-hidden bg-transparent pb-6 pt-5 sm:pb-8 sm:pt-6 md:pb-10 md:pt-8"
     >
-      {/* Background Aurora Layers */}
-      <Blob className="absolute -right-64 -top-44 -z-10 w-[78vw] max-w-[1000px]" />
+      {/* RVITM College Campus Background with Framer Motion */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden"
+        style={shouldReduceMotion ? {} : { y: campusY, scale: campusScale }}
+        initial={shouldReduceMotion ? { opacity: 0.38 } : { opacity: 0 }}
+        animate={{ opacity: 0.38 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
+        <motion.img
+          src="/images/rvitm-campusb.png"
+          alt="RVITM Campus"
+          className="h-full w-full object-cover object-center contrast-[1.05] saturate-[0.5] filter"
+          animate={
+            shouldReduceMotion
+              ? {}
+              : {
+                  scale: [1, 1.03, 1],
+                }
+          }
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        {/* Soft Vignette and Seamless Blending Masks */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/15 to-white/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.45)_15%,transparent_80%)]" />
+      </motion.div>
 
-      {/* Decorative centered white haze behind headline */}
+      {/* Background Aurora Layers & Dispersed Light Overlay */}
+      {/* Top-Right Morphing Blob */}
+
+      {/* Top-Left Ambient Mist */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-[20%] -z-10 h-[70%] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.92),transparent_70%)]"
+        className="from-[#00545f]/18 via-[#ecffb6]/32 pointer-events-none absolute -left-28 -top-16 z-0 h-[560px] w-[560px] rounded-full bg-gradient-to-br to-transparent blur-[140px]"
       />
 
-      {/* Top-left soft glow */}
+      {/* Mid-Right Lime Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-10 -z-10 h-[360px] w-[360px] rounded-full bg-gradient-to-br from-aurora-lavender/40 to-aurora-ice/30 opacity-70 blur-3xl"
+        className="pointer-events-none absolute -right-24 top-1/2 z-0 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-gradient-to-l from-[#d6fb00]/20 via-[#ecffb6]/30 to-transparent blur-[140px]"
       />
 
-      {/* Pale lavender haze */}
+      {/* Bottom-Left Soft Teal Aura */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/3 top-36 -z-10 h-[260px] w-[500px] rounded-full bg-aurora-lavender/20 blur-[100px]"
+        className="from-[#00545f]/16 via-[#ecffb6]/28 pointer-events-none absolute -bottom-14 -left-32 z-0 h-[580px] w-[580px] rounded-full bg-gradient-to-tr to-transparent blur-[140px]"
       />
 
-      <Container>
+      {/* Bottom-Right Pale Chartreuse Glow */}
+      <div
+        aria-hidden="true"
+        className="from-[#d6fb00]/18 pointer-events-none absolute -bottom-14 -right-24 z-0 h-[520px] w-[520px] rounded-full bg-gradient-to-tl via-[#ecffb6]/30 to-transparent blur-[140px]"
+      />
+
+      {/* Decorative Subtle Orbit Rings */}
+      <div
+        aria-hidden="true"
+        className="border-[#00545f]/8 pointer-events-none absolute left-1/2 top-1/2 z-0 h-[680px] w-[680px] -translate-x-1/2 -translate-y-1/2 rounded-full border"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[920px] w-[920px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#d6fb00]/20"
+      />
+
+      {/* Seamless Edge Fades */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-12 bg-gradient-to-b from-white/60 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-12 bg-gradient-to-t from-white/60 to-transparent"
+      />
+
+      <Container className="relative z-10">
         <h1 className="mb-6 text-center text-2xl font-bold text-gray-700">
           DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
         </h1>
@@ -98,7 +158,7 @@ export default function Hero({ onOpenModal }) {
             <span className="mt-1 block overflow-hidden pb-[0.04em] sm:mt-2">
               <motion.span
                 variants={lineVariants}
-                className="relative inline-block font-sans text-[clamp(3.5rem,30vw,15rem)] font-bold leading-[0.88] tracking-tighter text-ink"
+                className="relative inline-block bg-gradient-to-r from-[#00545f] via-[#007b89] to-[#d6fb00] bg-clip-text font-sans text-[clamp(3.5rem,30vw,15rem)] font-black leading-[0.88] tracking-tighter text-transparent drop-shadow-[0_10px_30px_rgba(0,84,95,0.20)]"
               >
                 NCDTE
               </motion.span>
@@ -123,7 +183,7 @@ export default function Hero({ onOpenModal }) {
                 <line x1="8" y1="2" x2="8" y2="6" />
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
-              <span className="text-aurora -mx-1 bg-[linear-gradient(transparent_60%,rgba(139,61,255,0.16)_60%)] px-1 font-sans text-[clamp(1.35rem,2.4vw,2.2rem)] font-bold tracking-tight">
+              <span className="-mx-1 bg-[linear-gradient(transparent_60%,#ecffb6_60%)] px-1 font-sans text-[clamp(1.35rem,2.4vw,2.2rem)] font-bold tracking-tight text-[#00545f]">
                 4th December 2026
               </span>
             </div>
@@ -142,7 +202,9 @@ export default function Hero({ onOpenModal }) {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <span className="text-[clamp(0.9rem,1.4vw,1.1rem)]">RV Institute of Technology and Management, Bengaluru</span>
+              <span className="text-[clamp(0.9rem,1.4vw,1.1rem)]">
+                RV Institute of Technology and Management, Bengaluru
+              </span>
             </div>
           </div>
 

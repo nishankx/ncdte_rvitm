@@ -5,10 +5,10 @@ export default function Glow({
   color = "lavender", // "lavender" | "ice" | "aurora"
 }) {
   const colorMap = {
-    lavender: "bg-[rgba(167,139,250,0.35)]",
-    ice: "bg-[rgba(56,189,248,0.28)]",
+    lavender: "bg-[rgba(236,255,182,0.35)]",
+    ice: "bg-[rgba(214,251,0,0.22)]",
     aurora:
-      "bg-gradient-to-r from-[rgba(0,212,255,0.3)] via-[rgba(31,107,255,0.25)] to-[rgba(139,61,255,0.3)]",
+      "bg-gradient-to-r from-[rgba(0,84,95,0.28)] via-[rgba(214,251,0,0.25)] to-[rgba(236,255,182,0.30)]",
   };
 
   return (

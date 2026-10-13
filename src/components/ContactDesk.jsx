@@ -51,7 +51,7 @@ export default function ContactDesk() {
                   >
                     <a
                       href={`tel:+91${phone}`}
-                      className="font-sans text-small font-medium tabular-nums text-white transition-colors group-hover:text-aurora-cyan"
+                      className="font-sans text-small font-medium tabular-nums text-white transition-colors group-hover:text-[#d6fb00]"
                     >
                       +91 {phone}
                     </a>
@@ -76,7 +76,7 @@ export default function ContactDesk() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                className="rounded-md bg-white/15 p-2.5 text-center text-caption font-medium text-aurora-ice"
+                className="rounded-md bg-white/15 p-2.5 text-center text-caption font-medium text-[#ecffb6]"
               >
                 Copied +91 {copiedPhone} to clipboard!
               </motion.div>
@@ -90,7 +90,7 @@ export default function ContactDesk() {
             </span>
             <a
               href={`mailto:${CONFIG.EMAIL}`}
-              className="break-all font-sans text-small text-white transition-colors hover:text-aurora-cyan"
+              className="break-all font-sans text-small text-white transition-colors hover:text-[#d6fb00]"
             >
               {CONFIG.EMAIL}
             </a>
