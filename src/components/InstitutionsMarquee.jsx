@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
-import { AFFILIATIONS_DATA } from '../data/affiliations';
+import React, { useState } from "react";
+import { useReducedMotion } from "framer-motion";
+import { AFFILIATIONS_DATA } from "../data/affiliations";
 
 function MarqueeLogoItem({ aff }) {
   const [error, setError] = useState(false);
@@ -8,26 +8,22 @@ function MarqueeLogoItem({ aff }) {
   return (
     <div
       title={aff.fullName}
-      className="flex flex-col items-center justify-center gap-1 group/item shrink-0 select-none cursor-default"
+      className="flex h-[48px] w-[140px] shrink-0 cursor-default select-none items-center justify-center"
     >
-      <div className="w-[140px] h-[48px] flex items-center justify-center">
-        {!error ? (
-          <img
-            src={aff.img}
-            alt={aff.name}
-            loading="lazy"
-            onError={() => setError(true)}
-            className="max-w-[140px] max-h-[48px] w-auto h-auto object-contain filter grayscale opacity-70 transition-all duration-300 group-hover/item:grayscale-0 group-hover/item:opacity-100"
-          />
-        ) : (
-          <span className="font-sans font-bold text-sm tracking-wider text-graphite group-hover/item:text-ink transition-colors">
-            {aff.name}
-          </span>
-        )}
-      </div>
-      <span className="text-[12px] text-graphite group-hover/item:text-ink transition-colors font-medium text-center">
-        {aff.name}
-      </span>
+      {!error ? (
+        <img
+          src={aff.img}
+          alt={aff.alt || aff.fullName}
+          width={140}
+          height={48}
+          decoding="async"
+          loading="eager"
+          onError={() => setError(true)}
+          className="h-auto max-h-[48px] w-auto max-w-[140px] object-contain mix-blend-multiply"
+        />
+      ) : (
+        <span className="font-sans text-sm font-bold tracking-wider text-graphite">{aff.name}</span>
+      )}
     </div>
   );
 }
@@ -36,18 +32,14 @@ export default function InstitutionsMarquee() {
   const shouldReduceMotion = useReducedMotion();
 
   // Create a sequence repeated 3 times to ensure sufficient width across large displays
-  const repeatedList = [
-    ...AFFILIATIONS_DATA,
-    ...AFFILIATIONS_DATA,
-    ...AFFILIATIONS_DATA,
-  ];
+  const repeatedList = [...AFFILIATIONS_DATA, ...AFFILIATIONS_DATA, ...AFFILIATIONS_DATA];
 
   if (shouldReduceMotion) {
     return (
       <section
         role="region"
         aria-label="Participating institutions"
-        className="w-full bg-mist py-4 flex items-center justify-center relative overflow-hidden"
+        className="relative flex w-full items-center justify-center overflow-hidden bg-mist py-4"
       >
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 px-6">
           {AFFILIATIONS_DATA.map((aff, idx) => (
@@ -62,22 +54,22 @@ export default function InstitutionsMarquee() {
     <section
       role="region"
       aria-label="Participating institutions"
-      className="w-full bg-mist h-[76px] md:h-[88px] flex items-center overflow-hidden relative"
+      className="relative flex h-[76px] w-full items-center overflow-hidden bg-mist md:h-[88px]"
       style={{
         maskImage: "linear-gradient(to right, transparent, #000 8%, #000 92%, transparent)",
         WebkitMaskImage: "linear-gradient(to right, transparent, #000 8%, #000 92%, transparent)",
       }}
     >
-      <div className="flex items-center gap-20 w-max animate-marquee">
+      <div className="animate-marquee flex w-max items-center gap-20">
         {/* Primary sequence */}
-        <div className="flex items-center gap-20 shrink-0">
+        <div className="flex shrink-0 items-center gap-20">
           {repeatedList.map((aff, idx) => (
             <MarqueeLogoItem key={`primary-${idx}`} aff={aff} />
           ))}
         </div>
 
         {/* Duplicate sequence for seamless loop */}
-        <div className="flex items-center gap-20 shrink-0" aria-hidden="true">
+        <div className="flex shrink-0 items-center gap-20" aria-hidden="true">
           {repeatedList.map((aff, idx) => (
             <MarqueeLogoItem key={`dupe-${idx}`} aff={aff} />
           ))}

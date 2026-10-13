@@ -3,21 +3,25 @@ export const AFFILIATIONS_DATA = [
   {
     name: "RSST",
     fullName: "Rashtreeya Sikshana Samithi Trust",
-    img: "/images/rsst.png",
+    alt: "Rashtreeya Sikshana Samithi Trust (RSST)",
+    img: "/images/logos/rsst.png",
   },
   {
     name: "RVITM",
     fullName: "RV Institute of Technology and Management",
-    img: "/images/rvitm-logo.png",
+    alt: "RV Institute of Technology and Management",
+    img: "/images/logos/rvitm.png",
   },
   {
     name: "VTU",
     fullName: "Visvesvaraya Technological University",
-    img: "/images/vtu.png",
+    alt: "Visvesvaraya Technological University",
+    img: "/images/logos/vtu.png",
   },
   {
     name: "AICTE",
     fullName: "All India Council for Technical Education",
-    img: "/images/aicte.png",
+    alt: "All India Council for Technical Education",
+    img: "/images/logos/aicte.png",
   },
 ];

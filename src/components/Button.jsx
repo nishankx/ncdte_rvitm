@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function Button({
   children,
@@ -39,7 +39,7 @@ export default function Button({
     <>
       <span>{children}</span>
       {showArrow && (
-        <span className="ml-1.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 inline-block">
+        <span className="ml-1.5 inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
           ↗
         </span>
       )}

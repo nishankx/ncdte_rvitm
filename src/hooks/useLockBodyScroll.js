@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 export function useLockBodyScroll(isLocked) {
   useEffect(() => {
@@ -7,14 +7,14 @@ export function useLockBodyScroll(isLocked) {
     const originalStyle = window.getComputedStyle(document.body).overflow;
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
     if (scrollBarWidth > 0) {
       document.body.style.paddingRight = `${scrollBarWidth}px`;
     }
 
     return () => {
       document.body.style.overflow = originalStyle;
-      document.body.style.paddingRight = '';
+      document.body.style.paddingRight = "";
     };
   }, [isLocked]);
 }

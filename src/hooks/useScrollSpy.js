@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const DEFAULT_SECTIONS = [
-  'home',
-  'about',
-  'institution',
-  'department',
-  'tracks',
-  'guidelines',
-  'why',
-  'process',
-  'dates',
-  'registration',
-  'committee',
-  'faq',
+  "home",
+  "about",
+  "institution",
+  "department",
+  "tracks",
+  "guidelines",
+  "why",
+  "process",
+  "dates",
+  "registration",
+  "committee",
+  "faq",
 ];
 
 export function useScrollSpy(sectionIds = DEFAULT_SECTIONS, offset = 140) {
-  const [activeId, setActiveId] = useState('');
+  const [activeId, setActiveId] = useState("");
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !sectionIds.length) return;
+    if (typeof window === "undefined" || !sectionIds.length) return;
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + offset;
@@ -37,14 +37,14 @@ export function useScrollSpy(sectionIds = DEFAULT_SECTIONS, offset = 140) {
       }
 
       // If above first section
-      setActiveId('');
+      setActiveId("");
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial check
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [sectionIds, offset]);
 

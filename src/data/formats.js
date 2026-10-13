@@ -22,10 +22,16 @@ export const PRESENTATION_FORMATS_DATA = [
     desc: "A visual presentation of research findings and project outcomes.",
     accent: "from-plum to-indigoDeep",
     bullets: [
-      { text: "Visual presentation of research findings and prototype demonstrations", official: false }, // DRAFT
+      {
+        text: "Visual presentation of research findings and prototype demonstrations",
+        official: false,
+      }, // DRAFT
       { text: "Recommended poster size: 3 feet by 4 feet (36 x 48 inches)", official: false }, // DRAFT: confirm dimensions
       { text: "Acceptance status is communicated by email after peer review", official: true },
-      { text: "At least one author of each accepted paper or poster must register on or before 20 November 2026", official: true },
+      {
+        text: "At least one author of each accepted paper or poster must register on or before 20 November 2026",
+        official: true,
+      },
     ],
   },
 ];

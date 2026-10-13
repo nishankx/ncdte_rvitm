@@ -1,84 +1,87 @@
-import React from 'react';
-import Container from './Container';
-import SectionLabel from './SectionLabel';
-import SectionHeading from './SectionHeading';
-import Reveal from './Reveal';
-import Button from './Button';
-import Card from './Card';
-import { FEES_DATA } from '../data/fees';
+import React from "react";
+import Container from "./Container";
+import SectionLabel from "./SectionLabel";
+import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
+import Button from "./Button";
+import Card from "./Card";
+import { FEES_DATA } from "../data/fees";
 
 export default function Fees({ onOpenModal }) {
   return (
-    <section id="registration" className="py-20 md:py-32 bg-mist scroll-mt-20">
+    <section id="registration" className="scroll-mt-20 bg-mist py-20 md:py-32">
       <Container>
-        <SectionLabel onWhite={false}>Registration Fee</SectionLabel>
-        <SectionHeading>
-          Registration <em className="font-serif italic font-normal text-ink">Fee</em>
-        </SectionHeading>
+        <div className="flex flex-col items-center text-center">
+          <SectionLabel onWhite={false}>Registration Fee</SectionLabel>
+          <SectionHeading>
+            Registration <em className="font-serif font-normal italic text-ink">Fee</em>
+          </SectionHeading>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
-          {/* Left Column (7 cols): Giant Fee Numbers & Details */}
-          <div className="lg:col-span-7 space-y-6">
-            <Reveal>
-              <span className="text-eyebrow uppercase text-graphite tracking-widest block">
+          {/* Single centered axis: Price block on top, Card beneath, max-w-3xl mx-auto */}
+          <div className="mx-auto flex w-full max-w-3xl flex-col items-center space-y-12 text-center">
+            {/* Top Block: Giant Fee Numbers & Details */}
+            <Reveal className="w-full space-y-6">
+              <span className="block text-eyebrow uppercase tracking-widest text-graphite">
                 Primary Participation Fee
               </span>
 
               {/* Giant Rs. 1300 in Satoshi 700 + text-aurora */}
-              <div className="font-sans font-bold text-[clamp(5rem,13vw,11rem)] leading-none tracking-tighter text-aurora select-none mt-2">
+              <div className="text-aurora mt-2 select-none font-sans text-[clamp(5rem,13vw,11rem)] font-bold leading-none tracking-tighter">
                 Rs. 1300
               </div>
 
               {/* Label in Serif Italic 28px */}
-              <h3 className="font-serif italic text-[28px] text-ink leading-tight mt-3">
+              <h3 className="mt-3 font-serif text-[28px] italic leading-tight text-ink">
                 {FEES_DATA.main.category}
               </h3>
 
               {/* Extra Team Members */}
-              <p className="font-sans text-xl font-medium text-ink pt-2">
+              <p className="pt-2 font-sans text-xl font-medium text-ink">
                 {FEES_DATA.extraMembersNote}
               </p>
 
-              {/* Kit Note & Deadline Note: no borders */}
-              <div className="space-y-2 pt-6 text-small text-graphite max-w-[54ch]">
+              {/* Kit Note & Deadline Note */}
+              <div className="mx-auto max-w-[54ch] space-y-2 pt-6 text-small text-graphite">
                 <p>{FEES_DATA.note}</p>
-                <p className="text-small font-medium text-ink">
-                  {FEES_DATA.deadlineNotice}
-                </p>
+                <p className="text-small font-medium text-ink">{FEES_DATA.deadlineNotice}</p>
               </div>
             </Reveal>
-          </div>
 
-          {/* Right Column (5 cols): "What the registration includes" Card */}
-          <div className="lg:col-span-5">
-            <Reveal delay={0.15}>
-              <Card onWhite={false} className="!p-8 sm:!p-10 space-y-8">
+            {/* Inclusions Card Beneath */}
+            <Reveal delay={0.15} className="w-full">
+              <Card
+                onWhite={false}
+                className="flex w-full flex-col items-center space-y-8 !p-8 text-center sm:!p-10"
+              >
                 <div>
-                  <span className="text-eyebrow uppercase text-graphite tracking-widest block mb-2">
+                  <span className="mb-2 block text-eyebrow uppercase tracking-widest text-graphite">
                     Delegate Inclusions
                   </span>
-                  <h4 className="font-serif italic text-2xl text-ink">
+                  <h4 className="font-serif text-2xl italic text-ink">
                     What the registration includes
                   </h4>
                 </div>
 
-                <ul className="space-y-4">
+                <ul className="mx-auto w-fit max-w-full list-none space-y-3">
                   {FEES_DATA.inclusions.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3.5 text-small leading-[1.7] text-ink/80">
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3 text-left text-small leading-[1.7] text-ink/80"
+                    >
                       <span
                         aria-hidden="true"
-                        className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet mt-2.5 shrink-0"
+                        className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
                       />
                       <span>{item.text}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="pt-4">
+                <div className="flex w-full justify-center pt-4">
                   <Button
                     variant="primary"
                     onClick={() => onOpenModal("registration")}
-                    className="w-full text-sm font-medium"
+                    className="w-full max-w-xs text-sm font-medium"
                   >
                     Register Now
                   </Button>

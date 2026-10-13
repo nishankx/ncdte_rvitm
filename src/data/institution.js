@@ -10,10 +10,6 @@ export const INSTITUTION_DATA = {
     "To be a centre of excellence in technical and management education, producing capable professionals who contribute to society and industry.",
   mission:
     "To deliver quality education through effective teaching-learning practices, promote research and innovation, strengthen industry interaction, and nurture ethical, socially responsible graduates.",
-  facts: [
-    "Managed by RSST",
-    "VTU-affiliated",
-    "AICTE-approved",
-  ],
+  facts: ["Managed by RSST", "VTU-affiliated", "AICTE-approved"],
   campusImage: "/images/rvitm-campus.webp",
 };

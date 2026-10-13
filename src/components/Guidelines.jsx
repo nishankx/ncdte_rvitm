@@ -1,12 +1,12 @@
-import React from 'react';
-import Container from './Container';
-import SectionLabel from './SectionLabel';
-import SectionHeading from './SectionHeading';
-import Reveal from './Reveal';
-import Button from './Button';
-import Card from './Card';
-import PresentationFormats from './PresentationFormats';
-import { CONFIG } from '../config';
+import React from "react";
+import Container from "./Container";
+import SectionLabel from "./SectionLabel";
+import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
+import Button from "./Button";
+import Card from "./Card";
+import PresentationFormats from "./PresentationFormats";
+import { CONFIG } from "../config";
 
 export default function Guidelines({ onOpenModal }) {
   const paperGuidelines = [
@@ -23,91 +23,94 @@ export default function Guidelines({ onOpenModal }) {
   ];
 
   return (
-    <section id="guidelines" className="py-20 md:py-32 bg-mist scroll-mt-20">
+    <section id="guidelines" className="scroll-mt-20 bg-mist py-20 md:py-32">
       <Container>
-        <SectionLabel onWhite={false}>Guidelines for Submission</SectionLabel>
-        <SectionHeading>
-          Submission <em className="font-serif italic font-normal text-ink">Guidelines</em>
-        </SectionHeading>
+        <div className="flex flex-col items-center text-center">
+          <SectionLabel onWhite={false}>Guidelines for Submission</SectionLabel>
+          <SectionHeading>
+            Submission <em className="font-serif font-normal italic text-ink">Guidelines</em>
+          </SectionHeading>
 
-        {/* Presentation Formats */}
-        <Reveal delay={0.1}>
-          <PresentationFormats />
-        </Reveal>
+          {/* Presentation Formats */}
+          <Reveal delay={0.1} className="w-full">
+            <PresentationFormats />
+          </Reveal>
 
-        {/* Guidelines Two-Column Card */}
-        <Reveal delay={0.2}>
-          <Card onWhite={false} className="!p-10 md:!p-14">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              {/* Column 1: Paper Presentation */}
-              <div className="space-y-6">
-                <span className="text-eyebrow uppercase text-graphite tracking-widest block">
-                  Author Protocol
-                </span>
-                <h3 className="font-serif italic text-[28px] text-ink leading-tight">
-                  Paper Presentation
-                </h3>
-                <ul className="space-y-4">
-                  {paperGuidelines.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3.5 text-body text-ink/85">
-                      <span
-                        aria-hidden="true"
-                        className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet mt-2.5 shrink-0"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+          {/* Guidelines Two-Column Card */}
+          <Reveal delay={0.2} className="w-full">
+            <Card onWhite={false} className="w-full !p-10 md:!p-14">
+              <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+                {/* Column 1: Paper Presentation */}
+                <div className="flex flex-col items-center space-y-6 text-center">
+                  <span className="block text-eyebrow uppercase tracking-widest text-graphite">
+                    Author Protocol
+                  </span>
+                  <h3 className="font-serif text-[28px] italic leading-tight text-ink">
+                    Paper Presentation
+                  </h3>
 
-                {CONFIG.PAPER_TEMPLATE_URL && CONFIG.PAPER_TEMPLATE_URL.trim() !== "" && (
-                  <div className="pt-4">
-                    <Button
-                      variant="primary"
-                      href={CONFIG.PAPER_TEMPLATE_URL}
-                      target="_blank"
-                    >
-                      Download Paper Template
-                    </Button>
-                  </div>
-                )}
+                  <ul className="mx-auto w-fit max-w-full list-none space-y-3">
+                    {paperGuidelines.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-left text-body text-ink/85"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {CONFIG.PAPER_TEMPLATE_URL && CONFIG.PAPER_TEMPLATE_URL.trim() !== "" && (
+                    <div className="flex justify-center pt-4">
+                      <Button variant="primary" href={CONFIG.PAPER_TEMPLATE_URL} target="_blank">
+                        Download Paper Template
+                      </Button>
+                    </div>
+                  )}
+                </div>
+
+                {/* Column 2: Important Note */}
+                <div className="flex flex-col items-center space-y-6 text-center">
+                  <span className="block text-eyebrow uppercase tracking-widest text-graphite">
+                    Review & Publication
+                  </span>
+                  <h3 className="font-serif text-[28px] italic leading-tight text-ink">
+                    Important Note
+                  </h3>
+
+                  <ul className="mx-auto w-fit max-w-full list-none space-y-3">
+                    {importantNotes.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-left text-body text-ink/85"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              {/* Column 2: Important Note */}
-              <div className="space-y-6">
-                <span className="text-eyebrow uppercase text-graphite tracking-widest block">
-                  Review & Publication
+              {/* Bottom CTA Row: Centered */}
+              <div className="mt-14 flex flex-col items-center justify-center gap-4 pt-8 text-center sm:flex-row sm:gap-6">
+                <span className="text-small text-graphite">
+                  Plagiarism level must be strictly under 15% before final paper upload.
                 </span>
-                <h3 className="font-serif italic text-[28px] text-ink leading-tight">
-                  Important Note
-                </h3>
-                <ul className="space-y-4">
-                  {importantNotes.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3.5 text-body text-ink/85">
-                      <span
-                        aria-hidden="true"
-                        className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet mt-2.5 shrink-0"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <Button variant="primary" onClick={() => onOpenModal("submission")}>
+                  SUBMIT YOUR PAPERS HERE
+                </Button>
               </div>
-            </div>
-
-            {/* Bottom CTA Row: no borders, generous space */}
-            <div className="mt-14 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <span className="text-small text-graphite">
-                Plagiarism level must be strictly under 15% before final paper upload.
-              </span>
-              <Button
-                variant="primary"
-                onClick={() => onOpenModal("submission")}
-              >
-                SUBMIT YOUR PAPERS HERE
-              </Button>
-            </div>
-          </Card>
-        </Reveal>
+            </Card>
+          </Reveal>
+        </div>
       </Container>
     </section>
   );

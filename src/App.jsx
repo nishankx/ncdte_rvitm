@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import InstitutionsMarquee from './components/InstitutionsMarquee';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Institution from './components/Institution';
-import Department from './components/Department';
-import Tracks from './components/Tracks';
-import Guidelines from './components/Guidelines';
-import WhyParticipate from './components/WhyParticipate';
-import SubmissionProcess from './components/SubmissionProcess';
-import ImportantDates from './components/ImportantDates';
-import Fees from './components/Fees';
-import Committee from './components/Committee';
-import FAQ from './components/FAQ';
-import CtaBand from './components/CtaBand';
-import Footer from './components/Footer';
-import RegistrationModal from './components/RegistrationModal';
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import InstitutionsMarquee from "./components/InstitutionsMarquee";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Institution from "./components/Institution";
+import Department from "./components/Department";
+import Tracks from "./components/Tracks";
+import Guidelines from "./components/Guidelines";
+import WhyParticipate from "./components/WhyParticipate";
+import SubmissionProcess from "./components/SubmissionProcess";
+import ImportantDates from "./components/ImportantDates";
+import Fees from "./components/Fees";
+import Committee from "./components/Committee";
+import FAQ from "./components/FAQ";
+import CtaBand from "./components/CtaBand";
+import Footer from "./components/Footer";
+import RegistrationModal from "./components/RegistrationModal";
 
 export default function App() {
   const [modalState, setModalState] = useState({
@@ -38,56 +38,56 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col text-ink font-sans antialiased selection:bg-aurora-ice overflow-x-clip">
-      {/* 1. Institutions Marquee (First element, full-bleed strip at top of page) */}
-      <InstitutionsMarquee />
-
-      {/* 2. Sticky Navbar with negative bottom margin to overlay hero canvas */}
+    <div className="flex min-h-screen flex-col overflow-x-clip bg-white font-sans text-ink antialiased selection:bg-aurora-ice">
+      {/* 1. Sticky Navbar */}
       <Navbar onOpenModal={handleOpenModal} />
 
-      {/* Main Content Sections (Strict Alternating White/Mist Rhythm) */}
+      {/* 2. Institutions Marquee directly below Navbar */}
+      <InstitutionsMarquee />
+
+      {/* Main Content Sections */}
       <main className="flex-1">
-        {/* 3. Hero (#home, White) */}
+        {/* 3. Hero (#home) */}
         <Hero onOpenModal={handleOpenModal} />
 
-        {/* 4. About (#about, Mist) */}
+        {/* 4. About (#about) */}
         <About />
 
-        {/* 5. About RVITM (#institution, White) */}
+        {/* 5. About RVITM (#institution) */}
         <Institution />
 
-        {/* 6. Department (#department, Mist) */}
+        {/* 6. Department (#department) */}
         <Department />
 
-        {/* 7. Research Tracks (#tracks, White) */}
+        {/* 7. Research Tracks (#tracks) */}
         <Tracks />
 
-        {/* 8. Guidelines & Presentation Formats (#guidelines, Mist) */}
+        {/* 8. Guidelines & Presentation Formats (#guidelines) */}
         <Guidelines onOpenModal={handleOpenModal} />
 
-        {/* 9. Why Participate (#why, White) */}
+        {/* 9. Why Participate (#why) */}
         <WhyParticipate />
 
-        {/* 10. Submission Process (#process, Mist) */}
+        {/* 10. Submission Process (#process) */}
         <SubmissionProcess onOpenModal={handleOpenModal} />
 
-        {/* 11. Important Dates (#dates, White) */}
+        {/* 11. Important Dates (#dates) */}
         <ImportantDates />
 
-        {/* 12. Registration Fee (#registration, Mist) */}
+        {/* 12. Registration Fee (#registration) */}
         <Fees onOpenModal={handleOpenModal} />
 
-        {/* 13. Committee & Helpdesk (#committee, White) */}
+        {/* 13. Committee & Helpdesk (#committee) */}
         <Committee />
 
-        {/* 14. Frequently Asked Questions (#faq, Mist) */}
+        {/* 14. Frequently Asked Questions (#faq) */}
         <FAQ />
 
-        {/* 15. CTA Band (Ink) */}
+        {/* 15. CTA Band */}
         <CtaBand onOpenModal={handleOpenModal} />
       </main>
 
-      {/* 16. Footer (Ink) */}
+      {/* 16. Footer */}
       <Footer />
 
       {/* 17. Registration Modal */}

@@ -8,14 +8,14 @@
     color-scheme: light;
   }
   body {
-    @apply bg-white text-ink font-sans antialiased overflow-x-clip;
+    @apply overflow-x-clip bg-white font-sans text-ink antialiased;
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    background: #CDE7FF;
+    background: #cde7ff;
   }
   *:focus-visible {
-    outline: 2px solid #1F6BFF;
+    outline: 2px solid #1f6bff;
     outline-offset: 3px;
   } /* the only outline allowed */
 }
@@ -40,7 +40,7 @@
 
 @layer utilities {
   .text-aurora {
-    background-image: linear-gradient(120deg, #00D4FF, #1F6BFF 50%, #8B3DFF);
+    background-image: linear-gradient(120deg, #00d4ff, #1f6bff 50%, #8b3dff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

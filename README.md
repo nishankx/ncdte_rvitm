@@ -9,23 +9,29 @@ Built with **React 18 + Vite**, **Tailwind CSS v3**, and **Framer Motion**.
 ## 🚀 Quick Start
 
 ### 1. Install dependencies
+
 ```bash
 npm install
 ```
 
 ### 2. Run local development server
+
 ```bash
 npm run dev
 ```
+
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### 3. Build for production (Static build for Vercel / Netlify / GitHub Pages)
+
 ```bash
 npm run build
 ```
+
 Production assets are output to the `dist/` folder.
 
 To preview the production build locally:
+
 ```bash
 npm run preview
 ```
@@ -38,18 +44,20 @@ You can edit all conference action URLs in [src/config.js](file:///c:/Users/nish
 
 ```javascript
 export const CONFIG = {
-  SUBMISSION_URL: "",       // External portal link for paper submission (e.g. CMT / EasyChair)
-  REGISTRATION_URL: "",     // External portal link for registration payment gateway
-  PAPER_TEMPLATE_URL: "",   // Downloadable paper template (e.g. Word / LaTeX format link)
-  CONFERENCE_WEBSITE: "",   // Official college conference subdomain link
+  SUBMISSION_URL: "", // External portal link for paper submission (e.g. CMT / EasyChair)
+  REGISTRATION_URL: "", // External portal link for registration payment gateway
+  PAPER_TEMPLATE_URL: "", // Downloadable paper template (e.g. Word / LaTeX format link)
+  CONFERENCE_WEBSITE: "", // Official college conference subdomain link
   EMAIL: "conference.rvitm@rvei.edu.in",
-  BROCHURE_URL: "",         // Download Conference Brochure (button hidden if empty)
-  MAP_URL: "https://www.google.com/maps/search/?api=1&query=RV+Institute+of+Technology+and+Management+Kothanur+JP+Nagar+Bengaluru+560076",
+  BROCHURE_URL: "", // Download Conference Brochure (button hidden if empty)
+  MAP_URL:
+    "https://www.google.com/maps/search/?api=1&query=RV+Institute+of+Technology+and+Management+Kothanur+JP+Nagar+Bengaluru+560076",
   CONTACT_PHONES: ["9655523276", "9902028279", "7200575617", "9739981676"],
 };
 ```
 
 ### Automatic Fallback Behavior:
+
 - When `SUBMISSION_URL` is empty (`""`), the submission CTA automatically falls back to:
   `mailto:conference.rvitm@rvei.edu.in?subject=NCDTE-2026%20Paper%20Submission`
 - When `REGISTRATION_URL` is empty (`""`), the registration button falls back to:
@@ -61,6 +69,7 @@ export const CONFIG = {
 ## 🖼️ Committee Photo Specifications & Assets
 
 ### Committee Portraits (`/public/images/committee/<slug>.jpg`):
+
 - **Dimensions**: 800 × 1000 px (4:5 aspect ratio).
 - **Format**: JPG or WebP.
 - **Composition**: Face centered in the upper half of the frame with a consistent neutral background.

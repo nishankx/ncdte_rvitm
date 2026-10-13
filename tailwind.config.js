@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -41,15 +38,27 @@ export default {
         aurora: "linear-gradient(120deg,#00D4FF 0%,#1F6BFF 45%,#8B3DFF 100%)",
       },
       fontSize: {
-        mega:   ["clamp(6.5rem,22vw,20rem)", { lineHeight: ".82", letterSpacing: "-0.055em", fontWeight: "700" }],
-        serifxl:["clamp(2.5rem,5.6vw,5.5rem)", { lineHeight: "1", letterSpacing: "-0.02em", fontWeight: "400" }],
-        h2:     ["clamp(2.25rem,5vw,4.5rem)", { lineHeight: "1.04", letterSpacing: "-0.035em", fontWeight: "500" }],
-        h3:     ["clamp(1.5rem,2.4vw,2rem)", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "600" }],
-        body:    ["1.1875rem", { lineHeight: "1.75" }],  // 19px, was 17px
-        lead:    ["1.3125rem", { lineHeight: "1.7" }],   // 21px, for About/Institution lead paragraphs (was 19-20px)
-        small:   ["1rem",      { lineHeight: "1.65" }],  // 16px, card descriptions, captions (was 14px)
-        caption: ["0.9375rem", { lineHeight: "1.6" }],   // 15px, minimum for any readable text
-        eyebrow: ["0.75rem",   { lineHeight: "1", letterSpacing: "0.16em", fontWeight: "700" }], // 12px, was 11px
+        mega: [
+          "clamp(6.5rem,22vw,20rem)",
+          { lineHeight: ".82", letterSpacing: "-0.055em", fontWeight: "700" },
+        ],
+        serifxl: [
+          "clamp(2.5rem,5.6vw,5.5rem)",
+          { lineHeight: "1", letterSpacing: "-0.02em", fontWeight: "400" },
+        ],
+        h2: [
+          "clamp(2.25rem,5vw,4.5rem)",
+          { lineHeight: "1.04", letterSpacing: "-0.035em", fontWeight: "500" },
+        ],
+        h3: [
+          "clamp(1.5rem,2.4vw,2rem)",
+          { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "600" },
+        ],
+        body: ["1.1875rem", { lineHeight: "1.75" }], // 19px, was 17px
+        lead: ["1.3125rem", { lineHeight: "1.7" }], // 21px, for About/Institution lead paragraphs (was 19-20px)
+        small: ["1rem", { lineHeight: "1.65" }], // 16px, card descriptions, captions (was 14px)
+        caption: ["0.9375rem", { lineHeight: "1.6" }], // 15px, minimum for any readable text
+        eyebrow: ["0.75rem", { lineHeight: "1", letterSpacing: "0.16em", fontWeight: "700" }], // 12px, was 11px
       },
     },
   },

@@ -1,13 +1,15 @@
-import React from 'react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import React from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 
 export default function Blob({ className = "" }) {
   const shouldReduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const parallaxY = useTransform(scrollY, [0, 800], [0, 80]);
 
-  const morphPath1 = "M120 760 C80 560 220 420 330 330 C430 250 400 90 560 40 C700 -5 820 120 800 300 C780 480 700 560 640 680 C590 780 200 880 120 760 Z";
-  const morphPath2 = "M140 740 C110 540 250 440 350 340 C450 260 440 110 580 60 C720 10 830 150 790 320 C760 490 690 580 620 700 C560 800 190 860 140 740 Z";
+  const morphPath1 =
+    "M120 760 C80 560 220 420 330 330 C430 250 400 90 560 40 C700 -5 820 120 800 300 C780 480 700 560 640 680 C590 780 200 880 120 760 Z";
+  const morphPath2 =
+    "M140 740 C110 540 250 440 350 340 C450 260 440 110 580 60 C720 10 830 150 790 320 C760 490 690 580 620 700 C560 800 190 860 140 740 Z";
 
   return (
     <motion.div
@@ -17,7 +19,7 @@ export default function Blob({ className = "" }) {
     >
       <motion.svg
         viewBox="0 0 800 800"
-        className="w-[78vw] max-w-[1000px] h-auto overflow-visible opacity-90"
+        className="h-auto w-[78vw] max-w-[1000px] overflow-visible opacity-90"
         animate={
           shouldReduceMotion
             ? {}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export function useCountdown(targetIsoDate = "2026-12-04T00:00:00+05:30") {
   const calculateTimeLeft = () => {
@@ -22,10 +22,10 @@ export function useCountdown(targetIsoDate = "2026-12-04T00:00:00+05:30") {
     const s = Math.floor((difference / 1000) % 60);
 
     return {
-      days: String(d).padStart(2, '0'),
-      hours: String(h).padStart(2, '0'),
-      minutes: String(m).padStart(2, '0'),
-      seconds: String(s).padStart(2, '0'),
+      days: String(d).padStart(2, "0"),
+      hours: String(h).padStart(2, "0"),
+      minutes: String(m).padStart(2, "0"),
+      seconds: String(s).padStart(2, "0"),
       isCompleted: false,
     };
   };

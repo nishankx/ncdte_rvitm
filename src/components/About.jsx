@@ -1,9 +1,10 @@
-import React from 'react';
-import Container from './Container';
-import SectionLabel from './SectionLabel';
-import Reveal from './Reveal';
-import Button from './Button';
-import { CONFIG } from '../config';
+import React from "react";
+import Container from "./Container";
+import SectionLabel from "./SectionLabel";
+import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
+import Button from "./Button";
+import { CONFIG } from "../config";
 
 export default function About() {
   const highlights = [
@@ -22,71 +23,59 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-mist scroll-mt-20">
+    <section id="about" className="scroll-mt-20 bg-mist py-20 md:py-32">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column (5 cols): Label & Heading */}
-          <div className="lg:col-span-5">
-            <Reveal>
-              <div className="flex justify-start mb-5">
-                <span className="inline-flex items-center text-eyebrow uppercase px-3 py-2 rounded-pill tracking-widest bg-white text-ink shadow-pill">
-                  About NCDTE-2026
-                </span>
-              </div>
-              <h2 className="font-sans text-h2 text-ink leading-tight tracking-tight">
-                About <em className="font-serif italic font-normal text-aurora">NCDTE-2026</em>
-              </h2>
-            </Reveal>
+        <div className="flex flex-col items-center text-center">
+          <SectionLabel onWhite={false}>About NCDTE-2026</SectionLabel>
+          <SectionHeading>
+            About <em className="text-aurora font-serif font-normal italic">NCDTE-2026</em>
+          </SectionHeading>
 
-            {/* Brochure Button */}
-            {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
-              <Reveal delay={0.2} className="mt-8">
-                <Button
-                  variant="primary"
-                  href={CONFIG.BROCHURE_URL}
-                  target="_blank"
-                >
-                  Download Conference Brochure
-                </Button>
-              </Reveal>
-            )}
-          </div>
+          {/* Centered Editorial Paragraphs */}
+          <Reveal delay={0.1} className="mx-auto max-w-[62ch]">
+            <div className="space-y-6 text-lead font-normal text-ink/85">
+              <p>
+                The National Conference on Digital Technology and Engineering (NCDTE-2026) serves as
+                a platform for researchers, academicians, industry professionals, and students to
+                exchange knowledge, share innovative ideas, and discuss emerging developments in
+                digital technology and engineering.
+              </p>
+              <p>
+                The conference provides an avenue for presenting cutting-edge research,
+                technological innovations, and practical solutions addressing contemporary
+                challenges. NCDTE-2026 aims to foster interdisciplinary collaboration, encourage
+                meaningful academic and industry interactions, and promote research-driven
+                advancements in technology and engineering.
+              </p>
+            </div>
+          </Reveal>
 
-          {/* Right Column (7 cols): Editorial Typography */}
-          <div className="lg:col-span-7 space-y-8">
-            <Reveal delay={0.1}>
-              <div className="text-lead text-ink/85 max-w-[62ch] space-y-6 font-normal">
-                <p>
-                  The National Conference on Digital Technology and Engineering (NCDTE-2026) serves as a platform for researchers, academicians, industry professionals, and students to exchange knowledge, share innovative ideas, and discuss emerging developments in digital technology and engineering.
-                </p>
-                <p>
-                  The conference provides an avenue for presenting cutting-edge research, technological innovations, and practical solutions addressing contemporary challenges. NCDTE-2026 aims to foster interdisciplinary collaboration, encourage meaningful academic and industry interactions, and promote research-driven advancements in technology and engineering.
-                </p>
-              </div>
-            </Reveal>
+          {/* Three Highlight Items in a centered row */}
+          <Reveal delay={0.2} className="mt-14 w-full">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
+              {highlights.map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center space-y-3 text-center">
+                  <span
+                    aria-hidden="true"
+                    className="h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
+                  />
+                  <h4 className="font-sans text-[17px] font-semibold text-ink">{item.title}</h4>
+                  <p className="max-w-[42ch] text-small leading-relaxed text-graphite">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
 
-            {/* Three Plain Highlight Items with Aurora Gradient Dots, No borders */}
-            <Reveal delay={0.25}>
-              <div className="pt-6 space-y-6">
-                {highlights.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-4">
-                    <span
-                      aria-hidden="true"
-                      className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet mt-2 shrink-0"
-                    />
-                    <div>
-                      <h4 className="font-sans font-semibold text-[17px] text-ink">
-                        {item.title}
-                      </h4>
-                      <p className="text-small text-graphite mt-1 leading-relaxed max-w-[56ch]">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* Brochure Button centered */}
+          {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
+            <Reveal delay={0.25} className="mt-12 flex justify-center">
+              <Button variant="primary" href={CONFIG.BROCHURE_URL} target="_blank">
+                Download Conference Brochure
+              </Button>
             </Reveal>
-          </div>
+          )}
         </div>
       </Container>
     </section>
