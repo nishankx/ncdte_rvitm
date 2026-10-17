@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "./Container";
+import DarkPatternBackground from "./DarkPatternBackground";
 import { CONFIG } from "../config";
 import { CONTACT_DETAILS } from "../data/dates";
 import { AFFILIATIONS_DATA } from "../data/affiliations";
@@ -18,6 +19,8 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-ink pb-12 pt-20 text-white">
+      {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
+      <DarkPatternBackground circlePosition="right" />
       {/* Top Ambient Border Accent */}
       <div
         aria-hidden="true"

@@ -5,6 +5,7 @@ import SectionLabel from "./SectionLabel";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import Button from "./Button";
+import DarkPatternBackground from "./DarkPatternBackground";
 import { CONFIG } from "../config";
 import { SUBMISSION_PROCESS_DATA } from "../data/process";
 
@@ -16,6 +17,8 @@ export default function SubmissionProcess({ onOpenModal }) {
       id="process"
       className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-20 text-white md:py-32"
     >
+      {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
+      <DarkPatternBackground circlePosition="left" />
       {/* Top & Bottom Ambient Border Accent Lines matching Navbar/Footer */}
       <div
         aria-hidden="true"

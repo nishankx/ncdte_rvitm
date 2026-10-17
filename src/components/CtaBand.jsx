@@ -2,11 +2,14 @@ import React from "react";
 import Container from "./Container";
 import Reveal from "./Reveal";
 import Button from "./Button";
+import DarkPatternBackground from "./DarkPatternBackground";
 import { CONFIG } from "../config";
 
 export default function CtaBand({ onOpenModal }) {
   return (
     <section className="relative select-none bg-ink py-28 text-white md:py-32">
+      {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
+      <DarkPatternBackground circlePosition="center" />
       {/* Blurred Aurora Blob Behind */}
       <div
         aria-hidden="true"

@@ -3,6 +3,7 @@ import Container from "./Container";
 import SectionLabel from "./SectionLabel";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import DarkPatternBackground from "./DarkPatternBackground";
 import { TRACKS_DATA, CALL_FOR_PAPERS_INTRO } from "../data/tracks";
 
 export default function Tracks() {
@@ -11,6 +12,8 @@ export default function Tracks() {
       id="tracks"
       className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-14 text-white sm:py-20 md:py-28"
     >
+      {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
+      <DarkPatternBackground circlePosition="right" />
       {/* Top & Bottom Ambient Border Accent Lines matching Navbar/Footer */}
       <div
         aria-hidden="true"
