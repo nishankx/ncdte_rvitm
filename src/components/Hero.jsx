@@ -73,32 +73,7 @@ export default function Hero({ onOpenModal }) {
       </motion.div>
 
       {/* Background Aurora Layers & Dispersed Light Overlay */}
-      {/* Top-Right Morphing Blob */}
-
-      {/* Top-Left Ambient Mist */}
-      <div
-        aria-hidden="true"
-        className="from-[#00545f]/18 via-[#ecffb6]/32 pointer-events-none absolute -left-28 -top-16 z-0 h-[560px] w-[560px] rounded-full bg-gradient-to-br to-transparent blur-[140px]"
-      />
-
-      {/* Mid-Right Lime Glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-1/2 z-0 h-[520px] w-[520px] -translate-y-1/2 rounded-full bg-gradient-to-l from-[#d6fb00]/20 via-[#ecffb6]/30 to-transparent blur-[140px]"
-      />
-
-      {/* Bottom-Left Soft Teal Aura */}
-      <div
-        aria-hidden="true"
-        className="from-[#00545f]/16 via-[#ecffb6]/28 pointer-events-none absolute -bottom-14 -left-32 z-0 h-[580px] w-[580px] rounded-full bg-gradient-to-tr to-transparent blur-[140px]"
-      />
-
-      {/* Bottom-Right Pale Chartreuse Glow */}
-      <div
-        aria-hidden="true"
-        className="from-[#d6fb00]/18 pointer-events-none absolute -bottom-14 -right-24 z-0 h-[520px] w-[520px] rounded-full bg-gradient-to-tl via-[#ecffb6]/30 to-transparent blur-[140px]"
-      />
-
+     
 
       <Container className="relative z-10">
         <div className="mb-4 text-center">

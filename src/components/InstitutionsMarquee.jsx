@@ -75,7 +75,7 @@ export default function InstitutionsMarquee() {
       </div>
 
       {/* Tablet & Laptop / Desktop: Stagnant Banners */}
-      <div className="hidden md:block">
+      <div className="pt-2 hidden md:block">
         <Container className="max-w-7xl">
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-10 lg:gap-14">
             {ALL_LOGOS.map((logo) => (
