@@ -5,6 +5,7 @@ import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import Button from "./Button";
 import Card from "./Card";
+import LightPatternBackground from "./LightPatternBackground";
 import { CONFIG } from "../config";
 
 export default function Guidelines({ onOpenModal }) {
@@ -36,6 +37,8 @@ export default function Guidelines({ onOpenModal }) {
       id="guidelines"
       className="from-[#00545f]/8 to-[#ecffb6]/18 relative scroll-mt-20 overflow-hidden bg-gradient-to-br via-white/85 py-20 md:py-32"
     >
+      {/* Subtle Precision Plus-Grid & Diamond Drafting Lattice */}
+      <LightPatternBackground accent="diamond" accentPosition="right" />
       {/* Dispersed Background Gradient Blobs */}
       <div
         aria-hidden="true"

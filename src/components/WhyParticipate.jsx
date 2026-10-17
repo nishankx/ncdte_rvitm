@@ -5,6 +5,7 @@ import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import Card from "./Card";
 import Glow from "./Glow";
+import LightPatternBackground from "./LightPatternBackground";
 import { WHY_PARTICIPATE_DATA } from "../data/why";
 
 function CleanLineIcon({ type }) {
@@ -85,6 +86,8 @@ export default function WhyParticipate() {
       id="why"
       className="from-[#ecffb6]/18 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-bl via-white/85 py-20 md:py-32"
     >
+      {/* Subtle Precision Plus-Grid & Topographic Elevation Waves */}
+      <LightPatternBackground accent="waves" accentPosition="both" />
       {/* Dispersed Background Gradient Blobs */}
       <div
         aria-hidden="true"

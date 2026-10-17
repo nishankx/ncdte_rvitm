@@ -10,7 +10,7 @@ export default function DarkPatternBackground({
       className={`pointer-events-none absolute inset-0 -z-0 select-none overflow-hidden ${className}`}
     >
       {/* Subtle Dotted Background Matrix - fills negative space smoothly */}
-      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1.2px,transparent_1.2px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_at_center,#000_60%,transparent_95%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.14)_1.2px,transparent_1.2px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_at_center,#000_60%,transparent_95%)]" />
 
       {/* Concentric Circles - Right Position */}
       {(circlePosition === "right" || circlePosition === "both") && (

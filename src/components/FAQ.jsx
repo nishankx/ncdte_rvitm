@@ -4,6 +4,7 @@ import Container from "./Container";
 import SectionLabel from "./SectionLabel";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import LightPatternBackground from "./LightPatternBackground";
 import { FAQS_DATA } from "../data/faqs";
 import { CONFIG } from "../config";
 
@@ -20,6 +21,8 @@ export default function FAQ() {
       id="faq"
       className="from-[#ecffb6]/18 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-b via-white/85 py-20 md:py-32"
     >
+      {/* Subtle Precision Plus-Grid & Topographic Elevation Waves */}
+      <LightPatternBackground accent="waves" accentPosition="right" />
       {/* Dispersed Background Gradient Blobs */}
       <div
         aria-hidden="true"

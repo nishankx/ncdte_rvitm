@@ -5,6 +5,7 @@ import SectionLabel from "./SectionLabel";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import Button from "./Button";
+import LightPatternBackground from "./LightPatternBackground";
 import { CONFIG } from "../config";
 import { INSTITUTION_DATA } from "../data/institution";
 
@@ -27,6 +28,8 @@ export default function Institution() {
       ref={sectionRef}
       className="from-[#d6fb00]/12 to-[#ecffb6]/18 relative scroll-mt-20 overflow-hidden bg-gradient-to-bl via-white/85 py-20 md:py-32"
     >
+      {/* Subtle Precision Plus-Grid & Topographic Elevation Waves */}
+      <LightPatternBackground accent="waves" accentPosition="right" />
       {/* Dispersed Background Gradient Blobs */}
       <div
         aria-hidden="true"

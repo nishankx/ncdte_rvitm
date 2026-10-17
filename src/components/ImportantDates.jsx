@@ -4,6 +4,7 @@ import SectionLabel from "./SectionLabel";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import Card from "./Card";
+import LightPatternBackground from "./LightPatternBackground";
 import { IMPORTANT_DATES, CONTACT_DETAILS } from "../data/dates";
 import { CONFIG } from "../config";
 
@@ -39,6 +40,8 @@ export default function ImportantDates() {
       id="dates"
       className="from-[#d6fb00]/12 to-[#ecffb6]/18 relative scroll-mt-20 overflow-hidden bg-gradient-to-b via-white/85 py-20 md:py-32"
     >
+      {/* Subtle Precision Plus-Grid & Hexagonal Tech Lattice */}
+      <LightPatternBackground accent="hex" accentPosition="right" />
       {/* Dispersed Background Gradient Blobs */}
       <div
         aria-hidden="true"

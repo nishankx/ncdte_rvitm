@@ -4,6 +4,7 @@ import Container from "./Container";
 import Countdown from "./Countdown";
 import Button from "./Button";
 import Blob from "./Blob";
+import LightPatternBackground from "./LightPatternBackground";
 import { CONFIG } from "../config";
 
 export default function Hero({ onOpenModal }) {
@@ -71,10 +72,6 @@ export default function Hero({ onOpenModal }) {
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/15 to-white/40" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.45)_15%,transparent_80%)]" />
       </motion.div>
-
-      {/* Background Aurora Layers & Dispersed Light Overlay */}
-     
-
       <Container className="relative z-10">
         <div className="mb-4 text-center">
           <p className="font-sans text-xs font-bold uppercase tracking-widest text-[#00545f] sm:text-sm">

@@ -5,6 +5,7 @@ import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import PersonCard from "./PersonCard";
 import ContactDesk from "./ContactDesk";
+import LightPatternBackground from "./LightPatternBackground";
 import { COMMITTEE_GROUPS } from "../data/committee";
 
 export default function Committee() {
@@ -13,6 +14,8 @@ export default function Committee() {
       id="committee"
       className="from-[#ecffb6]/18 to-[#00545f]/8 relative scroll-mt-20 overflow-hidden bg-gradient-to-tr via-white/85 py-20 md:py-32"
     >
+      {/* Subtle Precision Plus-Grid & Diamond Drafting Lattice */}
+      <LightPatternBackground accent="diamond" accentPosition="left" />
       {/* Dispersed Background Gradient Blobs */}
       <div
         aria-hidden="true"

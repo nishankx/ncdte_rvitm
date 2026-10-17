@@ -4,6 +4,7 @@ import SectionLabel from "./SectionLabel";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import Card from "./Card";
+import LightPatternBackground from "./LightPatternBackground";
 import { department } from "../data/departments";
 
 export default function Department() {
@@ -12,6 +13,8 @@ export default function Department() {
       id="department"
       className="from-[#00545f]/8 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-tr via-white/85 py-20 md:py-32"
     >
+      {/* Subtle Precision Plus-Grid & Hexagonal Tech Lattice */}
+      <LightPatternBackground accent="hex" accentPosition="left" />
       {/* Dispersed Background Gradient Blobs */}
       <div
         aria-hidden="true"
