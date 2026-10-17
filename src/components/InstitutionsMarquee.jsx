@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Container from "./Container";
-import LightPatternBackground from "./LightPatternBackground";
 import { ALL_LOGOS } from "../data/affiliations";
 
 function PlainLogo({ logo, imgClassName = "h-5 sm:h-12 md:h-14 lg:h-22" }) {
@@ -50,7 +49,7 @@ export default function InstitutionsMarquee() {
           className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-white to-transparent"
         />
 
-        <div className="flex w-max animate-marquee active:[animation-play-state:paused] py-1">
+        <div className="flex w-max animate-marquee active:[animation-play-state:paused] py-1 will-change-transform transform-gpu">
           <div className="flex shrink-0 items-center gap-7 pr-7">
             {ALL_LOGOS.map((logo, idx) => (
               <PlainLogo

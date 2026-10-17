@@ -3,15 +3,13 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import Container from "./Container";
 import Countdown from "./Countdown";
 import Button from "./Button";
-import Blob from "./Blob";
-import LightPatternBackground from "./LightPatternBackground";
 import { CONFIG } from "../config";
 
 export default function Hero({ onOpenModal }) {
   const shouldReduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
-  const campusY = useTransform(scrollY, [0, 600], [0, 45]);
-  const campusScale = useTransform(scrollY, [0, 600], [1, 1.04]);
+  const campusY = useTransform(scrollY, [0, 600], [0, 40]);
+  const campusScale = useTransform(scrollY, [0, 600], [1, 1.03]);
 
   const quickStats = [
     { number: "04", suffix: "DEC", label: "Conference Date 2026" },
@@ -24,7 +22,7 @@ export default function Hero({ onOpenModal }) {
     hidden: { y: "110%" },
     visible: {
       y: 0,
-      transition: { duration: 0.95, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
@@ -32,7 +30,7 @@ export default function Hero({ onOpenModal }) {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.12,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -45,16 +43,16 @@ export default function Hero({ onOpenModal }) {
       {/* RVITM College Campus Background with Framer Motion */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden"
+        className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden will-change-transform transform-gpu"
         style={shouldReduceMotion ? {} : { y: campusY, scale: campusScale }}
         initial={shouldReduceMotion ? { opacity: 0.38 } : { opacity: 0 }}
         animate={{ opacity: 0.38 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        transition={{ duration: 1.0, ease: "easeOut" }}
       >
         <motion.img
           src="/images/rvitm-campusb.png"
           alt="RVITM Campus"
-          className="h-full w-full object-cover object-center contrast-[1.05] saturate-[0.5] filter"
+          className="h-full w-full object-cover object-center contrast-[1.05] saturate-[0.5] filter will-change-transform transform-gpu"
           animate={
             shouldReduceMotion
               ? {}

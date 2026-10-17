@@ -7,14 +7,14 @@ function DigitItem({ value, label }) {
 
   return (
     <div className="flex min-w-[3.5rem] flex-col items-center sm:min-w-[4rem]">
-      <div className="sm:h-13 relative flex h-11 items-center overflow-hidden">
-        <AnimatePresence mode="popLayout">
+      <div className="relative flex h-11 items-center overflow-hidden sm:h-13">
+        <AnimatePresence mode="wait">
           <motion.span
             key={value}
-            initial={shouldReduceMotion ? { opacity: 0 } : { y: 20, opacity: 0 }}
+            initial={shouldReduceMotion ? { opacity: 0 } : { y: 12, opacity: 0 }}
             animate={shouldReduceMotion ? { opacity: 1 } : { y: 0, opacity: 1 }}
-            exit={shouldReduceMotion ? { opacity: 0 } : { y: -20, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            exit={shouldReduceMotion ? { opacity: 0 } : { y: -12, opacity: 0 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
             className="font-sans text-3xl font-light tabular-nums tracking-tight text-ink sm:text-4xl md:text-5xl"
           >
             {value}
