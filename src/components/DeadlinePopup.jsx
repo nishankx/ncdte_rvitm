@@ -25,8 +25,8 @@ export default function DeadlinePopup() {
         <div className="relative overflow-hidden rounded-md">
           {/* Inner Card with Glassmorphic Gradient */}
           <div className="flex gap-2 items-center justify-center relative rounded-[15px] bg-gradient-to-b from-white via-white/95 to-amber-50/60 p-4 sm:p-4 backdrop-blur-xl">
-            {/*Alert Icon from public/icons/alert.gif*/}
-              <img src="public/icons/alert.gif" alt=" alert.gif" className="h-15 w-15 align-center justify-center text-rose-500" />
+            {/*Alert Icon from /icons/alert.gif*/}
+              <img src="/icons/alert.gif" alt="alert.gif" className="h-12 w-12 object-contain" />
             {/* Close Button */}
             <button
               type="button"

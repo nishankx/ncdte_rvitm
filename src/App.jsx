@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import InstitutionsMarquee from "./components/InstitutionsMarquee";
 import Hero from "./components/Hero";
+import DatesTimelineStrip from "./components/DatesTimelineStrip";
 import About from "./components/About";
 import Institution from "./components/Institution";
 import Department from "./components/Department";
@@ -63,6 +64,9 @@ export default function App() {
       <main className="flex-1">
         {/* 3. Hero (#home) */}
         <Hero onOpenModal={handleOpenModal} />
+
+        {/* Milestone Dates Horizontal Timeline Strip */}
+        <DatesTimelineStrip />
 
         {/* 4. About (#about) */}
         <About />
