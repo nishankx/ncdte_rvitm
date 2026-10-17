@@ -25,27 +25,19 @@ export default function About() {
   return (
     <section
       id="about"
-      className="from-[#ecffb6]/18 to-[#00545f]/8 relative scroll-mt-20 overflow-hidden bg-gradient-to-br via-white/85 py-20 md:py-32"
+      className="bg-gradient-to-r from-[#00545f] via-[#ecffb6] relative scroll-mt-20 overflow-hidden bg-gradient-to-br via-white/85 py-20 md:py-32"
     >
       {/* Dispersed Background Gradient Blobs */}
       <div
         aria-hidden="true"
         className="from-[#00545f]/14 via-[#ecffb6]/28 pointer-events-none absolute -left-28 top-16 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-br to-transparent blur-[140px]"
       />
-      <div
+       <div
         aria-hidden="true"
         className="from-[#d6fb00]/16 via-[#ecffb6]/28 pointer-events-none absolute -right-28 bottom-12 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-tl to-transparent blur-[140px]"
-      />
+      />  
 
       {/* Seamless Edge Fades */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-14 bg-gradient-to-b from-white/60 to-transparent"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 bg-gradient-to-t from-white/60 to-transparent"
-      />
 
       <Container className="relative z-10">
         <div className="flex flex-col items-center">
@@ -81,7 +73,7 @@ export default function About() {
                       {item.title}
                     </h4>
                   </div>
-                  <p className="text-small leading-relaxed text-graphite">{item.desc}</p>
+                  <p className="text-small leading-relaxed font-sans">{item.desc}</p>
                 </div>
               ))}
             </div>

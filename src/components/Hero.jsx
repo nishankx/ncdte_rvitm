@@ -205,7 +205,7 @@ export default function Hero({ onOpenModal }) {
           </div>
 
           {/* Lower Hero: Centered Countdown */}
-          <div className="mt-20 flex justify-center">
+          <div className="mt-2 flex justify-center">
             <Countdown />
           </div>
 
