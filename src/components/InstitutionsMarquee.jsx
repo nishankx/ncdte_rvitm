@@ -24,7 +24,7 @@ function PlainLogo({ logo }) {
         loading="eager"
         decoding="async"
         onError={() => setError(true)}
-        className="h-12 sm:h-10 md:h-14 lg:h-22 w-auto max-w-auto object-contain mix-blend-multiply"
+        className="h-9 sm:h-12 md:h-14 lg:h-22 w-auto max-w-auto object-contain mix-blend-multiply"
       />
     </div>
   );
