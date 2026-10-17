@@ -104,9 +104,6 @@ export default function RegistrationModal({ isOpen, onClose }) {
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#00545f] font-sans text-xs font-bold text-white">
                     1
                   </span>
-                  <h3 className="font-sans text-base font-semibold text-ink">
-                    Submit &amp; Register via Google Form
-                  </h3>
                 </div>
                 <p className="mt-2 text-small leading-relaxed text-graphite pl-10">
                   Fill in your author details, institution, research track, and upload your manuscript through the official conference Google Form.

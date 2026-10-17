@@ -49,7 +49,7 @@ export default function CtaBand({ onOpenModal }) {
                 rel="noopener noreferrer"
                 className="h-12 text-[15px]"
               >
-                Submit your paper →
+                Submit your paper
               </Button>
 
               {/* Optional Brochure Link */}

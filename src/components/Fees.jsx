@@ -114,18 +114,6 @@ export default function Fees({ onOpenModal }) {
                     </li>
                   ))}
                 </ul>
-
-                <div className="flex w-full justify-center pt-4">
-                  <Button
-                    variant="onDark"
-                    href={formHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full max-w-xs text-sm font-semibold"
-                  >
-                    Register via Google Form ↗
-                  </Button>
-                </div>
               </Card>
             </Reveal>
           </div>

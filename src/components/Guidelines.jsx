@@ -170,14 +170,6 @@ export default function Guidelines({ onOpenModal }) {
                 <span className="text-small text-graphite">
                   Registration deadline for accepted papers or posters: 25 November 2026.
                 </span>
-                <Button
-                  variant="primary"
-                  href={CONFIG.REGISTRATION_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Submit your paper →
-                </Button>
               </div>
             </Card>
           </Reveal>

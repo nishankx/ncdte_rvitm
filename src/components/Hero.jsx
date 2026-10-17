@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import Container from "./Container";
 import Countdown from "./Countdown";
 import Button from "./Button";
+import DeadlinePopup from "./DeadlinePopup";
 import { CONFIG } from "../config";
 
 export default function Hero({ onOpenModal }) {
@@ -169,6 +170,9 @@ export default function Hero({ onOpenModal }) {
           <div className="mt-2 flex justify-center">
             <Countdown />
           </div>
+
+          {/* Catchy Paper Submission Deadline Popup */}
+          <DeadlinePopup />
 
           {/* Centered Action buttons */}
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4 sm:mt-5 sm:gap-6">

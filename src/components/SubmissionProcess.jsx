@@ -103,19 +103,6 @@ export default function SubmissionProcess({ onOpenModal }) {
               </Reveal>
             ))}
           </div>
-
-          {/* CTA Row with onDark button */}
-          <Reveal delay={0.2} className="flex justify-center">
-            <Button
-              variant="onDark"
-              href={CONFIG.REGISTRATION_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-semibold"
-            >
-              Submit your paper →
-            </Button>
-          </Reveal>
         </div>
       </Container>
     </section>
