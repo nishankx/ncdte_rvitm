@@ -37,15 +37,6 @@ export default function Institution() {
         className="from-[#00545f]/14 via-[#ecffb6]/26 pointer-events-none absolute -left-28 bottom-10 -z-0 h-[520px] w-[520px] rounded-full bg-gradient-to-tr to-transparent blur-[140px]"
       />
 
-      {/* Seamless Edge Fades */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-14 bg-gradient-to-b from-white/60 to-transparent"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-14 bg-gradient-to-t from-white/60 to-transparent"
-      />
 
       <Container className="relative z-10">
         <div className="flex flex-col items-center text-center">

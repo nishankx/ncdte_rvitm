@@ -99,15 +99,6 @@ export default function Hero({ onOpenModal }) {
         className="from-[#d6fb00]/18 pointer-events-none absolute -bottom-14 -right-24 z-0 h-[520px] w-[520px] rounded-full bg-gradient-to-tl via-[#ecffb6]/30 to-transparent blur-[140px]"
       />
 
-      {/* Seamless Edge Fades */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-12 bg-gradient-to-b from-white/60 to-transparent"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-12 bg-gradient-to-t from-white/60 to-transparent"
-      />
 
       <Container className="relative z-10">
         <div className="mb-4 text-center">

@@ -25,7 +25,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-gradient-to-r from-[#00545f] via-[#ecffb6] relative scroll-mt-20 overflow-hidden bg-gradient-to-br via-white/85 py-20 md:py-32"
+      className="relative scroll-mt-20 overflow-hidden bg-gradient-to-br via-white/85 py-20 md:py-32"
     >
       {/* Dispersed Background Gradient Blobs */}
       <div
@@ -37,7 +37,14 @@ export default function About() {
         className="from-[#d6fb00]/16 via-[#ecffb6]/28 pointer-events-none absolute -right-28 bottom-12 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-tl to-transparent blur-[140px]"
       />  
 
-      {/* Seamless Edge Fades */}
+        <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-28 top-16 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-br from-[#0F2F31]/80 via-[#00D2C4]/10 to-transparent blur-[140px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-28 bottom-12 -z-0 h-[540px] w-[540px] rounded-full bg-gradient-to-tl from-[#E9AA3D]/12 via-[#1B393A]/50 to-transparent blur-[140px]"
+      />
 
       <Container className="relative z-10">
         <div className="flex flex-col items-center">
