@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Container from "./Container";
+import LightPatternBackground from "./LightPatternBackground";
 import { ALL_LOGOS } from "../data/affiliations";
 
 function PlainLogo({ logo, imgClassName = "h-5 sm:h-12 md:h-14 lg:h-22" }) {
@@ -35,7 +36,7 @@ export default function InstitutionsMarquee() {
     <section
       role="region"
       aria-label="Conference partner and institution logos"
-      className="bg-white w-full py-4 sm:py-5 md:py-2 lg:py-5 backdrop-blur-md overflow-hidden"
+      className="relative w-full overflow-hidden bg-gradient-to-r from-[#00545f]/6 via-white/85 to-[#d6fb00]/10 py-4 backdrop-blur-md  sm:py-5 md:py-2 lg:py-5"
     >
       {/* Mobile only: Continuous Marquee strip */}
       <div className="relative w-full overflow-hidden md:hidden">
