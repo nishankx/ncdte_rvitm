@@ -49,17 +49,6 @@ export default function CtaBand({ onOpenModal }) {
                 Submit your paper →
               </Button>
 
-              <Button
-                variant="ghostDark"
-                href={CONFIG.REGISTRATION_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                showArrow={false}
-                className="h-12 text-[15px]"
-              >
-                Register Now
-              </Button>
-
               {/* Optional Brochure Link */}
               {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
                 <a

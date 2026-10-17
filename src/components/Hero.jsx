@@ -58,8 +58,8 @@ export default function Hero({ onOpenModal }) {
             shouldReduceMotion
               ? {}
               : {
-                  scale: [1, 1.03, 1],
-                }
+                scale: [1, 1.03, 1],
+              }
           }
           transition={{
             duration: 22,
@@ -221,16 +221,16 @@ export default function Hero({ onOpenModal }) {
               Submit your paper →
             </Button>
 
-            <Button
-              variant="ghost"
-              href={CONFIG.REGISTRATION_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-10 px-5 text-sm sm:h-11"
-              showArrow={false}
-            >
-              Register Now
-            </Button>
+            {CONFIG.BROCHURE_URL && (
+              <Button
+                variant="ghost"
+                href="#brochure"
+                className="h-10 px-5 text-sm sm:h-11"
+                showArrow={false}
+              >
+                View Brochure ↓
+              </Button>
+            )}
           </div>
 
           {/* Quick Facts Stats Row */}

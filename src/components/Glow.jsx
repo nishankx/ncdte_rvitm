@@ -14,9 +14,8 @@ export default function Glow({
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none absolute -z-10 rounded-full blur-[90px] ${
-        colorMap[color] || colorMap.lavender
-      } ${className}`}
+      className={`pointer-events-none absolute -z-10 rounded-full blur-[90px] ${colorMap[color] || colorMap.lavender
+        } ${className}`}
     />
   );
 }

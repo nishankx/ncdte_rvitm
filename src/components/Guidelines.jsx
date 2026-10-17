@@ -23,12 +23,12 @@ export default function Guidelines({ onOpenModal }) {
   ];
 
   const indexingPartners = [
-    { name: "doi", label: "doi", type: "doi" },
-    { name: "Google Scholar", label: "Google Scholar", type: "scholar" },
-    { name: "publons", label: "publons", type: "publons" },
-    { name: "CiteFactor", label: "CiteFactor", type: "citefactor" },
-    { name: "Semantic Scholar", label: "Semantic Scholar", type: "semantic" },
-    { name: "Academia.edu", label: "Academia.edu", type: "academia" },
+    { name: "doi", label: "doi", img: "/images/logos/doi.png" },
+    { name: "Google Scholar", label: "Google Scholar", img: "/images/logos/google-scholar.webp" },
+    { name: "publons", label: "publons", img: "/images/logos/publons.webp" },
+    { name: "CiteFactor", label: "CiteFactor", img: "/images/logos/citefactor.png" },
+    { name: "Semantic Scholar", label: "Semantic Scholar", img: "/images/logos/semantic_scholar.png" },
+    { name: "Academia.edu", label: "Academia.edu", img: "/images/logos/academia_edu.png" },
   ];
 
   return (
@@ -134,43 +134,19 @@ export default function Guidelines({ onOpenModal }) {
                     <p className="text-small font-medium text-ink/90">
                       Accepted and presented papers will be published in relevant ISSN journals indexed in:
                     </p>
-                    <div className="mt-4 flex flex-wrap items-center gap-3">
+                    <div className="mt-5 flex flex-wrap items-center gap-3.5">
                       {indexingPartners.map((item) => (
                         <div
                           key={item.name}
-                          className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-1.5 shadow-sm transition-transform hover:-translate-y-0.5"
+                          className="inline-flex h-12 items-center gap-2.5 rounded-xl border border-[#EBE2CE] bg-[#F4F0E5]/90 px-3.5 py-1.5 shadow-soft backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#9EB2AE] hover:bg-white"
                         >
-                          {item.type === "doi" && (
-                            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#f39200] font-sans text-[10px] font-black text-white">
-                              doi
-                            </span>
-                          )}
-                          {item.type === "scholar" && (
-                            <svg className="h-4 w-4 text-[#4285F4]" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5l-7-3.82V17c0 3.31 3.13 6 7 6s7-2.69 7-6v-4.32l-7 3.82z" />
-                            </svg>
-                          )}
-                          {item.type === "publons" && (
-                            <span className="font-serif text-xs font-bold text-[#336699]">
-                              publons
-                            </span>
-                          )}
-                          {item.type === "citefactor" && (
-                            <span className="font-sans text-xs font-bold text-[#1a5f7a]">
-                              CiteFactor
-                            </span>
-                          )}
-                          {item.type === "semantic" && (
-                            <span className="font-sans text-xs font-bold text-[#185adb]">
-                              Semantic Scholar
-                            </span>
-                          )}
-                          {item.type === "academia" && (
-                            <span className="font-serif text-xs font-semibold text-[#8b0000]">
-                              Academia.edu
-                            </span>
-                          )}
-                          <span className="text-caption font-semibold text-slate-700">
+                          <img
+                            src={item.img}
+                            alt={item.name}
+                            className="h-7 w-auto max-w-[110px] object-contain mix-blend-multiply"
+                            loading="lazy"
+                          />
+                          <span className="text-caption font-semibold text-[#0F2F31]">
                             {item.label}
                           </span>
                         </div>
@@ -179,18 +155,17 @@ export default function Guidelines({ onOpenModal }) {
                   </div>
 
                   {/* Right: Scopus-indexed book series */}
-                  <div className="lg:col-span-4 lg:border-l lg:border-slate-200/80 lg:pl-8">
-                    <p className="text-small font-medium text-ink/90">
+                  <div className="lg:col-span-4 lg:border-l lg:border-[#EBE2CE] lg:pl-8">
+                    <p className="text-small font-medium text-[#0F2F31]/90">
                       Selected papers, after extension to full-length versions, will be published in a Scopus-indexed book series:
                     </p>
-                    <div className="mt-4 inline-flex items-center gap-3 rounded-md border border-[#ff6c00]/30 bg-orange-50/50 px-4 py-2 shadow-sm">
-                      <span className="font-sans text-[11px] font-black uppercase tracking-wider text-[#ff6c00]">
-                        ELSEVIER
-                      </span>
-                      <span className="h-4 w-px bg-slate-300" />
-                      <span className="font-sans text-sm font-bold tracking-tight text-[#00545f]">
-                        Scopus
-                      </span>
+                    <div className="mt-5 inline-flex h-12 items-center gap-3 rounded-xl border border-[#E9AA3D]/50 bg-[#EBE2CE]/50 px-4 py-2 shadow-soft backdrop-blur-sm transition-all hover:bg-white/90">
+                      <img
+                        src="/images/logos/elsevier_scopus.jpg"
+                        alt="Elsevier Scopus"
+                        className="h-8 w-auto max-w-[140px] object-contain mix-blend-multiply"
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                 </div>

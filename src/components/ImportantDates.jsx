@@ -75,9 +75,8 @@ export default function ImportantDates() {
                   <li className="flex flex-col items-center gap-3 py-8 text-center md:py-10">
                     {/* 1. Date (giant, centered) */}
                     <div
-                      className={`whitespace-normal break-words font-sans text-[clamp(2.75rem,8vw,6.5rem)] font-bold leading-none tracking-tighter sm:whitespace-nowrap ${
-                        isNext ? "text-aurora" : "text-ink"
-                      }`}
+                      className={`whitespace-normal break-words font-sans text-[clamp(2.75rem,8vw,6.5rem)] font-bold leading-none tracking-tighter sm:whitespace-nowrap ${isNext ? "text-aurora" : "text-ink"
+                        }`}
                     >
                       {item.dateDisplay}
                     </div>
@@ -97,9 +96,8 @@ export default function ImportantDates() {
                     {/* 3. Status Badge (centered) */}
                     <div className="pt-1">
                       <span
-                        className={`inline-block rounded-pill px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider ${
-                          isNext ? "bg-ink text-white" : "bg-mist-50 text-graphite"
-                        }`}
+                        className={`inline-block rounded-pill px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider ${isNext ? "bg-ink text-white" : "bg-mist-50 text-graphite"
+                          }`}
                       >
                         {item.status}
                       </span>

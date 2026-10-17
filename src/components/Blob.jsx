@@ -24,10 +24,10 @@ export default function Blob({ className = "" }) {
           shouldReduceMotion
             ? {}
             : {
-                y: [0, -26, 0],
-                rotate: [0, 4, 0],
-                scale: [1, 1.04, 1],
-              }
+              y: [0, -26, 0],
+              rotate: [0, 4, 0],
+              scale: [1, 1.04, 1],
+            }
         }
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -49,8 +49,8 @@ export default function Blob({ className = "" }) {
             shouldReduceMotion
               ? {}
               : {
-                  d: [morphPath1, morphPath2, morphPath1],
-                }
+                d: [morphPath1, morphPath2, morphPath1],
+              }
           }
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         />

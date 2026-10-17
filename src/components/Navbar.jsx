@@ -31,6 +31,7 @@ export default function Navbar({ onOpenModal }) {
     { id: "guidelines", label: "Guidelines" },
     { id: "dates", label: "Important Dates" },
     { id: "registration", label: "Registration" },
+    { id: "brochure", label: "Brochure" },
     { id: "committee", label: "Committee" },
     { id: "faq", label: "FAQ" },
   ];
@@ -83,9 +84,8 @@ export default function Navbar({ onOpenModal }) {
   return (
     <header
       ref={navRef}
-      className={`sticky top-0 z-50 h-[72px] bg-white transition-shadow duration-300 ${
-        isScrolled || isOpen ? "shadow-soft" : ""
-      }`}
+      className={`sticky top-0 z-50 h-[72px] bg-white transition-shadow duration-300 ${isScrolled || isOpen ? "shadow-soft" : ""
+        }`}
     >
       <Container className="h-full !px-4 sm:!px-6 md:!px-12">
         <div className="flex h-full items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr]">
@@ -116,9 +116,8 @@ export default function Navbar({ onOpenModal }) {
                   href={`#${link.id}`}
                   onMouseEnter={() => setHoveredId(link.id)}
                   onMouseLeave={() => setHoveredId(null)}
-                  className={`relative cursor-pointer select-none whitespace-nowrap py-1 font-sans text-[13.5px] transition-colors xl:text-[15px] ${
-                    isActive ? "font-semibold text-ink" : "font-medium text-ink hover:text-ink"
-                  }`}
+                  className={`relative cursor-pointer select-none whitespace-nowrap py-1 font-sans text-[13.5px] transition-colors xl:text-[15px] ${isActive ? "font-semibold text-ink" : "font-medium text-ink hover:text-ink"
+                    }`}
                 >
                   <span>{link.label}</span>
 
@@ -170,14 +169,12 @@ export default function Navbar({ onOpenModal }) {
             >
               <div className="relative flex h-3.5 w-5 flex-col justify-between">
                 <span
-                  className={`h-[2px] w-5 rounded-full bg-ink transition-all duration-300 ${
-                    isOpen ? "translate-y-[6px] rotate-45" : ""
-                  }`}
+                  className={`h-[2px] w-5 rounded-full bg-ink transition-all duration-300 ${isOpen ? "translate-y-[6px] rotate-45" : ""
+                    }`}
                 />
                 <span
-                  className={`h-[2px] w-5 rounded-full bg-ink transition-all duration-300 ${
-                    isOpen ? "-translate-y-[6px] -rotate-45" : ""
-                  }`}
+                  className={`h-[2px] w-5 rounded-full bg-ink transition-all duration-300 ${isOpen ? "-translate-y-[6px] -rotate-45" : ""
+                    }`}
                 />
               </div>
             </button>
@@ -204,9 +201,8 @@ export default function Navbar({ onOpenModal }) {
                       key={link.id}
                       href={`#${link.id}`}
                       onClick={(e) => handleLinkClick(e, link.id)}
-                      className={`w-full py-2.5 font-sans text-[18px] font-medium transition-colors sm:text-[20px] ${
-                        isActive ? "text-aurora font-semibold" : "text-ink hover:text-ink/70"
-                      }`}
+                      className={`w-full py-2.5 font-sans text-[18px] font-medium transition-colors sm:text-[20px] ${isActive ? "text-aurora font-semibold" : "text-ink hover:text-ink/70"
+                        }`}
                     >
                       {link.label}
                     </a>

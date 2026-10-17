@@ -1,30 +1,31 @@
 import React, { useState } from "react";
-import { AFFILIATIONS_DATA } from "../data/affiliations";
+import Container from "./Container";
+import { ALL_LOGOS } from "../data/affiliations";
 
-function StaticLogoItem({ aff }) {
+function PlainLogo({ logo }) {
   const [error, setError] = useState(false);
+
+  if (error) {
+    return (
+      <span className="font-sans text-sm font-bold tracking-wider text-[#0F2F31]">
+        {logo.name}
+      </span>
+    );
+  }
 
   return (
     <div
-      title={aff.fullName}
-      className="flex h-[46px] w-full min-w-0 cursor-default select-none items-center justify-center sm:h-[56px] md:h-[64px]"
+      title={logo.fullName || logo.name}
+      className="flex items-center justify-center select-none transition-transform duration-300 hover:scale-105"
     >
-      {!error ? (
-        <img
-          src={aff.img}
-          alt={aff.alt || aff.fullName}
-          width={200}
-          height={68}
-          decoding="async"
-          loading="eager"
-          onError={() => setError(true)}
-          className="h-auto max-h-[42px] w-auto max-w-full object-contain mix-blend-multiply transition-transform hover:scale-105 sm:max-h-[52px] md:max-h-[60px]"
-        />
-      ) : (
-        <span className="truncate text-center font-sans text-xs font-bold tracking-wider text-graphite sm:text-sm">
-          {aff.name}
-        </span>
-      )}
+      <img
+        src={logo.img}
+        alt={logo.alt || logo.fullName || logo.name}
+        loading="eager"
+        decoding="async"
+        onError={() => setError(true)}
+        className="h-12 sm:h-16 md:h-20 lg:h-22 w-auto max-w-[150px] sm:max-w-[200px] md:max-w-[240px] object-contain mix-blend-multiply"
+      />
     </div>
   );
 }
@@ -33,16 +34,16 @@ export default function InstitutionsMarquee() {
   return (
     <section
       role="region"
-      aria-label="Participating institutions"
-      className="relative w-full border-b border-[#00545f]/10 bg-white py-1 sm:py-1.5 md:py-2"
+      aria-label="Conference partner and institution logos"
+      className="relative w-full border-b border-[#EBE2CE] bg-[#F4F0E5]/90 py-6 sm:py-8 md:py-10 backdrop-blur-md"
     >
-      <div className="mx-auto w-full max-w-2xl px-2 sm:px-4">
-        <div className="flex items-center justify-center gap-8 sm:gap-16">
-          {AFFILIATIONS_DATA.map((aff) => (
-            <StaticLogoItem key={aff.name} aff={aff} />
+      <Container className="max-w-7xl">
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-12 lg:gap-14">
+          {ALL_LOGOS.map((logo) => (
+            <PlainLogo key={logo.name} logo={logo} />
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

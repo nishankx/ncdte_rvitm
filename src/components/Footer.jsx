@@ -11,6 +11,7 @@ export default function Footer() {
     { name: "Submission Guidelines", href: "#guidelines" },
     { name: "Important Dates", href: "#dates" },
     { name: "Registration Fee", href: "#registration" },
+    { name: "Conference Brochure", href: "#brochure" },
     { name: "Organizing Committee", href: "#committee" },
     { name: "FAQ", href: "#faq" },
   ];
@@ -53,19 +54,19 @@ export default function Footer() {
               <span className="block text-eyebrow uppercase tracking-widest text-white/40">
                 Recognised & Governed By
               </span>
-              <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3.5">
                 {AFFILIATIONS_DATA.map((aff) => (
                   <div
                     key={aff.name}
-                    className="inline-flex items-center justify-center rounded-md bg-white px-3 py-2"
+                    className="inline-flex h-12 items-center justify-center rounded-xl border border-[#264548] bg-white/95 px-4 py-2 shadow-soft transition-transform hover:-translate-y-0.5"
                     title={aff.fullName}
                   >
                     <img
                       src={aff.img}
                       alt={aff.alt || aff.name}
-                      width={100}
-                      height={24}
-                      className="max-h-6 w-auto object-contain"
+                      width={120}
+                      height={32}
+                      className="max-h-8 w-auto object-contain"
                       loading="lazy"
                     />
                   </div>

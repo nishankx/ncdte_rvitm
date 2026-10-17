@@ -70,9 +70,8 @@ export default function FAQ() {
                       <motion.span
                         animate={{ rotate: isOpen ? 45 : 0 }}
                         transition={{ duration: 0.2 }}
-                        className={`shrink-0 text-2xl font-light transition-colors ${
-                          isOpen ? "text-aurora font-medium" : "text-graphite"
-                        }`}
+                        className={`shrink-0 text-2xl font-light transition-colors ${isOpen ? "text-aurora font-medium" : "text-graphite"
+                          }`}
                         aria-hidden="true"
                       >
                         +
