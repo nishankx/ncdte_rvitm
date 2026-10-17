@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col overflow-x-clip bg-white font-sans text-ink antialiased selection:bg-aurora-ice">
+    <div className="flex min-h-screen flex-col overflow-x-clip font-sans text-ink antialiased selection:bg-aurora-ice">
       {/* Site-wide Ambient Aurora Mesh & Subtle Geometric Grids */}
       <div
         aria-hidden="true"

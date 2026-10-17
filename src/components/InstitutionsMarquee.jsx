@@ -24,7 +24,7 @@ function PlainLogo({ logo }) {
         loading="eager"
         decoding="async"
         onError={() => setError(true)}
-        className="h-12 sm:h-16 md:h-20 lg:h-22 w-auto max-w-[150px] sm:max-w-[200px] md:max-w-[240px] object-contain mix-blend-multiply"
+        className="h-12 sm:h-10 md:h-14 lg:h-22 w-auto max-w-auto object-contain mix-blend-multiply"
       />
     </div>
   );
@@ -35,10 +35,10 @@ export default function InstitutionsMarquee() {
     <section
       role="region"
       aria-label="Conference partner and institution logos"
-      className="relative w-full py-6 sm:py-8 md:py-10 backdrop-blur-md"
+      className="bg-white w-full py-5 sm:py-5 md:py-2 lg:py-5 backdrop-blur-md"
     >
       <Container className="max-w-7xl">
-        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-12 lg:gap-14">
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-10 lg:gap-14">
           {ALL_LOGOS.map((logo) => (
             <PlainLogo key={logo.name} logo={logo} />
           ))}

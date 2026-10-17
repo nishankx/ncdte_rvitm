@@ -31,7 +31,6 @@ export default function Navbar({ onOpenModal }) {
     { id: "guidelines", label: "Guidelines" },
     { id: "dates", label: "Important Dates" },
     { id: "registration", label: "Registration" },
-    { id: "brochure", label: "Brochure" },
     { id: "committee", label: "Committee" },
     { id: "faq", label: "FAQ" },
   ];

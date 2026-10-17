@@ -20,7 +20,7 @@ export const AFFILIATIONS_DATA = [
 ];
 
 export const ALL_LOGOS = [
-  {
+   {
     name: "RSST",
     fullName: "Rashtreeya Sikshana Samithi Trust",
     alt: "Rashtreeya Sikshana Samithi Trust (RSST)",
@@ -33,11 +33,18 @@ export const ALL_LOGOS = [
     img: "/images/logos/vtu.png",
   },
   {
-    name: "AICTE",
-    fullName: "All India Council for Technical Education",
-    alt: "All India Council for Technical Education",
-    img: "/images/logos/aicte.png",
+    name: "DOI",
+    fullName: "Digital Object Identifier (DOI)",
+    alt: "Digital Object Identifier (DOI)",
+    img: "/images/logos/doi.png",
   },
+  {
+    name: "Semantic Scholar",
+    fullName: "Semantic Scholar",
+    alt: "Semantic Scholar AI Research",
+    img: "/images/logos/semantic_scholar.png",
+  },
+  
   {
     name: "Scopus",
     fullName: "Elsevier Scopus",
@@ -50,12 +57,7 @@ export const ALL_LOGOS = [
     alt: "Google Scholar Indexed",
     img: "/images/logos/google-scholar.png",
   },
-  {
-    name: "DOI",
-    fullName: "Digital Object Identifier (DOI)",
-    alt: "Digital Object Identifier (DOI)",
-    img: "/images/logos/doi.png",
-  },
+
   {
     name: "Publons",
     fullName: "Publons",
@@ -68,12 +70,7 @@ export const ALL_LOGOS = [
     alt: "CiteFactor Indexed",
     img: "/images/logos/citefactor.png",
   },
-  {
-    name: "Semantic Scholar",
-    fullName: "Semantic Scholar",
-    alt: "Semantic Scholar AI Research",
-    img: "/images/logos/semantic_scholar.png",
-  },
+  
   {
     name: "Academia.edu",
     fullName: "Academia.edu",

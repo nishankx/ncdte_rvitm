@@ -142,7 +142,7 @@ export default function Hero({ onOpenModal }) {
             <span className="block overflow-hidden pb-[0.08em]">
               <motion.span
                 variants={lineVariants}
-                className="mx-auto block max-w-[18ch] font-serif text-[clamp(1.75rem,3vw,3.25rem)] leading-tight text-ink"
+                className="mx-auto block max-w-auto font-serif text-[clamp(1.75rem,3vw,3.25rem)] leading-tight text-ink"
               >
                 {" "}
                 Digital Technology <em className="font-serif font-normal italic">&amp;</em>{" "}
@@ -154,7 +154,7 @@ export default function Hero({ onOpenModal }) {
             <span className="mt-1 block overflow-hidden pb-[0.04em] sm:mt-2">
               <motion.span
                 variants={lineVariants}
-                className="relative inline-block bg-gradient-to-r from-[#00545f] via-[#007b89] to-[#d6fb00] bg-clip-text font-sans text-[clamp(3.5rem,30vw,15rem)] font-black leading-[0.88] tracking-tighter text-transparent drop-shadow-[0_10px_30px_rgba(0,84,95,0.20)]"
+                className="relative inline-block bg-gradient-to-r from-[#00545f] via-[#007b89] to-[#d6fb00] bg-clip-text font-sans text-[clamp(3.5rem,16vw,10rem)] font-black leading-[0.88] tracking-tighter text-transparent drop-shadow-[0_10px_30px_rgba(0,84,95,0.20)]"
               >
                 NCDTE
               </motion.span>
@@ -218,19 +218,8 @@ export default function Hero({ onOpenModal }) {
               rel="noopener noreferrer"
               className="h-10 px-6 text-sm sm:h-11"
             >
-              Submit your paper →
+              Submit your paper
             </Button>
-
-            {CONFIG.BROCHURE_URL && (
-              <Button
-                variant="ghost"
-                href="#brochure"
-                className="h-10 px-5 text-sm sm:h-11"
-                showArrow={false}
-              >
-                View Brochure ↓
-              </Button>
-            )}
           </div>
 
           {/* Quick Facts Stats Row */}
