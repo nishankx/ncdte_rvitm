@@ -34,15 +34,15 @@ export default function Department() {
 
       <Container className="relative z-10">
         <div className="flex flex-col items-center text-center">
-          <SectionLabel onWhite={false}>Department</SectionLabel>
+          <SectionLabel onWhite={false}>Organizing Department</SectionLabel>
           <SectionHeading>
-            Computer Science &{" "}
+            Computer Science &amp;{" "}
             <em className="font-serif font-normal italic text-ink">Engineering</em>
           </SectionHeading>
 
           {/* Two-column grid of equal-height cards */}
           <div className="grid w-full grid-cols-1 items-stretch gap-6 md:grid-cols-2">
-            {/* Left Card: HoD, description, focus areas */}
+            {/* Left Card: Department Coordination & Leadership */}
             <Reveal className="h-full">
               <Card
                 onWhite={false}
@@ -50,84 +50,66 @@ export default function Department() {
               >
                 <div className="w-full">
                   <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
-                    Head of Department
+                    Conference Coordination
                   </span>
-                  <h3 className="mb-6 text-left font-serif text-[32px] italic leading-tight text-ink">
-                    {department.hod}
+                  <h3 className="mb-4 text-left font-serif text-[28px] italic leading-tight text-ink">
+                    {department.cluster}
                   </h3>
-                  <p className="mb-8 w-full text-body leading-relaxed text-ink/85">
+                  <p className="mb-6 w-full text-body leading-relaxed text-ink/85">
                     {department.desc}
                   </p>
                 </div>
 
-                <div className="w-full">
-                  <span className="mb-3 block text-left text-eyebrow uppercase tracking-widest text-graphite">
-                    Focus Areas
-                  </span>
-                  <div className="flex flex-wrap gap-2.5">
-                    {department.focus.map((area, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-flex select-none rounded-md bg-mist-50 px-3.5 py-2 text-[15px] font-semibold text-graphite"
-                      >
-                        {area}
-                      </span>
-                    ))}
+                <div className="w-full space-y-3 border-t border-slate-200/80 pt-5">
+                  <div>
+                    <p className="font-serif text-lg font-semibold italic text-ink">{department.dean}</p>
+                    <p className="text-caption text-graphite">{department.deanRole}</p>
+                  </div>
+                  <div>
+                    <p className="font-serif text-lg font-semibold italic text-ink">{department.hod}</p>
+                    <p className="text-caption text-graphite">{department.hodRole}</p>
                   </div>
                 </div>
               </Card>
             </Reveal>
 
-            {/* Right Column: Two stacked Cards for Vision & Mission */}
-            <div className="flex flex-col gap-6">
-              {/* Vision Card */}
-              <Reveal delay={0.1} className="flex-1">
-                <Card
-                  onWhite={false}
-                  className="flex h-full flex-col items-start justify-center text-left"
-                >
+            {/* Right Card: Coordinators from Brochure */}
+            <Reveal delay={0.1} className="h-full">
+              <Card
+                onWhite={false}
+                className="flex h-full flex-col items-start justify-between text-left"
+              >
+                <div className="w-full">
                   <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
-                    Strategic Direction
+                    Department Faculty Coordinators
                   </span>
-                  <h4 className="mb-3 text-left font-serif text-2xl italic text-ink">
-                    Department Vision
+                  <h4 className="mb-6 text-left font-serif text-2xl italic text-ink">
+                    Organizing Coordinators
                   </h4>
-                  <p className="w-full text-body leading-relaxed text-ink/85">
-                    {department.vision}
-                  </p>
-                </Card>
-              </Reveal>
 
-              {/* Mission Card */}
-              <Reveal delay={0.15} className="flex-1">
-                <Card
-                  onWhite={false}
-                  className="flex h-full flex-col items-start justify-center text-left"
-                >
-                  <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
-                    Commitment to Excellence
-                  </span>
-                  <h4 className="mb-3 text-left font-serif text-2xl italic text-ink">
-                    Department Mission
-                  </h4>
-                  {/* Bullet list */}
-                  <ul className="w-full list-none space-y-3">
-                    {department.mission.map((m, idx) => (
+                  <ul className="w-full list-none space-y-3.5">
+                    {department.coordinators.map((coord, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-3 text-left text-body text-ink/85"
+                        className="flex items-start gap-3 text-left text-small text-ink/85"
                       >
                         <span
                           aria-hidden="true"
-                          className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet"
+                          className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-[#00545f]"
                         />
-                        <span>{m}</span>
+                        <span>{coord}</span>
                       </li>
                     ))}
                   </ul>
-                </Card>
-              </Reveal>
-            </div>
+                </div>
+
+                <div className="mt-6 w-full border-t border-slate-200/80 pt-4">
+                  <span className="text-caption text-graphite">
+                    Coordinated by Department of Computer Science and Engineering · CSE Cluster, RVITM
+                  </span>
+                </div>
+              </Card>
+            </Reveal>
           </div>
         </div>
       </Container>

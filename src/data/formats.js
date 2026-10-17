@@ -1,37 +1,26 @@
-// DRAFT: verify with organisers before publishing
-
 export const PRESENTATION_FORMATS_DATA = [
   {
     id: "paper",
     title: "Paper Presentation",
-    tagline: "Oral Track Session",
-    desc: "Original, unpublished research presented before the conference audience.",
-    accent: "from-royal to-banner",
+    tagline: "Submission Guidelines",
+    desc: "Original and unpublished research papers not under consideration for publication elsewhere.",
     bullets: [
-      { text: "Original and unpublished work not under consideration elsewhere", official: true },
-      { text: "Similarity / plagiarism level must be strictly below 15%", official: true },
-      { text: "Must follow the prescribed conference paper template", official: true },
-      { text: "Rigorous peer-review process with email notification", official: true },
-      { text: "Selected papers will be published in relevant ISSN Journal", official: true },
+      { text: "Papers must be original and unpublished, and not under consideration for publication elsewhere." },
+      { text: "Follow the prescribed conference paper template, available on the conference website." },
+      { text: "Similarity / AI plagiarism level of the paper must be below 15%." },
+      { text: "Authors of accepted papers must register using the designated registration link." },
     ],
   },
   {
-    id: "poster",
-    title: "Poster Presentation",
-    tagline: "Visual Display Session",
-    desc: "A visual presentation of research findings and project outcomes.",
-    accent: "from-plum to-indigoDeep",
+    id: "notes",
+    title: "Important Notes & Publication",
+    tagline: "Review & Publication",
+    desc: "Peer review, author registration deadline, and indexed publication avenues.",
     bullets: [
-      {
-        text: "Visual presentation of research findings and prototype demonstrations",
-        official: false,
-      }, // DRAFT
-      { text: "Recommended poster size: 3 feet by 4 feet (36 x 48 inches)", official: false }, // DRAFT: confirm dimensions
-      { text: "Acceptance status is communicated by email after peer review", official: true },
-      {
-        text: "At least one author of each accepted paper or poster must register on or before 20 November 2026",
-        official: true,
-      },
+      { text: "Acceptance status will be communicated by email after the peer-review process." },
+      { text: "At least one author of each accepted paper or poster must register by paying the applicable fee on or before 25 November 2026." },
+      { text: "Accepted and presented papers will be published in relevant ISSN journals indexed in: doi, Google Scholar, publons, CiteFactor, Semantic Scholar, Academia.edu." },
+      { text: "Selected papers, after extension to full-length versions, will be published in a Scopus-indexed book series." },
     ],
   },
 ];

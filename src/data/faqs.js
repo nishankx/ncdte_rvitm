@@ -1,74 +1,51 @@
 export const FAQS_DATA = [
   {
     id: "faq-1",
-    question: "Who can participate?",
-    answer: "Researchers, academicians, industry professionals, and students.",
+    question: "What is NCDTE-2026?",
+    answer:
+      "NCDTE-2026 brings together researchers, academicians, industry professionals and students to exchange knowledge, share ideas and explore emerging developments in digital technology and engineering. It showcases cutting-edge research, innovations and practical solutions to contemporary challenges, fostering interdisciplinary collaboration and meaningful academia-industry interaction.",
   },
   {
     id: "faq-2",
-    question: "What topics are accepted?",
+    question: "Who is organizing the conference?",
     answer:
-      "Original research papers presenting significant findings, project outcomes, experimental studies, and industrial experiences in the following areas, but not limited to:\n\n1. Emerging Digital Technologies and Artificial Intelligence\n2. Smart Systems, IoT, Robotics and Intelligent Automation\n3. Computing, Communication, Networking and Cybersecurity\n4. Advanced Engineering, Electronics and Intelligent Systems\n5. Sustainable Engineering and Emerging Applications",
+      "NCDTE-2026 is organized by RV Institute of Technology and Management (RVITM), coordinated by Department of Computer Science and Engineering · CSE Cluster.\n\nAddress: Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India.",
   },
   {
     id: "faq-3",
-    question: "What are the submission requirements?",
+    question: "What are the research tracks?",
     answer:
-      "Submitted papers must be original and unpublished and should not be under consideration for publication elsewhere. Authors are requested to follow the prescribed conference paper template, available on the conference website. The similarity/plagiarism level of the submitted paper should be below 15%. Authors of accepted papers must complete the registration process using the designated registration link.",
+      "Original research papers presenting significant findings, project outcomes, experimental studies and industrial experiences are invited in:\n\n• Track 1: Generative AI, Agentic AI, Machine Learning and Data Science\n• Track 2: IoT, Edge Computing, Robotics and Smart Automation\n• Track 3: Cybersecurity, Blockchain and Trustworthy Computing\n• Track 4: Cloud, Communication Networks and Quantum Technologies\n• Track 5: Advanced Engineering, Electronics and Embedded Systems\n• Track 6: Sustainable Technologies, Digital Health and Smart Cities",
   },
   {
     id: "faq-4",
-    question: "When are the key deadlines?",
+    question: "What are the important deadlines?",
     answer:
-      "• Submission Deadline: 2nd November, 2026\n• Notification of Acceptance: 10th November, 2026\n• Registration Deadline: 20th November, 2026\n• Conference Date: 4th December, 2026",
+      "• Submission Deadline: 10 November 2026\n• Notification of Acceptance: 20 November 2026\n• Registration Deadline: 25 November 2026\n• Conference Date: 4 December 2026",
   },
   {
     id: "faq-5",
-    question: "Will accepted papers be published?",
-    answer: "Selected papers will be published in relevant ISSN Journal.",
+    question: "What are the paper submission guidelines?",
+    answer:
+      "• Papers must be original and unpublished, and not under consideration for publication elsewhere.\n• Follow the prescribed conference paper template, available on the conference website.\n• Similarity / AI plagiarism level of the paper must be below 15%.\n• Authors of accepted papers must register using the designated registration link.",
   },
   {
     id: "faq-6",
-    question: "What is the registration fee?",
+    question: "What is the registration fee and how do I pay?",
     answer:
-      "Rs. 1300 for UG Student / PG Student / Academicians; extra team members Rs. 200. A registration kit will be provided for participants who register by paying the full fee of Rs. 1300.",
+      "• Registration Fee: ₹1,300 (UG Students · PG Students · Academicians)\n• Extra team member: ₹200\n• One registration kit will be provided per registration.\n• Registration & Payment Procedure: Authors register using the official Google Form. Following paper review, payment procedures will be sent directly to authors via email.\n• At least one author of each accepted paper or poster must register by paying the applicable fee on or before 25 November 2026.",
   },
   {
     id: "faq-7",
-    question: "How will I know if my paper is accepted?",
+    question: "Where will accepted papers be published?",
     answer:
-      "The acceptance status of submitted papers will be communicated to the authors via email following the peer-review process.",
+      "• Accepted and presented papers will be published in relevant ISSN journals indexed in: doi, Google Scholar, publons, CiteFactor, Semantic Scholar, and Academia.edu.\n• Selected papers, after extension to full-length versions, will be published in a Scopus-indexed book series (Elsevier Scopus).",
   },
-  // New additions:
   {
     id: "faq-8",
-    question: "How do I submit my paper?",
-    answer:
-      "Email your full paper to conference.rvitm@rvei.edu.in on or before 2 November 2026, following the conference template.",
-  },
-  {
-    id: "faq-9",
-    question: "What are the presentation formats?",
-    answer:
-      "Paper presentations and poster presentations. At least one author of each accepted paper or poster must register by 20 November 2026.",
-  },
-  {
-    id: "faq-10",
-    question: "Does the registration fee include a kit?",
-    answer:
-      "A registration kit is provided to participants who register by paying the full fee of Rs. 1300.",
-  },
-  {
-    id: "faq-11",
-    question: "Where is the conference held?",
-    answer:
-      "RV Institute of Technology and Management, Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076.",
-    hasMapLink: true,
-  },
-  {
-    id: "faq-12",
     question: "Who should I contact for help?",
     answer:
-      "For any assistance or queries, contact our conference coordinators:\n• Helpline Numbers: 9655523276, 9902028279, 7200575617, 9739981676\n• Email: conference.rvitm@rvei.edu.in",
+      "Contact the conference coordinators:\n• Phone: 99020 28279 · 72005 75617 · 97399 81676\n• Email: conference.rvitm@rvei.edu.in\n• Venue: RV Institute of Technology and Management, Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076",
+    hasMapLink: true,
   },
 ];

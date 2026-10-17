@@ -1,34 +1,25 @@
-// DRAFT items marked below: verify with organisers before publishing
-
 export const FEES_DATA = {
   main: {
-    category: "UG Student / PG Student / Academicians",
-    amount: "Rs. 1300",
+    category: "UG Students · PG Students · Academicians",
+    amount: "₹1,300",
     kitIncluded: true,
-    description:
-      "Includes access to all technical sessions, presentation slots, conference kit, and certificate.",
+    description: "One registration kit will be provided per registration.",
   },
   secondary: {
-    category: "Extra Team Members",
-    amount: "Rs. 200",
+    category: "Extra team member",
+    amount: "₹200",
     kitIncluded: false,
-    description:
-      "Applicable for co-authors or additional team members attending the presentation sessions.",
+    description: "Applicable for extra team members per registration.",
   },
-  note: "Registration Kit will be provided for participants who register by paying the full fee of Rs. 1300.",
+  note: "One registration kit will be provided per registration.",
   deadlineNotice:
-    "At least one author of each accepted paper or poster must complete registration on or before 20 November 2026.",
-  extraMembersNote: "Extra team members: Rs. 200 each.",
+    "At least one author of each accepted paper or poster must register by paying the applicable fee on or before 25 November 2026.",
+  extraMembersNote: "Extra team member: ₹200",
   inclusions: [
-    { text: "Full conference access", official: true },
-    {
-      text: "Registration kit (for participants who pay the full fee of Rs. 1300)",
-      official: true,
-    },
-    {
-      text: "Eligibility for publication of selected papers in a relevant ISSN Journal",
-      official: true,
-    },
-    { text: "Certificate of participation / presentation", official: false }, // DRAFT
+    { text: "Registration category: UG Students · PG Students · Academicians (₹1,300)" },
+    { text: "Extra team member: ₹200" },
+    { text: "One registration kit will be provided per registration" },
+    { text: "Accepted and presented papers published in relevant ISSN journals indexed in doi, Google Scholar, publons, CiteFactor, Semantic Scholar, Academia.edu" },
+    { text: "Selected papers, after extension to full-length versions, published in a Scopus-indexed book series" },
   ],
 };

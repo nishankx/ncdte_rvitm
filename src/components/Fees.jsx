@@ -6,8 +6,13 @@ import Reveal from "./Reveal";
 import Button from "./Button";
 import Card from "./Card";
 import { FEES_DATA } from "../data/fees";
+import { CONFIG } from "../config";
 
 export default function Fees({ onOpenModal }) {
+  const formHref =
+    CONFIG.REGISTRATION_FORM_URL ||
+    "https://docs.google.com/forms/d/e/1FAIpQLSfVttXz-rb-C6C21Xz5obDIeep6rOzu0NIhewn3Eus3gDnUCQ/viewform?usp=publish-editor";
+
   return (
     <section
       id="registration"
@@ -40,33 +45,36 @@ export default function Fees({ onOpenModal }) {
             Registration <em className="font-serif font-normal italic text-ink">Fee</em>
           </SectionHeading>
 
-          {/* Single centered axis: Price block on top, Card beneath, max-w-3xl mx-auto */}
-          <div className="mx-auto flex w-full max-w-3xl flex-col items-center space-y-12 text-center">
-            {/* Top Block: Giant Fee Numbers & Details */}
-            <Reveal className="w-full space-y-6">
+          {/* Single centered axis: Price block on top, Card beneath */}
+          <div className="mx-auto flex w-full max-w-3xl flex-col items-center space-y-10 text-center">
+            {/* Top Block: Giant Fee Numbers & Details matching brochure banner */}
+            <Reveal className="w-full space-y-5">
               <span className="block text-eyebrow uppercase tracking-widest text-graphite">
-                Primary Participation Fee
+                Conference Registration
               </span>
 
-              {/* Giant Rs. 1300 in Satoshi 700 + text-aurora */}
-              <div className="text-aurora mt-2 select-none font-sans text-[clamp(5rem,13vw,11rem)] font-bold leading-none tracking-tighter">
-                Rs. 1300
+              {/* Giant ₹1,300 in Satoshi 700 + text-aurora */}
+              <div className="text-aurora mt-2 select-none font-sans text-[clamp(4.5rem,12vw,9.5rem)] font-bold leading-none tracking-tighter">
+                ₹1,300
               </div>
 
-              {/* Label in Serif Italic 28px */}
-              <h3 className="mt-3 font-serif text-[28px] italic leading-tight text-ink">
+              {/* Category */}
+              <h3 className="mt-3 font-serif text-[26px] italic leading-tight text-ink sm:text-[30px]">
                 {FEES_DATA.main.category}
               </h3>
 
               {/* Extra Team Members */}
-              <p className="pt-2 font-sans text-xl font-medium text-ink">
+              <div className="inline-flex rounded-full bg-[#00545f]/10 px-5 py-2 font-sans text-base font-semibold text-[#00545f] sm:text-lg">
                 {FEES_DATA.extraMembersNote}
-              </p>
+              </div>
 
               {/* Kit Note & Deadline Note */}
-              <div className="mx-auto max-w-[54ch] space-y-2 pt-6 text-small text-graphite">
-                <p>{FEES_DATA.note}</p>
-                <p className="font-medium text-ink">{FEES_DATA.deadlineNotice}</p>
+              <div className="mx-auto max-w-[54ch] space-y-2 pt-4 text-small text-graphite">
+                <p className="font-medium text-ink/90">{FEES_DATA.note}</p>
+                <p className="font-medium text-[#00545f]">{FEES_DATA.deadlineNotice}</p>
+                <p className="text-caption text-graphite pt-1">
+                  Complete your registration via Google Form. Payment procedures will be sent directly to your registered email address following review.
+                </p>
               </div>
             </Reveal>
 
@@ -78,10 +86,10 @@ export default function Fees({ onOpenModal }) {
               >
                 <div className="w-full text-left">
                   <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
-                    Delegate Inclusions
+                    Fee Inclusions
                   </span>
                   <h4 className="text-left font-serif text-2xl italic text-ink">
-                    What the registration includes
+                    Registration details & publication eligibility
                   </h4>
                 </div>
 
@@ -103,10 +111,12 @@ export default function Fees({ onOpenModal }) {
                 <div className="flex w-full justify-center pt-4">
                   <Button
                     variant="primary"
-                    onClick={() => onOpenModal("registration")}
+                    href={formHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full max-w-xs text-sm font-medium"
                   >
-                    Register Now
+                    Register via Google Form ↗
                   </Button>
                 </div>
               </Card>

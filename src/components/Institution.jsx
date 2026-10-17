@@ -104,27 +104,21 @@ export default function Institution() {
                 </div>
               </Reveal>
 
-              {/* Vision and Mission as Two Plain Text Blocks with Serif Italic Subheadings to the left */}
-              <div className="w-full space-y-6 pt-2">
+              {/* Institutional Leadership from brochure */}
+              <div className="w-full space-y-4 pt-2">
                 <Reveal delay={0.2} className="w-full">
-                  <div className="space-y-2 text-left">
-                    <h3 className="text-left font-serif text-2xl italic text-ink">
-                      Institution Vision
-                    </h3>
-                    <p className="w-full text-small leading-relaxed text-graphite">
-                      {INSTITUTION_DATA.vision}
-                    </p>
-                  </div>
-                </Reveal>
-
-                <Reveal delay={0.25} className="w-full">
-                  <div className="space-y-2 text-left">
-                    <h3 className="text-left font-serif text-2xl italic text-ink">
-                      Institution Mission
-                    </h3>
-                    <p className="w-full text-small leading-relaxed text-graphite">
-                      {INSTITUTION_DATA.mission}
-                    </p>
+                  <div className="space-y-3 text-left">
+                    <span className="block text-eyebrow uppercase tracking-widest text-graphite">
+                      College Leadership
+                    </span>
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      {INSTITUTION_DATA.leadership?.map((leader, idx) => (
+                        <div key={idx} className="rounded-md border border-slate-200/80 bg-white p-3.5 shadow-sm">
+                          <p className="font-serif text-base font-semibold italic text-ink">{leader.name}</p>
+                          <p className="text-caption text-graphite">{leader.title}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </Reveal>
               </div>

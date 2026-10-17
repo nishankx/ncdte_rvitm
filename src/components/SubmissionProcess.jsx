@@ -81,13 +81,15 @@ export default function SubmissionProcess({ onOpenModal }) {
                   </div>
                 )}
 
-                {stepItem.isMailto && (
+                {stepItem.hasFormLink && (
                   <div className="flex justify-center pt-2">
                     <a
-                      href={`mailto:${CONFIG.EMAIL}?subject=NCDTE-2026%20Paper%20Submission`}
+                      href={CONFIG.REGISTRATION_FORM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-caption font-semibold uppercase tracking-wider text-ink underline underline-offset-4 transition-colors hover:text-aurora-azure"
                     >
-                      Email Submission ↗
+                      Open Google Form ↗
                     </a>
                   </div>
                 )}
@@ -99,10 +101,12 @@ export default function SubmissionProcess({ onOpenModal }) {
           <Reveal delay={0.2} className="flex justify-center">
             <Button
               variant="primary"
-              onClick={() => onOpenModal("submission")}
+              href={CONFIG.REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-medium"
             >
-              SUBMIT YOUR PAPERS HERE
+              Submit your paper →
             </Button>
           </Reveal>
         </div>

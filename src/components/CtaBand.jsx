@@ -41,15 +41,19 @@ export default function CtaBand({ onOpenModal }) {
             <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
               <Button
                 variant="onDark"
-                onClick={() => onOpenModal("submission")}
+                href={CONFIG.REGISTRATION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-12 text-[15px]"
               >
-                SUBMIT YOUR PAPERS HERE
+                Submit your paper →
               </Button>
 
               <Button
                 variant="ghostDark"
-                onClick={() => onOpenModal("registration")}
+                href={CONFIG.REGISTRATION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 showArrow={false}
                 className="h-12 text-[15px]"
               >

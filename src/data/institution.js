@@ -1,15 +1,13 @@
-// DRAFT: verify with organisers before publishing
-
 export const INSTITUTION_DATA = {
-  name: "RV Institute of Technology and Management",
+  name: "RV Institute of Technology and Management®",
   shortName: "RVITM",
-  location: "Kothanur, JP Nagar, Bengaluru",
+  location: "Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India",
   description:
-    "RV Institute of Technology and Management (RVITM), Bengaluru, is an engineering and management institution run by the Rashtreeya Sikshana Samithi Trust (RSST). Located in Kothanur, JP Nagar, the institute offers undergraduate and postgraduate programmes in engineering and computer applications, with an emphasis on academic quality, research culture and industry-readiness.",
-  vision:
-    "To be a centre of excellence in technical and management education, producing capable professionals who contribute to society and industry.",
-  mission:
-    "To deliver quality education through effective teaching-learning practices, promote research and innovation, strengthen industry interaction, and nurture ethical, socially responsible graduates.",
-  facts: ["Managed by RSST", "VTU-affiliated", "AICTE-approved"],
+    "RV Institute of Technology and Management® (RVITM), Bengaluru, is governed by the Rashtreeya Sikshana Samithi Trust (RSST). Located in Kothanur, JP Nagar, RVITM is the proud host of the National Conference on Digital Technology & Engineering (NCDTE-2026).",
+  leadership: [
+    { title: "Principal, RVITM", name: "Dr. Nagashettappa Biradar" },
+    { title: "Vice Principal, RVITM", name: "Dr. Manjunatha Prasad R" },
+  ],
+  facts: ["Managed by RSST", "Bengaluru, Karnataka", "Venue for NCDTE-2026"],
   campusImage: "/images/rvitm-campus.webp",
 };

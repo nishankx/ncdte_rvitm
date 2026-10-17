@@ -9,16 +9,16 @@ import { CONFIG } from "../config";
 export default function About() {
   const highlights = [
     {
-      title: "Exchange Knowledge",
-      desc: "Share innovative ideas and emerging developments across digital technology and engineering domains.",
+      title: "Exchange Knowledge & Ideas",
+      desc: "Brings together researchers, academicians, industry professionals and students to exchange knowledge, share ideas and explore emerging developments in digital technology and engineering.",
     },
     {
-      title: "Interdisciplinary Collaboration",
-      desc: "Foster cross-domain partnerships to address modern engineering and technological challenges.",
+      title: "Cutting-Edge Innovations",
+      desc: "Showcases cutting-edge research, innovations and practical solutions to contemporary challenges in engineering and technology.",
     },
     {
-      title: "Academia-Industry Interaction",
-      desc: "Encourage meaningful dialogue between researchers, faculty, industry leaders, and students.",
+      title: "Meaningful Collaboration",
+      desc: "Fosters interdisciplinary collaboration and meaningful academia-industry interaction across modern computing disciplines.",
     },
   ];
 
@@ -54,26 +54,20 @@ export default function About() {
             About <em className="text-aurora font-serif font-normal italic">NCDTE-2026</em>
           </SectionHeading>
 
-          {/* Justified Editorial Paragraphs */}
-          <Reveal delay={0.1} className="mx-auto w-full max-w-[62ch]">
+          {/* Exact text from brochure */}
+          <Reveal delay={0.1} className="mx-auto w-full max-w-[68ch]">
             <div className="space-y-6 text-center text-lead font-normal leading-relaxed text-ink/85">
               <p>
-                The National Conference on Digital Technology and Engineering (NCDTE-2026) serves as
-                a platform for researchers, academicians, industry professionals, and students to
-                exchange knowledge, share innovative ideas, and discuss emerging developments in
-                digital technology and engineering.
-              </p>
-              <p>
-                The conference provides an avenue for presenting cutting-edge research,
-                technological innovations, and practical solutions addressing contemporary
-                challenges. NCDTE-2026 aims to foster interdisciplinary collaboration, encourage
-                meaningful academic and industry interactions, and promote research-driven
-                advancements in technology and engineering.
+                NCDTE-2026 brings together researchers, academicians, industry professionals and
+                students to exchange knowledge, share ideas and explore emerging developments in
+                digital technology and engineering. It showcases cutting-edge research, innovations
+                and practical solutions to contemporary challenges, fostering interdisciplinary
+                collaboration and meaningful academia-industry interaction.
               </p>
             </div>
           </Reveal>
 
-          {/* Three Highlight Items: subheadings to the left, content justified */}
+          {/* Three Highlight Items */}
           <Reveal delay={0.2} className="mt-14 w-full">
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
               {highlights.map((item, idx) => (

@@ -37,7 +37,7 @@ export default function InstitutionsMarquee() {
       className="relative w-full border-b border-[#00545f]/10 bg-white py-1 sm:py-1.5 md:py-2"
     >
       <div className="mx-auto w-full max-w-2xl px-2 sm:px-4">
-        <div className="grid grid-cols-4 items-center justify-items-center gap-1.5 sm:gap-3 md:gap-5">
+        <div className="flex items-center justify-center gap-8 sm:gap-16">
           {AFFILIATIONS_DATA.map((aff) => (
             <StaticLogoItem key={aff.name} aff={aff} />
           ))}

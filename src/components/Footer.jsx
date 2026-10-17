@@ -7,10 +7,12 @@ import { AFFILIATIONS_DATA } from "../data/affiliations";
 export default function Footer() {
   const importantLinks = [
     { name: "About Conference", href: "#about" },
-    { name: "Department", href: "#department" },
-    { name: "Research Tracks", href: "#tracks" },
-    { name: "Timeline & Deadlines", href: "#dates" },
-    { name: "Registration", href: "#registration" },
+    { name: "Call for Papers", href: "#tracks" },
+    { name: "Submission Guidelines", href: "#guidelines" },
+    { name: "Important Dates", href: "#dates" },
+    { name: "Registration Fee", href: "#registration" },
+    { name: "Organizing Committee", href: "#committee" },
+    { name: "FAQ", href: "#faq" },
   ];
 
   return (
@@ -38,9 +40,9 @@ export default function Footer() {
 
             <div className="mx-auto max-w-[42ch] space-y-2 text-small leading-relaxed text-white/70">
               <p className="font-medium text-white/90">
-                Organised by RV Institute of Technology and Management
+                RV Institute of Technology and Management®
               </p>
-              <p>Department of Computer Science and Engineering</p>
+              <p className="text-white/80">Coordinated by Department of Computer Science and Engineering · CSE Cluster</p>
               <p className="text-caption text-white/60">
                 Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India
               </p>

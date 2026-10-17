@@ -4,6 +4,7 @@ import Container from "./Container";
 import Countdown from "./Countdown";
 import Button from "./Button";
 import Blob from "./Blob";
+import { CONFIG } from "../config";
 
 export default function Hero({ onOpenModal }) {
   const shouldReduceMotion = useReducedMotion();
@@ -14,8 +15,8 @@ export default function Hero({ onOpenModal }) {
   const quickStats = [
     { number: "04", suffix: "DEC", label: "Conference Date 2026" },
     { number: "RVITM", suffix: "", label: "Bengaluru Campus Venue" },
-    { number: "05", suffix: "", label: "Research Tracks" },
-    { number: "02", suffix: "NOV", label: "Submission Deadline 2026" },
+    { number: "06", suffix: "", label: "Research Tracks" },
+    { number: "10", suffix: "NOV", label: "Submission Deadline 2026" },
   ];
 
   const lineVariants = {
@@ -109,13 +110,18 @@ export default function Hero({ onOpenModal }) {
       />
 
       <Container className="relative z-10">
-        <h1 className="mb-6 text-center text-2xl font-bold text-gray-700">
-          DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
-        </h1>
+        <div className="mb-4 text-center">
+          <p className="font-sans text-xs font-bold uppercase tracking-widest text-[#00545f] sm:text-sm">
+            RV Institute of Technology and Management®
+          </p>
+          <p className="mt-1 text-xs font-medium text-graphite sm:text-sm">
+            Coordinated by Department of Computer Science and Engineering · CSE Cluster
+          </p>
+        </div>
         <div className="flex flex-col items-center text-center">
           {/* Accessible Headline */}
           <motion.h1
-            aria-label="National Conference on Digital Technology and Engineering, NCDTE-2026"
+            aria-label="National Conference on Digital Technology & Engineering, NCDTE-2026"
             variants={headerContainer}
             initial={shouldReduceMotion ? "visible" : "hidden"}
             animate="visible"
@@ -139,7 +145,7 @@ export default function Hero({ onOpenModal }) {
                 className="mx-auto block max-w-[18ch] font-serif text-[clamp(1.75rem,3vw,3.25rem)] leading-tight text-ink"
               >
                 {" "}
-                Digital Technology <em className="font-serif font-normal italic">and</em>{" "}
+                Digital Technology <em className="font-serif font-normal italic">&amp;</em>{" "}
                 Engineering
               </motion.span>
             </span>
@@ -174,7 +180,7 @@ export default function Hero({ onOpenModal }) {
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
               <span className="-mx-1 bg-[linear-gradient(transparent_60%,#ecffb6_60%)] px-1 font-sans text-[clamp(1.35rem,2.4vw,2.2rem)] font-bold tracking-tight text-[#00545f]">
-                4th December 2026
+                4 December 2026
               </span>
             </div>
 
@@ -199,7 +205,7 @@ export default function Hero({ onOpenModal }) {
           </div>
 
           {/* Lower Hero: Centered Countdown */}
-          <div className="mt-24 flex justify-center">
+          <div className="mt-20 flex justify-center">
             <Countdown />
           </div>
 
@@ -207,19 +213,24 @@ export default function Hero({ onOpenModal }) {
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4 sm:mt-5 sm:gap-6">
             <Button
               variant="primary"
-              onClick={() => onOpenModal("registration")}
+              href={CONFIG.REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-10 px-6 text-sm sm:h-11"
+            >
+              Submit your paper →
+            </Button>
+
+            <Button
+              variant="ghost"
+              href={CONFIG.REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="h-10 px-5 text-sm sm:h-11"
+              showArrow={false}
             >
               Register Now
             </Button>
-
-            <button
-              type="button"
-              onClick={() => onOpenModal("submission")}
-              className="cursor-pointer bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet bg-[length:0%_2px] bg-left-bottom bg-no-repeat pb-0.5 font-sans text-[13px] font-bold tracking-wide text-ink transition-[background-size] duration-300 hover:bg-[length:100%_2px] sm:text-[14px]"
-            >
-              SUBMIT YOUR PAPERS HERE
-            </button>
           </div>
 
           {/* Quick Facts Stats Row */}

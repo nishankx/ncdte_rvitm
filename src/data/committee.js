@@ -110,16 +110,16 @@ export const COMMITTEE_GROUPS = [
     roleGroup: "COORDINATORS",
     members: [
       {
-        name: "Dr. Prema Arokia Mary",
+        name: "Dr. Prema Arokia Mary G",
         role: "COORDINATOR",
         designation: "Associate Professor, CSE Dept, RVITM",
         photo: "/images/committee/prema-arokia-mary.png",
       },
       {
-        name: "Ms. Veda",
+        name: "Dr. V R Srividhya",
         role: "COORDINATOR",
         designation: "Assistant Professor, CSE Dept, RVITM",
-        photo: "/images/committee/veda.png",
+        photo: "/images/committee/v-r-srividhya.png",
       },
       {
         name: "Mr. Murugan S",
@@ -128,10 +128,10 @@ export const COMMITTEE_GROUPS = [
         photo: "/images/committee/murugan-s.png",
       },
       {
-        name: "Dr. V R Srividhya",
+        name: "Ms. Veda N",
         role: "COORDINATOR",
         designation: "Assistant Professor, CSE Dept, RVITM",
-        photo: "/images/committee/v-r-srividhya.png",
+        photo: "/images/committee/veda.png",
       },
     ],
   },

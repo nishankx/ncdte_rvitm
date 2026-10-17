@@ -1,42 +1,41 @@
+export const CALL_FOR_PAPERS_INTRO =
+  "Original research papers presenting significant findings, project outcomes, experimental studies and industrial experiences are invited in the following areas, but not limited to:";
+
 export const TRACKS_DATA = [
   {
     id: 1,
-    number: "TRACK 01",
-    title: "Emerging Digital Technologies and Artificial Intelligence",
-    icon: "cpu", // AI chip
-    description:
-      "Original research covering cutting-edge artificial intelligence, machine learning architectures, and emerging digital innovations.",
+    number: "TRACK 1",
+    title: "Generative AI, Agentic AI, Machine Learning and Data Science",
+    icon: "cpu",
   },
   {
     id: 2,
-    number: "TRACK 02",
-    title: "Smart Systems, IoT, Robotics and Intelligent Automation",
-    icon: "bot", // IoT / Robot
-    description:
-      "Smart sensory systems, industrial automation, robotics frameworks, and interconnected Internet of Things infrastructures.",
+    number: "TRACK 2",
+    title: "IoT, Edge Computing, Robotics and Smart Automation",
+    icon: "bot",
   },
   {
     id: 3,
-    number: "TRACK 03",
-    title: "Computing, Communication, Networking and Cybersecurity",
-    icon: "shield-network", // Network / Shield
-    description:
-      "Advanced computing paradigms, secure communication protocols, next-gen wireless networks, and cyber defense mechanisms.",
+    number: "TRACK 3",
+    title: "Cybersecurity, Blockchain and Trustworthy Computing",
+    icon: "shield-network",
   },
   {
     id: 4,
-    number: "TRACK 04",
-    title: "Advanced Engineering, Electronics and Intelligent Systems",
-    icon: "circuit", // Circuit
-    description:
-      "VLSI, embedded systems, modern electronic device engineering, signal processing, and intelligent hardware design.",
+    number: "TRACK 4",
+    title: "Cloud, Communication Networks and Quantum Technologies",
+    icon: "circuit",
   },
   {
     id: 5,
-    number: "TRACK 05",
-    title: "Sustainable Engineering and Emerging Applications",
-    icon: "leaf-gear", // Leaf / Gear
-    description:
-      "Green engineering practices, energy-efficient computational models, renewable technology systems, and societal applications.",
+    number: "TRACK 5",
+    title: "Advanced Engineering, Electronics and Embedded Systems",
+    icon: "microchip",
+  },
+  {
+    id: 6,
+    number: "TRACK 6",
+    title: "Sustainable Technologies, Digital Health and Smart Cities",
+    icon: "leaf-gear",
   },
 ];

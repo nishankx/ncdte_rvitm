@@ -9,6 +9,7 @@ import {
 import Container from "./Container";
 import Button from "./Button";
 import { useScrollSpy } from "../hooks/useScrollSpy";
+import { CONFIG } from "../config";
 
 export default function Navbar({ onOpenModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,10 +27,10 @@ export default function Navbar({ onOpenModal }) {
 
   const navLinks = [
     { id: "about", label: "About" },
-    { id: "department", label: "Department" },
-    { id: "tracks", label: "Tracks" },
+    { id: "tracks", label: "Call for Papers" },
     { id: "guidelines", label: "Guidelines" },
-    { id: "dates", label: "Dates" },
+    { id: "dates", label: "Important Dates" },
+    { id: "registration", label: "Registration" },
     { id: "committee", label: "Committee" },
     { id: "faq", label: "FAQ" },
   ];
@@ -151,7 +152,9 @@ export default function Navbar({ onOpenModal }) {
           <div className="flex items-center justify-end gap-2 sm:gap-3">
             <Button
               variant="primary"
-              onClick={() => onOpenModal("registration")}
+              href={CONFIG.REGISTRATION_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-9 px-3 text-xs font-medium sm:h-10 sm:px-5 sm:text-sm"
             >
               Register
@@ -213,10 +216,10 @@ export default function Navbar({ onOpenModal }) {
 
               <Button
                 variant="primary"
-                onClick={() => {
-                  setIsOpen(false);
-                  onOpenModal("registration");
-                }}
+                href={CONFIG.REGISTRATION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
                 className="h-11 w-full text-[15px]"
               >
                 Register Now

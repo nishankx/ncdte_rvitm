@@ -1,36 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { CONFIG } from "../config";
 import { useLockBodyScroll } from "../hooks/useLockBodyScroll";
 import Button from "./Button";
 
-function ModalQRCode({ src, alt, label }) {
-  const [error, setError] = useState(false);
-
-  return (
-    <div className="mx-auto my-4 flex max-w-[200px] select-none flex-col items-center justify-center rounded-md bg-mist-50 p-4">
-      {!error ? (
-        <img
-          src={src}
-          alt={alt}
-          width={128}
-          height={128}
-          className="h-32 w-32 rounded-md object-contain"
-          loading="lazy"
-          onError={() => setError(true)}
-        />
-      ) : (
-        <div className="flex h-32 w-32 flex-col items-center justify-center rounded-md bg-white p-2 text-center text-graphite shadow-soft">
-          <span className="text-caption font-semibold text-ink">{label}</span>
-          <span className="mt-1 text-[11px] text-graphite">Portal Code</span>
-        </div>
-      )}
-      <span className="mt-2 text-center text-caption font-medium text-graphite">{label}</span>
-    </div>
-  );
-}
-
-export default function RegistrationModal({ isOpen, onClose, initialStep = "submission" }) {
+export default function RegistrationModal({ isOpen, onClose }) {
   const shouldReduceMotion = useReducedMotion();
   const modalRef = useRef(null);
   const previouslyFocusedElementRef = useRef(null);
@@ -62,15 +36,10 @@ export default function RegistrationModal({ isOpen, onClose, initialStep = "subm
     }
   }, [isOpen, onClose]);
 
-  const submissionHref =
-    CONFIG.SUBMISSION_URL && CONFIG.SUBMISSION_URL.trim() !== ""
-      ? CONFIG.SUBMISSION_URL
-      : `mailto:${CONFIG.EMAIL}?subject=${encodeURIComponent("NCDTE-2026 Paper Submission")}`;
-
-  const registrationHref =
-    CONFIG.REGISTRATION_URL && CONFIG.REGISTRATION_URL.trim() !== ""
-      ? CONFIG.REGISTRATION_URL
-      : `mailto:${CONFIG.EMAIL}?subject=${encodeURIComponent("NCDTE-2026 Registration")}`;
+  const formHref =
+    CONFIG.REGISTRATION_FORM_URL ||
+    CONFIG.SUBMISSION_URL ||
+    "https://docs.google.com/forms/d/e/1FAIpQLSfVttXz-rb-C6C21Xz5obDIeep6rOzu0NIhewn3Eus3gDnUCQ/viewform?usp=publish-editor";
 
   return (
     <AnimatePresence>
@@ -102,7 +71,7 @@ export default function RegistrationModal({ isOpen, onClose, initialStep = "subm
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-10 max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-lg bg-white shadow-lift focus:outline-none"
           >
-            {/* Header: centered */}
+            {/* Header */}
             <div className="relative p-8 pb-6 text-center sm:p-10">
               <button
                 type="button"
@@ -120,89 +89,59 @@ export default function RegistrationModal({ isOpen, onClose, initialStep = "subm
                 id="modal-title"
                 className="font-serif text-3xl italic leading-tight text-ink sm:text-4xl"
               >
-                Complete Your Registration
+                Author Registration &amp; Submission
               </h2>
               <p className="mx-auto mt-2 max-w-md text-small text-graphite">
-                Follow the 2-step procedure for paper submission and author registration.
+                Complete your paper submission and registration through our official form.
               </p>
             </div>
 
             {/* Modal Body */}
-            <div className="space-y-10 px-8 pb-8 sm:px-10">
-              {/* Step 1 */}
-              <div className="flex flex-col items-center space-y-4 text-center">
-                {/* Step badge above step, centered */}
-                <span className="text-aurora block font-serif text-[40px] italic leading-none">
-                  1
-                </span>
-                <div>
-                  <h3 className="font-sans text-lg font-semibold text-ink">
-                    Step 1: Submit your paper
+            <div className="space-y-6 px-8 pb-8 sm:px-10">
+              {/* Step 1: Google Form */}
+              <div className="rounded-lg border border-slate-200/80 bg-mist-50/50 p-6 text-left">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#00545f] font-sans text-xs font-bold text-white">
+                    1
+                  </span>
+                  <h3 className="font-sans text-base font-semibold text-ink">
+                    Submit &amp; Register via Google Form
                   </h3>
-                  <p className="text-small text-graphite">
-                    Scan the QR code below to access the submission form.
-                  </p>
                 </div>
-
-                <ModalQRCode
-                  src="/images/qr-submission.png"
-                  alt="Submission QR Code"
-                  label="Submission QR Portal"
-                />
-
-                <div className="flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row">
+                <p className="mt-2 text-small leading-relaxed text-graphite pl-10">
+                  Fill in your author details, institution, research track, and upload your manuscript through the official conference Google Form.
+                </p>
+                <div className="mt-4 pl-10">
                   <Button
                     variant="primary"
-                    href={submissionHref}
-                    target={CONFIG.SUBMISSION_URL ? "_blank" : undefined}
+                    href={formHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium"
                   >
-                    Submit Your Paper
+                    Open Google Registration Form ↗
                   </Button>
-                  {!CONFIG.SUBMISSION_URL && (
-                    <span className="text-caption text-graphite">Fallback: Email submission</span>
-                  )}
                 </div>
               </div>
 
-              {/* Step 2 */}
-              <div className="flex flex-col items-center space-y-4 pt-4 text-center">
-                {/* Step badge above step, centered */}
-                <span className="text-aurora block font-serif text-[40px] italic leading-none">
-                  2
-                </span>
-                <div>
-                  <h3 className="font-sans text-lg font-semibold text-ink">
-                    Step 2: Pay the registration fee
+              {/* Step 2: Payment Email Notification */}
+              <div className="rounded-lg border border-slate-200/80 bg-mist-50/50 p-6 text-left">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#00545f] font-sans text-xs font-bold text-white">
+                    2
+                  </span>
+                  <h3 className="font-sans text-base font-semibold text-ink">
+                    Payment Procedures via Email
                   </h3>
-                  <p className="text-small text-graphite">
-                    Scan the QR code below to complete your fee payment.
-                  </p>
                 </div>
-
-                <ModalQRCode
-                  src="/images/qr-payment.png"
-                  alt="Payment QR Code"
-                  label="Fee Payment QR"
-                />
-
-                <div className="flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row">
-                  <Button
-                    variant="primary"
-                    href={registrationHref}
-                    target={CONFIG.REGISTRATION_URL ? "_blank" : undefined}
-                  >
-                    Pay Registration Fee
-                  </Button>
-                  {!CONFIG.REGISTRATION_URL && (
-                    <span className="text-caption text-graphite">Fallback: Email registration</span>
-                  )}
-                </div>
+                <p className="mt-2 text-small leading-relaxed text-graphite pl-10">
+                  Once your submission is reviewed, our conference team will send the applicable fee payment procedures (₹1,300 for UG/PG Students &amp; Academicians, ₹200 for extra members) directly to your registered email address.
+                </p>
               </div>
 
-              {/* Note */}
-              <div className="rounded-md bg-mist-50 p-4 text-center text-caption leading-relaxed text-graphite">
-                <strong className="text-ink">Note:</strong> Authors of accepted papers must complete
-                the registration process using the designated registration link.
+              {/* Notice */}
+              <div className="rounded-md border border-[#00545f]/20 bg-[#00545f]/5 p-4 text-center text-caption leading-relaxed text-ink/80">
+                <strong className="text-[#00545f]">Important:</strong> Authors of accepted papers or posters must complete fee payment on or before <strong>25 November 2026</strong>. One registration kit will be provided per registration.
               </div>
             </div>
 
