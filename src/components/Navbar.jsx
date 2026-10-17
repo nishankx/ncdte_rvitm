@@ -101,33 +101,33 @@ export default function Navbar({ onOpenModal }) {
       />
 
       <Container className="relative z-10 h-full !px-3 sm:!px-6 lg:!px-6 xl:!px-8 max-w-7xl">
-        <div className="flex h-full items-center justify-between gap-2 sm:gap-4 lg:gap-4 xl:gap-8">
+        <div className="flex h-full items-center justify-between gap-1.5 sm:gap-4 lg:gap-4 xl:gap-8">
           {/* Left: RVITM College Logo + NCDTE 2026 Wordmark linking to #home */}
-          <div className="flex shrink-0 items-center justify-start">
+          <div className="flex min-w-0 shrink items-center justify-start">
             <a
               href="#home"
-              className="group inline-flex select-none items-center gap-2 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure sm:gap-3 lg:gap-3.5"
+              className="group inline-flex select-none items-center gap-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure sm:gap-3 lg:gap-3.5"
             >
               {/* RVITM College Logo - enlarged and crisp */}
               <img
                 src="/images/logos/rvitm.png"
                 alt="RVITM College Logo"
-                className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105 sm:h-12 lg:h-13 xl:h-14"
+                className="h-8 w-auto object-contain transition-transform duration-200 group-hover:scale-105 sm:h-12 lg:h-13 xl:h-14"
                 loading="eager"
               />
 
               {/* Vertical Divider */}
               <span
                 aria-hidden="true"
-                className="h-7 w-px bg-white/20 sm:h-8"
+                className="h-5 w-px bg-white/20 sm:h-8"
               />
 
               {/* Conference Wordmark */}
               <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
-                <span className="font-sans text-[17px] font-bold tracking-tight text-white sm:text-[19px] lg:text-[20px] xl:text-[21px]">
+                <span className="font-sans text-[15px] font-bold tracking-tight text-white sm:text-[19px] lg:text-[20px] xl:text-[21px]">
                   NCDTE
                 </span>
-                <span className="text-aurora font-serif text-[17px] font-normal italic sm:text-[19px] lg:text-[20px] xl:text-[21px]">
+                <span className="text-aurora font-serif text-[15px] font-normal italic sm:text-[19px] lg:text-[20px] xl:text-[21px]">
                   2026
                 </span>
               </div>
@@ -181,13 +181,13 @@ export default function Navbar({ onOpenModal }) {
           </nav>
 
           {/* Right: Register Button + Mobile Hamburger (below lg) */}
-          <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-3">
             <Button
               variant="onDark"
               href={CONFIG.REGISTRATION_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-9 px-3.5 text-xs font-semibold sm:h-10 sm:px-5 sm:text-sm whitespace-nowrap"
+              className="inline-flex !h-8 !px-2.5 text-xs font-semibold sm:!h-10 sm:!px-5 sm:text-sm whitespace-nowrap"
             >
               Register
             </Button>
@@ -198,16 +198,16 @@ export default function Navbar({ onOpenModal }) {
               onClick={() => setIsOpen((prev) => !prev)}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
-              className="flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-pill border border-white/15 bg-white/10 text-white backdrop-blur-xl transition-colors hover:bg-white/20 sm:h-11 sm:w-11 lg:hidden"
+              className="flex h-9 w-9 shrink-0 cursor-pointer select-none items-center justify-center rounded-pill border border-white/15 bg-white/10 text-white backdrop-blur-xl transition-colors hover:bg-white/20 sm:h-11 sm:w-11 lg:hidden"
             >
-              <div className="relative flex h-3.5 w-5 flex-col justify-between">
+              <div className="relative flex h-3.5 w-4 flex-col justify-between sm:w-5">
                 <span
-                  className={`h-[2px] w-5 rounded-full bg-white transition-all duration-300 ${
+                  className={`h-[2px] w-4 rounded-full bg-white transition-all duration-300 sm:w-5 ${
                     isOpen ? "translate-y-[6px] rotate-45" : ""
                   }`}
                 />
                 <span
-                  className={`h-[2px] w-5 rounded-full bg-white transition-all duration-300 ${
+                  className={`h-[2px] w-4 rounded-full bg-white transition-all duration-300 sm:w-5 ${
                     isOpen ? "-translate-y-[6px] -rotate-45" : ""
                   }`}
                 />
