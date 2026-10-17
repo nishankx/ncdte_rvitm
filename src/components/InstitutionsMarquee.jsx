@@ -35,7 +35,7 @@ export default function InstitutionsMarquee() {
     <section
       role="region"
       aria-label="Conference partner and institution logos"
-      className="relative w-full border-b border-[#EBE2CE] bg-[#F4F0E5]/90 py-6 sm:py-8 md:py-10 backdrop-blur-md"
+      className="relative w-full py-6 sm:py-8 md:py-10 backdrop-blur-md"
     >
       <Container className="max-w-7xl">
         <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-12 lg:gap-14">
