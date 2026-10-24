@@ -1,10 +1,10 @@
 export const CONFIG = {
   SUBMISSION_URL:
-    "https://docs.google.com/forms/d/e/1FAIpQLSfVttXz-rb-C6C21Xz5obDIeep6rOzu0NIhewn3Eus3gDnUCQ/viewform?usp=publish-editor",
+    "https://docs.google.com/forms/d/e/1FAIpQLSdNOU6DmwyIOC94b-UIRu2Kw4BGqFOmzzVkcpz6GPXwHmL03w/viewform?usp=send_form",
   REGISTRATION_URL:
-    "https://docs.google.com/forms/d/e/1FAIpQLSfVttXz-rb-C6C21Xz5obDIeep6rOzu0NIhewn3Eus3gDnUCQ/viewform?usp=publish-editor",
+    "https://docs.google.com/forms/d/e/1FAIpQLSdNOU6DmwyIOC94b-UIRu2Kw4BGqFOmzzVkcpz6GPXwHmL03w/viewform?usp=send_formr",
   REGISTRATION_FORM_URL:
-    "https://docs.google.com/forms/d/e/1FAIpQLSfVttXz-rb-C6C21Xz5obDIeep6rOzu0NIhewn3Eus3gDnUCQ/viewform?usp=publish-editor",
+    "https://docs.google.com/forms/d/e/1FAIpQLSdNOU6DmwyIOC94b-UIRu2Kw4BGqFOmzzVkcpz6GPXwHmL03w/viewform?usp=send_form",
   PAPER_TEMPLATE_URL: "",
   CONFERENCE_WEBSITE: "",
   EMAIL: "national_conference.rvitm@rvei.edu.in",
