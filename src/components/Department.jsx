@@ -48,7 +48,7 @@ export default function Department() {
                 <div>
                   <div className="mb-4 flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-[#00545f]" />
-                    <span className="text-eyebrow text-[2rem] uppercase tracking-widest text-graphite font-bold">
+                    <span className="text-eyebrow text-[2.5rem] uppercase tracking-widest text-graphite font-bold">
                       Department Vision
                     </span>
                   </div>
@@ -89,12 +89,12 @@ export default function Department() {
                 <div>
                   <div className="mb-4 flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-gradient-to-r from-aurora-cyan to-aurora-lime" />
-                    <span className="text-eyebrow mb-5 text-[2rem] uppercase tracking-widest text-graphite font-bold">
+                    <span className="text-eyebrow mb-5 text-[2.5rem] uppercase tracking-widest text-graphite font-bold">
                      Department Mission
                     </span>
                   </div>
 
-                  <div className="space-y-3.5">
+                  <div className="space-y-3.5 mt-10">
                     {department.mission.map((item) => (
                       <div
                         key={item.code}
