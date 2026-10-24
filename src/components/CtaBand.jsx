@@ -7,7 +7,7 @@ import { CONFIG } from "../config";
 
 export default function CtaBand({ onOpenModal }) {
   return (
-    <section className="relative select-none bg-ink py-28 text-white md:py-32">
+    <section className="relative select-none bg-ink py-14 text-white sm:py-18 md:py-20">
       {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
       <DarkPatternBackground circlePosition="center" />
       {/* Blurred Aurora Blob Behind */}
@@ -31,9 +31,9 @@ export default function CtaBand({ onOpenModal }) {
               NCDTE-2026 · 4 DECEMBER 2026 · BENGALURU
             </span>
 
-            <h2 className="mx-auto max-w-[16ch] font-sans text-[clamp(3rem,9vw,9rem)] font-medium leading-[1.02] tracking-tighter text-white">
+            <h2 className="mx-auto max-w-[18ch] font-sans text-[clamp(2.75rem,7.5vw,7.5rem)] font-bold leading-[1.04] tracking-tight text-white">
               Ready to share{" "}
-              <em className="text-aurora font-serif font-normal italic">your research?</em>
+              <span className="text-aurora">your research?</span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-[50ch] text-lead font-normal leading-relaxed text-white/70">

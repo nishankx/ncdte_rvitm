@@ -7,12 +7,11 @@ import { AFFILIATIONS_DATA } from "../data/affiliations";
 
 export default function Footer() {
   const importantLinks = [
+    { name: "Important Dates", href: "#dates" },
     { name: "About Conference", href: "#about" },
     { name: "Call for Papers", href: "#tracks" },
     { name: "Submission Guidelines", href: "#guidelines" },
-    { name: "Important Dates", href: "#dates" },
     { name: "Registration Fee", href: "#registration" },
-    { name: "Conference Brochure", href: "#brochure" },
     { name: "Organizing Committee", href: "#committee" },
     { name: "FAQ", href: "#faq" },
   ];
@@ -46,7 +45,7 @@ export default function Footer() {
               <p className="font-medium text-white/90">
                 RV Institute of Technology and Management®
               </p>
-              <p className="text-white/80">Coordinated by Department of Computer Science and Engineering · CSE Cluster</p>
+              <p className="text-white/80">Coordinated by Department of Computer Science and Engineering</p>
               <p className="text-caption text-white/60">
                 Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India
               </p>
@@ -144,17 +143,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        {/* Giant Cropped Wordmark "NCDTE-2026" centered */}
-        <div className="pointer-events-none relative -mb-8 select-none overflow-hidden text-center sm:-mb-16">
-          {/*Make it fit the container*/}
-          <div className="mx-auto whitespace-nowrap font-sans text-[22vw] font-bold uppercase leading-none tracking-tighter text-white/[0.06]">
-            NCDTE.
-          </div>
-        </div>
-
         {/* Copyright Line */}
-        <div className="pt-[100px] text-center text-caption font-normal text-white/40">
+        <div className="text-center text-caption font-normal text-white/40">
           © 2026 RV Institute of Technology and Management. All Rights Reserved.
         </div>
       </Container>

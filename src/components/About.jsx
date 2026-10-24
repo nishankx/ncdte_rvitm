@@ -26,7 +26,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-20 text-white md:py-32"
+      className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-12 text-white sm:py-16 md:py-20"
     >
       {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
       <DarkPatternBackground circlePosition="both" />
@@ -58,53 +58,60 @@ export default function About() {
         <div className="flex flex-col items-center">
           <SectionLabel onDark>About NCDTE-2026</SectionLabel>
           <SectionHeading className="!text-white">
-            About <em className="text-aurora font-serif font-normal italic">NCDTE-2026</em>
+            About <span className="text-aurora">NCDTE-2026</span>
           </SectionHeading>
 
-          {/* Exact text from brochure */}
-          <Reveal delay={0.1} className="mx-auto w-full max-w-[68ch]">
-            <div className="space-y-6 text-center text-lead font-normal leading-relaxed text-white/85">
-              <p>
-                NCDTE-2026 brings together researchers, academicians, industry professionals and
-                students to exchange knowledge, share ideas and explore emerging developments in
-                digital technology and engineering. It showcases cutting-edge research, innovations
-                and practical solutions to contemporary challenges, fostering interdisciplinary
-                collaboration and meaningful academia-industry interaction.
-              </p>
-            </div>
-          </Reveal>
+          <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+            {/* Left Column: Main Paragraph & Brochure CTA */}
+            <div className="lg:col-span-5 flex flex-col justify-center">
+              <Reveal delay={0.1} className="w-full">
+                <div className="space-y-6 text-left">
+                  <p className="text-base sm:text-lg lg:text-[1.18rem] font-normal leading-relaxed text-white/90">
+                    NCDTE-2026 brings together researchers, academicians, industry professionals and
+                    students to exchange knowledge, share ideas and explore emerging developments in
+                    digital technology and engineering. It showcases cutting-edge research, innovations
+                    and practical solutions to contemporary challenges, fostering interdisciplinary
+                    collaboration and meaningful academia-industry interaction.
+                  </p>
 
-          {/* Three Highlight Cards */}
-          <Reveal delay={0.2} className="mt-14 w-full">
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
-              {highlights.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="group flex flex-col items-start rounded-2xl border border-[#264548] bg-[#142A2C]/80 p-6 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#007a87]/60 hover:bg-[#183437]/90"
-                >
-                  <div className="mb-3 flex items-center gap-2.5">
-                    <span
-                      aria-hidden="true"
-                      className="h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet shadow-[0_0_10px_#d6fb00]"
-                    />
-                    <h4 className="font-sans text-[17px] font-semibold text-white">
-                      {item.title}
-                    </h4>
-                  </div>
-                  <p className="font-sans text-small leading-relaxed text-[#9EB2AE]">{item.desc}</p>
+                  {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
+                    <div className="pt-2">
+                      <Button variant="onDark" href={CONFIG.BROCHURE_URL} target="_blank">
+                        Download Conference Brochure
+                      </Button>
+                    </div>
+                  )}
                 </div>
-              ))}
+              </Reveal>
             </div>
-          </Reveal>
 
-          {/* Brochure Button */}
-          {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
-            <Reveal delay={0.25} className="mt-12 flex justify-center">
-              <Button variant="onDark" href={CONFIG.BROCHURE_URL} target="_blank">
-                Download Conference Brochure
-              </Button>
-            </Reveal>
-          )}
+            {/* Right Column: Three Highlight Panels */}
+            <div className="lg:col-span-7 w-full">
+              <Reveal delay={0.2} className="w-full">
+                <div className="flex flex-col gap-4 sm:gap-5 w-full">
+                  {highlights.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="group flex flex-col items-start rounded-2xl border border-[#264548] bg-[#142A2C]/80 p-5 sm:p-6 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#007a87]/60 hover:bg-[#183437]/90"
+                    >
+                      <div className="mb-2 flex items-center gap-2.5">
+                        <span
+                          aria-hidden="true"
+                          className="h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet shadow-[0_0_10px_#d6fb00]"
+                        />
+                        <h4 className="font-sans text-[17px] font-semibold text-white">
+                          {item.title}
+                        </h4>
+                      </div>
+                      <p className="font-sans text-sm sm:text-[15px] leading-relaxed text-[#9EB2AE]">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

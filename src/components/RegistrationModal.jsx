@@ -39,7 +39,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
   const formHref =
     CONFIG.REGISTRATION_FORM_URL ||
     CONFIG.SUBMISSION_URL ||
-    "https://docs.google.com/forms/d/e/1FAIpQLSfVttXz-rb-C6C21Xz5obDIeep6rOzu0NIhewn3Eus3gDnUCQ/viewform?usp=publish-editor";
+    "https://docs.google.com/forms/d/e/1FAIpQLSdNOU6DmwyIOC94b-UIRu2Kw4BGqFOmzzVkcpz6GPXwHmL03w/viewform?usp=send_form";
 
   return (
     <AnimatePresence>
@@ -87,7 +87,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
               </span>
               <h2
                 id="modal-title"
-                className="font-serif text-3xl italic leading-tight text-ink sm:text-4xl"
+                className="font-sans text-2xl font-bold leading-tight text-ink sm:text-3xl"
               >
                 Author Registration &amp; Submission
               </h2>
@@ -136,9 +136,23 @@ export default function RegistrationModal({ isOpen, onClose }) {
                 </p>
               </div>
 
-              {/* Notice */}
-              <div className="rounded-md border border-[#00545f]/20 bg-[#00545f]/5 p-4 text-center text-caption leading-relaxed text-ink/80">
-                <strong className="text-[#00545f]">Important:</strong> Authors of accepted papers or posters must complete fee payment on or before <strong>25 November 2026</strong>. One registration kit will be provided per registration.
+              {/* Notice with Aggressive Flicker Highlight Animation */}
+              <div className="relative overflow-hidden rounded-xl border-2 border-[#00545f] bg-gradient-to-r from-[#00545f]/15 via-[#ecffb6]/35 to-[#00545f]/15 p-4 text-center text-caption leading-relaxed text-ink animate-flicker">
+                <div className="flex items-center justify-center gap-2 mb-1.5">
+                  <span className="relative flex h-3 w-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00545f] opacity-85" />
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-[#00545f] shadow-[0_0_8px_#00545f]" />
+                  </span>
+                  <strong className="text-eyebrow font-black uppercase tracking-widest text-[#00545f]">
+                    Important Notice
+                  </strong>
+                </div>
+                <p className="font-extrabold text-ink text-[15px]">
+                  Registrations will commence after paper acceptance.
+                </p>
+                <p className="mt-1 text-caption text-graphite font-medium">
+                  Authors of accepted papers or posters must complete fee payment on or before <strong>25 November 2026</strong>. One registration kit will be provided per registration.
+                </p>
               </div>
             </div>
 

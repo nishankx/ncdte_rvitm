@@ -16,37 +16,45 @@ export default function PersonCard({ member, isChief = false }) {
 
   return (
     <motion.article
-      className="group mx-auto flex select-none flex-col items-center text-center"
-      whileHover={shouldReduceMotion ? {} : { y: -4 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      className="group mx-auto flex select-none flex-col items-center text-center w-full max-w-[120px] sm:max-w-[130px]"
+      whileHover={shouldReduceMotion ? {} : { y: -3 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
     >
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md border border-[#00545f]/10 bg-mist-50 shadow-soft">
+      {/* Compact Minimal Photo */}
+      <div className={`relative aspect-[4/5] w-20 sm:w-24 overflow-hidden rounded-xl border bg-mist-50 shadow-sm transition-all duration-300 group-hover:shadow-md ${
+        isChief ? "border-[#00545f]/30 ring-2 ring-[#00545f]/15" : "border-[#00545f]/15"
+      }`}>
         {!imgError && member.photo ? (
           <img
             src={member.photo}
             alt={member.name}
             loading="lazy"
             onError={() => setImgError(true)}
-            className="absolute inset-0 h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.04] group-hover:grayscale-0"
+            className="absolute inset-0 h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-aurora-ice via-aurora-lavender to-white">
-            <span className="select-none font-serif text-[72px] leading-none text-ink/70">
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#ecffb6] via-[#d6fb00]/25 to-white">
+            <span className="select-none font-serif text-2xl font-bold leading-none text-ink/70">
               {initials}
             </span>
           </div>
         )}
       </div>
 
-      <span className="mt-5 block text-[13px] font-bold uppercase tracking-[0.14em] text-graphite">
+      {/* Role */}
+      <span className="mt-2 block text-[9.5px] sm:text-[10.5px] font-bold uppercase tracking-wider text-graphite/70">
         {member.role}
       </span>
 
-      <h4 className="mt-2 font-sans text-[22px] font-semibold leading-snug text-ink">
+      {/* Name */}
+      <h4 className="mt-0.5 font-sans text-xs sm:text-[13.5px] font-bold leading-snug text-ink">
         {member.name}
       </h4>
 
-      <p className="mt-1 text-[16px] leading-relaxed text-graphite">{member.designation}</p>
+      {/* Designation */}
+      <p className="mt-0.5 text-[10.5px] sm:text-[11.5px] leading-snug text-graphite line-clamp-3">
+        {member.designation}
+      </p>
     </motion.article>
   );
 }

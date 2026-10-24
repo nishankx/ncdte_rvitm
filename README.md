@@ -48,7 +48,7 @@ export const CONFIG = {
   REGISTRATION_URL: "", // External portal link for registration payment gateway
   PAPER_TEMPLATE_URL: "", // Downloadable paper template (e.g. Word / LaTeX format link)
   CONFERENCE_WEBSITE: "", // Official college conference subdomain link
-  EMAIL: "conference.rvitm@rvei.edu.in",
+  EMAIL: "national_conference.rvitm@rvei.edu.in",
   BROCHURE_URL: "", // Download Conference Brochure (button hidden if empty)
   MAP_URL:
     "https://www.google.com/maps/search/?api=1&query=RV+Institute+of+Technology+and+Management+Kothanur+JP+Nagar+Bengaluru+560076",
@@ -59,9 +59,9 @@ export const CONFIG = {
 ### Automatic Fallback Behavior:
 
 - When `SUBMISSION_URL` is empty (`""`), the submission CTA automatically falls back to:
-  `mailto:conference.rvitm@rvei.edu.in?subject=NCDTE-2026%20Paper%20Submission`
+  `mailto:national_conference.rvitm@rvei.edu.in?subject=NCDTE-2026%20Paper%20Submission`
 - When `REGISTRATION_URL` is empty (`""`), the registration button falls back to:
-  `mailto:conference.rvitm@rvei.edu.in?subject=NCDTE-2026%20Registration`
+  `mailto:national_conference.rvitm@rvei.edu.in?subject=NCDTE-2026%20Registration`
 - When `BROCHURE_URL` or `PAPER_TEMPLATE_URL` is empty, those optional buttons/links are hidden automatically.
 
 ---

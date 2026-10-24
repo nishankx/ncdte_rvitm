@@ -35,7 +35,7 @@ export default function Guidelines({ onOpenModal }) {
   return (
     <section
       id="guidelines"
-      className="from-[#00545f]/8 to-[#ecffb6]/18 relative scroll-mt-20 overflow-hidden bg-gradient-to-br via-white/85 py-20 md:py-32"
+      className="from-[#00545f]/8 to-[#ecffb6]/18 relative scroll-mt-20 overflow-hidden bg-gradient-to-br via-white/85 py-12 sm:py-16 md:py-20"
     >
       {/* Subtle Precision Plus-Grid & Diamond Drafting Lattice */}
       <LightPatternBackground accent="diamond" accentPosition="right" />
@@ -54,7 +54,7 @@ export default function Guidelines({ onOpenModal }) {
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={false}>Guidelines for Submission</SectionLabel>
           <SectionHeading>
-            Guidelines for <em className="font-serif font-normal italic text-ink">Submission</em>
+            Guidelines for Submission
           </SectionHeading>
 
           {/* Guidelines Two-Column Card */}

@@ -10,7 +10,7 @@ export default function Tracks() {
   return (
     <section
       id="tracks"
-      className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-14 text-white sm:py-20 md:py-28"
+      className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-12 text-white sm:py-16 md:py-20"
     >
       {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
       <DarkPatternBackground circlePosition="right" />
@@ -42,7 +42,7 @@ export default function Tracks() {
         <div className="flex flex-col items-center text-center">
           <SectionLabel onDark>Call for Papers</SectionLabel>
           <SectionHeading className="!mb-3 !text-white sm:!mb-4">
-            Call for <em className="text-aurora font-serif font-normal italic">Papers</em>
+            Call for <span className="text-aurora">Papers</span>
           </SectionHeading>
 
           <Reveal delay={0.08} className="mx-auto mb-8 max-w-[72ch] sm:mb-10">

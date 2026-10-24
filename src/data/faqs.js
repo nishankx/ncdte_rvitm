@@ -9,7 +9,7 @@ export const FAQS_DATA = [
     id: "faq-2",
     question: "Who is organizing the conference?",
     answer:
-      "NCDTE-2026 is organized by RV Institute of Technology and Management (RVITM), coordinated by Department of Computer Science and Engineering · CSE Cluster.\n\nAddress: Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India.",
+      "NCDTE-2026 is organized by RV Institute of Technology and Management (RVITM), coordinated by Department of Computer Science and Engineering.\n\nAddress: Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India.",
   },
   {
     id: "faq-3",
@@ -45,7 +45,7 @@ export const FAQS_DATA = [
     id: "faq-8",
     question: "Who should I contact for help?",
     answer:
-      "Contact the conference coordinators:\n• Phone: 99020 28279 · 72005 75617 · 97399 81676\n• Email: conference.rvitm@rvei.edu.in\n• Venue: RV Institute of Technology and Management, Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076",
+      "Contact the conference coordinators:\n• Phone: 99020 28279 · 72005 75617 · 97399 81676\n• Email: national_conference.rvitm@rvei.edu.in\n• Venue: RV Institute of Technology and Management, Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076",
     hasMapLink: true,
   },
 ];

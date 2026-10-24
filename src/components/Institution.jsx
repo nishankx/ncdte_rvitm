@@ -26,7 +26,7 @@ export default function Institution() {
     <section
       id="institution"
       ref={sectionRef}
-      className="from-[#d6fb00]/12 to-[#ecffb6]/18 relative scroll-mt-20 overflow-hidden bg-gradient-to-bl via-white/85 py-20 md:py-32"
+      className="from-[#d6fb00]/12 to-[#ecffb6]/18 relative scroll-mt-20 overflow-hidden bg-gradient-to-bl via-white/85 py-12 sm:py-16 md:py-20"
     >
       {/* Subtle Precision Plus-Grid & Topographic Elevation Waves */}
       <LightPatternBackground accent="waves" accentPosition="right" />
@@ -45,7 +45,7 @@ export default function Institution() {
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={true}>About RVITM</SectionLabel>
           <SectionHeading>
-            About <em className="font-serif font-normal italic text-ink">RVITM</em>
+            About RVITM
           </SectionHeading>
 
           <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">

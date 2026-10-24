@@ -57,16 +57,13 @@ export default function App() {
       {/* 1. Sticky Navbar */}
       <Navbar onOpenModal={handleOpenModal} />
 
-      {/* 2. Institutions Marquee directly below Navbar */}
-      <InstitutionsMarquee />
-
       {/* Main Content Sections */}
       <main className="flex-1">
         {/* 3. Hero (#home) */}
         <Hero onOpenModal={handleOpenModal} />
 
         {/* Milestone Dates Horizontal Timeline Strip */}
-        <DatesTimelineStrip />
+        <ImportantDates />
 
         {/* 4. About (#about) */}
         <About />
@@ -88,10 +85,6 @@ export default function App() {
 
         {/* 10. Submission Process (#process) */}
         <SubmissionProcess onOpenModal={handleOpenModal} />
-
-        {/* 11. Important Dates (#dates) */}
-        <ImportantDates />
-
         {/* 12. Registration Fee (#registration) */}
         <Fees onOpenModal={handleOpenModal} />
 

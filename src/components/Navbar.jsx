@@ -26,14 +26,31 @@ export default function Navbar({ onOpenModal }) {
   });
 
   const navLinks = [
+    { id: "dates", label: "Important Dates" },
     { id: "about", label: "About" },
     { id: "tracks", label: "Call for Papers" },
     { id: "guidelines", label: "Guidelines" },
-    { id: "dates", label: "Important Dates" },
     { id: "registration", label: "Registration" },
     { id: "committee", label: "Committee" },
     { id: "faq", label: "FAQ" },
   ];
+
+  // Map sub-sections to their parent navbar link
+  const SECTION_TO_NAV_MAP = {
+    home: "",
+    dates: "dates",
+    about: "about",
+    institution: "about",
+    department: "about",
+    tracks: "tracks",
+    guidelines: "guidelines",
+    why: "guidelines",
+    process: "guidelines",
+    registration: "registration",
+    committee: "committee",
+    faq: "faq",
+  };
+  const currentNavActive = SECTION_TO_NAV_MAP[activeId] || activeId;
 
   // Close mobile dropdown on outside click or Esc
   useEffect(() => {
@@ -71,19 +88,33 @@ export default function Navbar({ onOpenModal }) {
   const handleLinkClick = (e, targetId) => {
     e.preventDefault();
     setIsOpen(false);
-    setTimeout(() => {
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        window.history.pushState(null, "", `#${targetId}`);
-      }
-    }, 100);
+
+    if (targetId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.pushState(null, "", "#home");
+      return;
+    }
+
+    const element = document.getElementById(targetId);
+    if (element) {
+      const navOffset = window.innerWidth >= 1024 ? 100 : window.innerWidth >= 640 ? 96 : 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = targetId === "home" ? 0 : elementPosition - navOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", `#${targetId}`);
+    }
   };
 
   return (
     <header
       ref={navRef}
-      className={`sticky top-0 z-50 h-20 bg-ink text-white transition-all duration-300 ${
+      className={`sticky top-0 z-50 h-20 sm:h-24 lg:h-[100px] bg-ink text-white transition-all duration-300 ${
         isScrolled || isOpen
           ? "shadow-[0_10px_30px_rgba(0,0,0,0.5)] bg-ink/95 backdrop-blur-md"
           : "bg-ink"
@@ -100,34 +131,30 @@ export default function Navbar({ onOpenModal }) {
         className="pointer-events-none absolute left-1/2 top-0 -z-0 h-20 w-[500px] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#00545f]/25 to-transparent blur-[60px]"
       />
 
-      <Container className="relative z-10 h-full !px-3 sm:!px-6 lg:!px-6 xl:!px-8 max-w-7xl">
+      <Container className="relative z-10 h-full !px-3 sm:!px-6 lg:!px-6 xl:!px-8 max-w-[1440px]">
         <div className="flex h-full items-center justify-between gap-1.5 sm:gap-4 lg:gap-4 xl:gap-8">
           {/* Left: RVITM College Logo + NCDTE 2026 Wordmark linking to #home */}
           <div className="flex min-w-0 shrink items-center justify-start">
             <a
               href="#home"
-              className="group inline-flex select-none items-center gap-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure sm:gap-3 lg:gap-3.5"
+              onClick={(e) => handleLinkClick(e, "home")}
+              className="group inline-flex select-none items-center gap-2.5 sm:gap-4 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure"
             >
-              {/* RVITM College Logo - enlarged and crisp */}
-              <img
-                src="/images/logos/rvitm.png"
-                alt="RVITM College Logo"
-                className="h-8 w-auto object-contain transition-transform duration-200 group-hover:scale-105 sm:h-12 lg:h-13 xl:h-14"
-                loading="eager"
-              />
-
-              {/* Vertical Divider */}
-              <span
-                aria-hidden="true"
-                className="h-5 w-px bg-white/20 sm:h-8"
-              />
+              {/* College Logo (Significantly Bigger) */}
+              <div className="flex h-12 sm:h-16 md:h-16 lg:h-[74px] items-center justify-center rounded-lg transition-transform duration-200 group-hover:scale-105 shrink-0">
+                <img
+                  src="/images/logos/rvitm.png"
+                  alt="RV Institute of Technology and Management"
+                  className="h-full w-auto max-w-[200px] sm:max-w-[260px] lg:max-w-[300px] object-contain drop-shadow-sm"
+                />
+              </div>
 
               {/* Conference Wordmark */}
               <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
-                <span className="font-sans text-[15px] font-bold tracking-tight text-white sm:text-[19px] lg:text-[20px] xl:text-[21px]">
+                <span className="font-sans text-[15px] font-bold tracking-tight text-white sm:text-[18px] lg:text-[20px] xl:text-[22px]">
                   NCDTE
                 </span>
-                <span className="text-aurora font-serif text-[15px] font-normal italic sm:text-[19px] lg:text-[20px] xl:text-[21px]">
+                <span className="text-aurora font-sans text-[15px] font-bold sm:text-[18px] lg:text-[20px] xl:text-[22px]">
                   2026
                 </span>
               </div>
@@ -137,13 +164,14 @@ export default function Navbar({ onOpenModal }) {
           {/* Center (visible from lg): Desktop Links */}
           <nav className="hidden items-center justify-center gap-1 lg:flex xl:gap-4 2xl:gap-6">
             {navLinks.map((link) => {
-              const isActive = activeId === link.id;
+              const isActive = currentNavActive === link.id;
               const isHovered = hoveredId === link.id;
 
               return (
                 <a
                   key={link.id}
                   href={`#${link.id}`}
+                  onClick={(e) => handleLinkClick(e, link.id)}
                   onMouseEnter={() => setHoveredId(link.id)}
                   onMouseLeave={() => setHoveredId(null)}
                   className={`relative cursor-pointer select-none whitespace-nowrap px-1.5 py-1 font-sans text-[12.5px] transition-colors lg:text-[13px] xl:text-[14px] 2xl:text-[15px] ${
@@ -189,7 +217,7 @@ export default function Navbar({ onOpenModal }) {
               rel="noopener noreferrer"
               className="inline-flex !h-8 !px-2.5 text-xs font-semibold sm:!h-10 sm:!px-5 sm:text-sm whitespace-nowrap"
             >
-              Register
+              SUBMIT PAPER
             </Button>
 
             {/* Hamburger button (below lg) */}
@@ -225,7 +253,7 @@ export default function Navbar({ onOpenModal }) {
             animate={shouldReduceMotion ? { opacity: 1 } : { height: "auto", opacity: 1 }}
             exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 right-0 top-20 z-40 max-h-[calc(100vh-80px)] overflow-y-auto border-b border-white/10 bg-ink/95 backdrop-blur-xl shadow-2xl lg:hidden"
+            className="absolute left-0 right-0 top-20 sm:top-24 lg:top-[100px] z-40 max-h-[calc(100vh-80px)] sm:max-h-[calc(100vh-96px)] overflow-y-auto border-b border-white/10 bg-ink/95 backdrop-blur-xl shadow-2xl lg:hidden"
           >
             {/* Ambient accent divider */}
             <div
@@ -235,7 +263,7 @@ export default function Navbar({ onOpenModal }) {
             <div className="mx-auto flex max-w-sm flex-col items-center px-6 py-6 text-center">
               <nav className="mb-6 flex w-full flex-col items-center space-y-1">
                 {navLinks.map((link) => {
-                  const isActive = activeId === link.id;
+                  const isActive = currentNavActive === link.id;
                   return (
                     <a
                       key={link.id}
@@ -261,7 +289,7 @@ export default function Navbar({ onOpenModal }) {
                 onClick={() => setIsOpen(false)}
                 className="h-11 w-full text-[15px] font-semibold"
               >
-                Register Now
+                SUBMIT PAPER
               </Button>
             </div>
           </motion.div>

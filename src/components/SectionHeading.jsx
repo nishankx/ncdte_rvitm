@@ -6,7 +6,7 @@ export default function SectionHeading({ children, className = "", align = "cent
 
   return (
     <h2
-      className={`mb-16 max-w-[22ch] font-sans text-h2 leading-tight tracking-tight ${defaultTextColor} md:mb-24 ${alignClasses} ${className}`}
+      className={`mb-6 max-w-[22ch] font-sans font-bold text-h2 leading-tight tracking-tight ${defaultTextColor} sm:mb-8 md:mb-10 ${alignClasses} ${className}`}
     >
       {children}
     </h2>

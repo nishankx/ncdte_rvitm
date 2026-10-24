@@ -84,7 +84,7 @@ export default function WhyParticipate() {
   return (
     <section
       id="why"
-      className="from-[#ecffb6]/18 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-bl via-white/85 py-20 md:py-32"
+      className="from-[#ecffb6]/18 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-bl via-white/85 py-12 sm:py-16 md:py-20"
     >
       {/* Subtle Precision Plus-Grid & Topographic Elevation Waves */}
       <LightPatternBackground accent="waves" accentPosition="both" />
@@ -103,7 +103,7 @@ export default function WhyParticipate() {
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={true}>Why Participate?</SectionLabel>
           <SectionHeading>
-            Why <em className="font-serif font-normal italic text-ink">Participate?</em>
+            Why Participate?
           </SectionHeading>
 
           {/* 4 Cards Grid with Glow behind middle cards */}

@@ -12,12 +12,12 @@ import { CONFIG } from "../config";
 export default function Fees({ onOpenModal }) {
   const formHref =
     CONFIG.REGISTRATION_FORM_URL ||
-    "https://docs.google.com/forms/d/e/1FAIpQLSfVttXz-rb-C6C21Xz5obDIeep6rOzu0NIhewn3Eus3gDnUCQ/viewform?usp=publish-editor";
+    "https://docs.google.com/forms/d/e/1FAIpQLSdNOU6DmwyIOC94b-UIRu2Kw4BGqFOmzzVkcpz6GPXwHmL03w/viewform?usp=send_form";
 
   return (
     <section
       id="registration"
-      className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-20 text-white md:py-32"
+      className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-12 text-white sm:py-16 md:py-20"
     >
       {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
       <DarkPatternBackground circlePosition="both" />
@@ -49,8 +49,24 @@ export default function Fees({ onOpenModal }) {
         <div className="flex flex-col items-center text-center">
           <SectionLabel onDark>Registration Fee</SectionLabel>
           <SectionHeading className="!text-white">
-            Registration <em className="text-aurora font-serif font-normal italic">Fee</em>
+            Registration <span className="text-aurora">Fee</span>
           </SectionHeading>
+
+          {/* Bold Announcement Notice with Aggressive Flicker */}
+          <Reveal delay={0.05} className="mb-8 sm:mb-10 w-full max-w-2xl">
+            <div className="flex items-center justify-center gap-3.5 rounded-2xl border-2 border-[#d6fb00] bg-gradient-to-r from-[#00545f]/80 via-[#142A2C] to-[#00545f]/80 px-6 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.4)] backdrop-blur-md animate-flicker">
+              <span className="relative flex h-3.5 w-3.5 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#d6fb00] opacity-90" />
+                <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-[#d6fb00] shadow-[0_0_14px_#d6fb00]" />
+              </span>
+              <p className="font-sans text-sm sm:text-base md:text-lg font-extrabold tracking-tight text-white">
+                <span className="text-[#d6fb00] font-black uppercase tracking-wider underline decoration-[#d6fb00] decoration-2 underline-offset-4 mr-1.5">
+                  Important Notice:
+                </span>{" "}
+                Registrations will commence after paper acceptance.
+              </p>
+            </div>
+          </Reveal>
 
           {/* Single centered axis: Price block on top, Card beneath */}
           <div className="mx-auto flex w-full max-w-3xl flex-col items-center space-y-10 text-center">

@@ -40,6 +40,6 @@ export const CONTACT_DETAILS = {
     { label: "Coordinator 2", number: "7200575617" },
     { label: "Coordinator 3", number: "9739981676" },
   ],
-  email: "conference.rvitm@rvei.edu.in",
+  email: "national_conference.rvitm@rvei.edu.in",
   address: "Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India",
 };

@@ -20,12 +20,6 @@ export const AFFILIATIONS_DATA = [
 ];
 
 export const ALL_LOGOS = [
-   {
-    name: "RSST",
-    fullName: "Rashtreeya Sikshana Samithi Trust",
-    alt: "Rashtreeya Sikshana Samithi Trust (RSST)",
-    img: "/images/logos/rsst.png",
-  },
   {
     name: "VTU",
     fullName: "Visvesvaraya Technological University",

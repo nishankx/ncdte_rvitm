@@ -19,7 +19,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="from-[#ecffb6]/18 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-b via-white/85 py-20 md:py-32"
+      className="from-[#ecffb6]/18 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-b via-white/85 py-12 sm:py-16 md:py-20"
     >
       {/* Subtle Precision Plus-Grid & Topographic Elevation Waves */}
       <LightPatternBackground accent="waves" accentPosition="right" />
@@ -38,7 +38,7 @@ export default function FAQ() {
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={false}>Frequently Asked Questions</SectionLabel>
           <SectionHeading>
-            Frequently asked <em className="font-serif font-normal italic text-ink">questions</em>
+            Frequently Asked Questions
           </SectionHeading>
 
           {/* Stacked Items, max-w-3xl mx-auto */}

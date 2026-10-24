@@ -11,7 +11,7 @@ export default function Department() {
   return (
     <section
       id="department"
-      className="from-[#00545f]/8 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-tr via-white/85 py-20 md:py-32"
+      className="from-[#00545f]/8 to-[#d6fb00]/12 relative scroll-mt-20 overflow-hidden bg-gradient-to-tr via-white/85 py-12 sm:py-16 md:py-20"
     >
       {/* Subtle Precision Plus-Grid & Hexagonal Tech Lattice */}
       <LightPatternBackground accent="hex" accentPosition="left" />
@@ -30,76 +30,92 @@ export default function Department() {
         <div className="flex flex-col items-center text-center">
           <SectionLabel onWhite={false}>Organizing Department</SectionLabel>
           <SectionHeading>
-            Computer Science &amp;{" "}
-            <em className="font-serif font-normal italic text-ink">Engineering</em>
+            Department of Computer Science &amp; Engineering
           </SectionHeading>
 
-          {/* Two-column grid of equal-height cards */}
-          <div className="grid w-full grid-cols-1 items-stretch gap-6 md:grid-cols-2">
-            {/* Left Card: Department Coordination & Leadership */}
-            <Reveal className="h-full">
+          <p className="mb-10 max-w-[65ch] text-small sm:text-body text-graphite leading-relaxed">
+            {department.desc}
+          </p>
+
+          {/* Two-column grid: Vision (left) & Mission (right) */}
+          <div className="grid w-full grid-cols-1 items-stretch gap-6 lg:grid-cols-12 lg:gap-8 text-left">
+            {/* Left Card: Department Vision & Leadership */}
+            <Reveal className="h-full lg:col-span-5">
               <Card
                 onWhite={false}
-                className="flex h-full flex-col items-start justify-between text-left"
+                className="flex h-full flex-col justify-between p-6 sm:p-8"
               >
-                <div className="w-full">
-                  <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
-                    Conference Coordination
-                  </span>
-                  <h3 className="mb-4 text-left font-serif text-[28px] italic leading-tight text-ink">
-                    {department.cluster}
-                  </h3>
-                  <p className="mb-6 w-full text-body leading-relaxed text-ink/85">
-                    {department.desc}
-                  </p>
+                <div>
+                  <div className="mb-4 flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#00545f]" />
+                    <span className="text-eyebrow text-[2rem] uppercase tracking-widest text-graphite font-bold">
+                      Department Vision
+                    </span>
+                  </div>
+
+                  <div className="relative rounded-2xl bg-gradient-to-br from-[#00545f]/8 via-[#ecffb6]/25 to-transparent p-5 sm:p-6 border border-[#00545f]/15">
+                    <span className="font-serif text-4xl text-[#00545f]/40 leading-none select-none block mb-1">
+                      “
+                    </span>
+                    <p className="font-serif text-[2rem] italic leading-relaxed text-ink -mt-3">
+                      {department.vision}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="w-full space-y-3 border-t border-slate-200/80 pt-5">
-                  <div>
-                    <p className="font-serif text-lg font-semibold italic text-ink">{department.dean}</p>
-                    <p className="text-caption text-graphite">{department.deanRole}</p>
-                  </div>
-                  <div>
-                    <p className="font-serif text-lg font-semibold italic text-ink">{department.hod}</p>
-                    <p className="text-caption text-graphite">{department.hodRole}</p>
-                  </div>
+                <div className="mt-8 border-t border-slate-200/80 pt-5 space-y-2">
+                  <span className="block text-eyebrow uppercase tracking-widest text-graphite">
+                    Department Leadership
+                  </span>
+                  <p className="font-serif text-xl font-semibold italic text-ink">
+                    {department.hod}
+                  </p>
+                  <p className="text-caption text-graphite">
+                    {department.hodRole}
+                  </p>
+                  <p className="text-caption text-graphite/80 pt-1">
+                    {department.institution}
+                  </p>
                 </div>
               </Card>
             </Reveal>
 
-            {/* Right Card: Coordinators from Brochure */}
-            <Reveal delay={0.1} className="h-full">
+            {/* Right Card: Department Mission (M1 - M4) */}
+            <Reveal delay={0.1} className="h-full lg:col-span-7">
               <Card
                 onWhite={false}
-                className="flex h-full flex-col items-start justify-between text-left"
+                className="flex h-full flex-col justify-between p-6 sm:p-8"
               >
-                <div className="w-full">
-                  <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-graphite">
-                    Department Faculty Coordinators
-                  </span>
-                  <h4 className="mb-6 text-left font-serif text-2xl italic text-ink">
-                    Organizing Coordinators
-                  </h4>
+                <div>
+                  <div className="mb-4 flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-gradient-to-r from-aurora-cyan to-aurora-lime" />
+                    <span className="text-eyebrow mb-5 text-[2rem] uppercase tracking-widest text-graphite font-bold">
+                     Department Mission
+                    </span>
+                  </div>
 
-                  <ul className="w-full list-none space-y-3.5">
-                    {department.coordinators.map((coord, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-3 text-left text-small text-ink/85"
+                  <div className="space-y-3.5">
+                    {department.mission.map((item) => (
+                      <div
+                        key={item.code}
+                        className="group flex items-start gap-3.5 rounded-xl border border-[#00545f]/10 bg-white/70 p-4 transition-all duration-200 hover:bg-white hover:border-[#00545f]/25 hover:shadow-soft"
                       >
-                        <span
-                          aria-hidden="true"
-                          className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-[#00545f]"
-                        />
-                        <span>{coord}</span>
-                      </li>
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#00545f] text-white font-sans text-xs font-bold tracking-wider shadow-sm transition-transform duration-200 group-hover:scale-105">
+                          {item.code}
+                        </span>
+                        <div className="flex-1">
+                          <p className="text-small text-ink/90 leading-relaxed">
+                            {item.text}
+                          </p>
+                        </div>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                <div className="mt-6 w-full border-t border-slate-200/80 pt-4">
+                <div className="mt-8 border-t border-slate-200/80 pt-4">
                   <span className="text-caption text-graphite">
-                    Coordinated by Department of Computer Science and Engineering · CSE Cluster, RVITM
+                    Department of Computer Science &amp; Engineering · RVITM Bengaluru
                   </span>
                 </div>
               </Card>

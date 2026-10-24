@@ -61,7 +61,7 @@ export const COMMITTEE_GROUPS = [
       {
         name: "Dr. Malini M Patil",
         role: "PROGRAM CHAIR",
-        designation: "Dean, CSE Cluster, RVITM",
+        designation: "Dean, CSE Dept, RVITM",
         photo: "/images/committee/malini-m-patil.png",
       },
     ],

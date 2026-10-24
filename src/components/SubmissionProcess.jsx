@@ -15,7 +15,7 @@ export default function SubmissionProcess({ onOpenModal }) {
   return (
     <section
       id="process"
-      className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-20 text-white md:py-32"
+      className="relative scroll-mt-20 overflow-hidden bg-[#0F2F31] py-12 text-white sm:py-16 md:py-20"
     >
       {/* Subtle Dotted Matrix & Concentric Circles Pattern */}
       <DarkPatternBackground circlePosition="left" />
@@ -47,7 +47,7 @@ export default function SubmissionProcess({ onOpenModal }) {
         <div className="flex flex-col items-center text-center">
           <SectionLabel onDark>Submission Process</SectionLabel>
           <SectionHeading className="!text-white">
-            Submission <em className="text-aurora font-serif font-normal italic">Process</em>
+            Submission <span className="text-aurora">Process</span>
           </SectionHeading>
 
           {/* 3x2 Grid: each step flex flex-col items-center text-center, numeral above title */}

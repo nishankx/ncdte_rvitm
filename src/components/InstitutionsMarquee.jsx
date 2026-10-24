@@ -38,7 +38,7 @@ export default function InstitutionsMarquee() {
       className="relative w-full overflow-hidden bg-gradient-to-r from-[#00545f]/6 via-white/85 to-[#d6fb00]/10 py-4 backdrop-blur-md  sm:py-5 md:py-2 lg:py-5"
     >
       {/* Mobile only: Continuous Marquee strip */}
-      <div className="relative w-full overflow-hidden md:hidden">
+      <div className="relative w-full overflow-hidden">
         {/* Soft edge fades for seamless horizontal entry and exit */}
         <div
           aria-hidden="true"
@@ -72,21 +72,6 @@ export default function InstitutionsMarquee() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Tablet & Laptop / Desktop: Stagnant Banners */}
-      <div className="pt-2 hidden md:block">
-        <Container className="max-w-7xl">
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-10 md:gap-10 lg:gap-14">
-            {ALL_LOGOS.map((logo) => (
-              <PlainLogo
-                key={logo.name}
-                logo={logo}
-                imgClassName="md:h-14 lg:h-22"
-              />
-            ))}
-          </div>
-        </Container>
       </div>
     </section>
   );

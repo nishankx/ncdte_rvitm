@@ -8,11 +8,11 @@ export default function DatesTimelineStrip() {
   return (
     <section
       aria-label="Conference Timeline Milestones"
-      className="relative z-10 -mt-2 mb-2 w-full overflow-hidden py-6 sm:py-8"
+      className="relative z-10 w-full overflow-hidden py-2 sm:py-4"
     >
       <Container>
         {/* Timeline wrapper with horizontal line connecting all dots */}
-        <div className="relative mx-auto max-w-4xl px-2 sm:px-4">
+        <div className="relative mx-auto max-w-5xl px-2 sm:px-4">
           {/* Row 1: Date Badges */}
           <div className="grid grid-cols-4 gap-x-1 sm:gap-x-4">
             {dates.map((item, index) => {
@@ -22,13 +22,12 @@ export default function DatesTimelineStrip() {
               return (
                 <div key={item.id || index} className="flex h-7 items-end justify-center pb-1 text-center">
                   <span
-                    className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-tight transition-transform duration-200 hover:-translate-y-0.5 sm:px-2.5 sm:text-[11px] ${
-                      isSubmission
+                    className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-tight transition-transform duration-200 hover:-translate-y-0.5 sm:px-2.5 sm:text-[11px] ${isSubmission
                         ? "bg-rose-500/10 text-rose-600 ring-1 ring-rose-500/30"
                         : isConference
-                        ? "bg-[#00545f] text-[#d6fb00] shadow-sm"
-                        : "bg-[#00545f]/8 text-[#00545f]"
-                    }`}
+                          ? "bg-[#00545f] text-[#d6fb00] shadow-sm"
+                          : "bg-[#00545f]/8 text-[#00545f]"
+                      }`}
                   >
                     {item.dateDisplay.replace(" 2026", "")}
                   </span>
@@ -62,23 +61,21 @@ export default function DatesTimelineStrip() {
 
                       {/* Outer Ring */}
                       <div
-                        className={`relative z-20 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 transition-all duration-300 hover:scale-125 sm:h-4 sm:w-4 ${
-                          isSubmission
+                        className={`relative z-20 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 transition-all duration-300 hover:scale-125 sm:h-4 sm:w-4 ${isSubmission
                             ? "border-rose-500 bg-white shadow-sm shadow-rose-500/30"
                             : isConference
-                            ? "border-[#00545f] bg-[#d6fb00] shadow-sm"
-                            : "border-[#00545f] bg-white hover:border-[#007a87]"
-                        }`}
+                              ? "border-[#00545f] bg-[#d6fb00] shadow-sm"
+                              : "border-[#00545f] bg-white hover:border-[#007a87]"
+                          }`}
                       >
                         {/* Inner Dot */}
                         <span
-                          className={`h-1.5 w-1.5 rounded-full ${
-                            isSubmission
+                          className={`h-1.5 w-1.5 rounded-full ${isSubmission
                               ? "bg-rose-500"
                               : isConference
-                              ? "bg-[#00545f]"
-                              : "bg-[#00545f]"
-                          }`}
+                                ? "bg-[#00545f]"
+                                : "bg-[#00545f]"
+                            }`}
                         />
                       </div>
                     </div>
