@@ -100,7 +100,7 @@ export default function Hero({ onOpenModal }) {
               <img
                 src="/icons/College_logo.png"
                 alt="RV Institute of Technology and Management"
-                className="mx-auto h-[8rem] w-auto object-contain mix-blend-multiply"
+                className="mx-auto h-[10rem] w-auto object-contain mix-blend-multiply"
               />
               <p className="mt-2 text-xs font-medium text-graphite sm:text-sm">
                 Coordinated by Department of Computer Science and Engineering
