@@ -79,7 +79,7 @@ export default function Institution() {
             {/* Right Column (5 cols): Description, Facts, Vision/Mission, Map Link */}
             <div className="flex flex-col items-start space-y-8 py-4 text-left lg:col-span-5">
               <Reveal delay={0.1} className="w-full">
-                <p className="w-full text-lead font-normal leading-relaxed text-ink/85">
+                <p className="w-full text-lead font-normal leading-relaxed text-ink/85 text-justify">
                   {INSTITUTION_DATA.description}
                 </p>
               </Reveal>

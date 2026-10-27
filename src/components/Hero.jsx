@@ -19,7 +19,7 @@ export default function Hero({ onOpenModal }) {
     { number: "04", suffix: "DEC", label: "Conference Date 2026" },
     { number: "RVITM", suffix: "", label: "Bengaluru Campus Venue" },
     { number: "06", suffix: "", label: "Research Tracks" },
-    { number: "10", suffix: "NOV", label: "Submission Deadline 2026" },
+    { number: "15", suffix: "NOV", label: "Submission Deadline 2026" },
   ];
 
   const lineVariants = {
@@ -102,8 +102,8 @@ export default function Hero({ onOpenModal }) {
                 alt="RV Institute of Technology and Management"
                 className="mx-auto h-[10rem] w-auto object-contain mix-blend-multiply"
               />
-              <p className="mt-2 text-xs font-medium text-graphite sm:text-sm">
-                Coordinated by Department of Computer Science and Engineering
+              <p className="mt-4 text-center text-xs font-medium text-graphite sm:text-sm">
+                Organized by Department of Computer Science and Engineering - CSE Cluster
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
@@ -198,7 +198,7 @@ export default function Hero({ onOpenModal }) {
               </div>
 
               {/* Centered Action buttons */}
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-4 sm:mt-5 sm:gap-6">
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-3 sm:mt-5 sm:gap-4">
                 <Button
                   variant="primary"
                   href={CONFIG.REGISTRATION_FORM_URL}
@@ -208,6 +208,28 @@ export default function Hero({ onOpenModal }) {
                 >
                   Submit your paper
                 </Button>
+                {CONFIG.BROCHURE_1_URL && (
+                  <Button
+                    variant="soft"
+                    href={CONFIG.BROCHURE_1_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-10 px-4 text-xs sm:h-11 sm:text-sm border border-ink/15"
+                  >
+                    Brochure 1
+                  </Button>
+                )}
+                {CONFIG.BROCHURE_2_URL && (
+                  <Button
+                    variant="soft"
+                    href={CONFIG.BROCHURE_2_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-10 px-4 text-xs sm:h-11 sm:text-sm border border-ink/15"
+                  >
+                    Brochure 2
+                  </Button>
+                )}
               </div>
             </div>
           </div>

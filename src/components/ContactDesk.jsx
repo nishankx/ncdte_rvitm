@@ -15,7 +15,7 @@ export default function ContactDesk() {
 
   return (
     <div className="mx-auto mt-20 w-full max-w-3xl md:mt-24">
-      <div className="relative flex flex-col items-center overflow-hidden rounded-lg bg-ink p-8 text-center text-white shadow-soft sm:p-12">
+      <div className="relative flex flex-col items-center overflow-hidden rounded-lg bg-ink p-5 text-center text-white shadow-soft sm:p-8 md:p-12">
         {/* Aurora corner glow */}
         <div
           aria-hidden="true"
@@ -30,7 +30,7 @@ export default function ContactDesk() {
             <h4 className="font-serif text-3xl italic text-white sm:text-4xl">
               Conference Helpdesk
             </h4>
-            <p className="mx-auto mt-2 max-w-[50ch] text-small leading-relaxed text-white/70">
+            <p className="mx-auto mt-2 max-w-[50ch] text-small leading-relaxed text-white/70 text-justify">
               Contact our helpline for direct assistance with paper submissions, author
               registrations, or local guidance.
             </p>

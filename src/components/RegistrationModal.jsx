@@ -72,12 +72,12 @@ export default function RegistrationModal({ isOpen, onClose }) {
             className="relative z-10 max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-lg bg-white shadow-lift focus:outline-none"
           >
             {/* Header */}
-            <div className="relative p-8 pb-6 text-center sm:p-10">
+            <div className="relative p-5 pb-4 text-center sm:p-10">
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close dialog"
-                className="absolute right-6 top-6 flex h-9 w-9 cursor-pointer items-center justify-center rounded-pill bg-mist-50 text-sm text-ink transition-colors hover:bg-mist"
+                className="absolute right-4 top-4 sm:right-6 sm:top-6 flex h-8 w-8 sm:h-9 sm:w-9 cursor-pointer items-center justify-center rounded-pill bg-mist-50 text-sm text-ink transition-colors hover:bg-mist"
               >
                 ✕
               </button>
@@ -97,15 +97,15 @@ export default function RegistrationModal({ isOpen, onClose }) {
             </div>
 
             {/* Modal Body */}
-            <div className="space-y-6 px-8 pb-8 sm:px-10">
+            <div className="space-y-5 px-4 pb-6 sm:space-y-6 sm:px-10 sm:pb-8">
               {/* Step 1: Google Form */}
-              <div className="rounded-lg border border-slate-200/80 bg-mist-50/50 p-6 text-left">
+              <div className="rounded-lg border border-slate-200/80 bg-mist-50/50 p-4 sm:p-6 text-left">
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#00545f] font-sans text-xs font-bold text-white">
                     1
                   </span>
                 </div>
-                <p className="mt-2 text-small leading-relaxed text-graphite pl-10">
+                <p className="mt-2 text-small leading-relaxed text-graphite pl-10 text-justify">
                   Fill in your author details, institution, research track, and upload your manuscript through the official conference Google Form.
                 </p>
                 <div className="mt-4 pl-10">
@@ -122,7 +122,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
               </div>
 
               {/* Step 2: Payment Email Notification */}
-              <div className="rounded-lg border border-slate-200/80 bg-mist-50/50 p-6 text-left">
+              <div className="rounded-lg border border-slate-200/80 bg-mist-50/50 p-4 sm:p-6 text-left">
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#00545f] font-sans text-xs font-bold text-white">
                     2
@@ -131,7 +131,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
                     Payment Procedures via Email
                   </h3>
                 </div>
-                <p className="mt-2 text-small leading-relaxed text-graphite pl-10">
+                <p className="mt-2 text-small leading-relaxed text-graphite pl-10 text-justify">
                   Once your submission is reviewed, our conference team will send the applicable fee payment procedures (₹1,300 for UG/PG Students &amp; Academicians, ₹200 for extra members) directly to your registered email address.
                 </p>
               </div>
@@ -150,7 +150,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
                 <p className="font-extrabold text-ink text-[15px]">
                   Registrations will commence after paper acceptance.
                 </p>
-                <p className="mt-1 text-caption text-graphite font-medium">
+                <p className="mt-1 text-caption text-graphite font-medium text-justify">
                   Authors of accepted papers or posters must complete fee payment on or before <strong>25 November 2026</strong>. One registration kit will be provided per registration.
                 </p>
               </div>

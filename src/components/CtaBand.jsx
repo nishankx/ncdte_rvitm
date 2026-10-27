@@ -36,7 +36,7 @@ export default function CtaBand({ onOpenModal }) {
               <span className="text-aurora">your research?</span>
             </h2>
 
-            <p className="mx-auto mt-6 max-w-[50ch] text-lead font-normal leading-relaxed text-white/70">
+            <p className="mx-auto mt-6 max-w-[50ch] text-lead font-normal leading-relaxed text-white/70 text-justify">
               Join leading researchers, faculty, and innovators at RV Institute of Technology and
               Management.
             </p>
@@ -52,15 +52,25 @@ export default function CtaBand({ onOpenModal }) {
                 Submit your paper
               </Button>
 
-              {/* Optional Brochure Link */}
-              {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
+              {/* Two Brochure Links */}
+              {CONFIG.BROCHURE_1_URL && (
                 <a
-                  href={CONFIG.BROCHURE_URL}
+                  href={CONFIG.BROCHURE_1_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-caption font-semibold uppercase tracking-wider text-[#d6fb00] underline underline-offset-4 transition-colors hover:text-white"
+                >
+                  Brochure 1 ↗
+                </a>
+              )}
+              {CONFIG.BROCHURE_2_URL && (
+                <a
+                  href={CONFIG.BROCHURE_2_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-2 text-caption font-semibold uppercase tracking-wider text-white/70 underline underline-offset-4 transition-colors hover:text-white"
                 >
-                  Download Brochure ↗
+                  Brochure 2 ↗
                 </a>
               )}
             </div>

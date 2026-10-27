@@ -66,7 +66,7 @@ export default function About() {
             <div className="lg:col-span-5 flex flex-col justify-center">
               <Reveal delay={0.1} className="w-full">
                 <div className="space-y-6 text-left">
-                  <p className="text-base sm:text-lg lg:text-[1.18rem] font-normal leading-relaxed text-white/90">
+                  <p className="text-base sm:text-lg lg:text-[1.18rem] font-normal leading-relaxed text-white/90 text-justify">
                     NCDTE-2026 brings together researchers, academicians, industry professionals and
                     students to exchange knowledge, share ideas and explore emerging developments in
                     digital technology and engineering. It showcases cutting-edge research, innovations
@@ -74,13 +74,18 @@ export default function About() {
                     collaboration and meaningful academia-industry interaction.
                   </p>
 
-                  {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
-                    <div className="pt-2">
-                      <Button variant="onDark" href={CONFIG.BROCHURE_URL} target="_blank">
-                        Download Conference Brochure
+                  <div className="flex flex-wrap items-center gap-3 pt-2">
+                    {CONFIG.BROCHURE_1_URL && (
+                      <Button variant="onDark" href={CONFIG.BROCHURE_1_URL} target="_blank">
+                        Brochure 1
                       </Button>
-                    </div>
-                  )}
+                    )}
+                    {CONFIG.BROCHURE_2_URL && (
+                      <Button variant="ghostDark" href={CONFIG.BROCHURE_2_URL} target="_blank">
+                        Brochure 2
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </Reveal>
             </div>
@@ -92,7 +97,7 @@ export default function About() {
                   {highlights.map((item, idx) => (
                     <div
                       key={idx}
-                      className="group flex flex-col items-start rounded-2xl border border-[#264548] bg-[#142A2C]/80 p-5 sm:p-6 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#007a87]/60 hover:bg-[#183437]/90"
+                      className="group flex flex-col items-start rounded-2xl bg-[#142A2C]/80 p-4 sm:p-6 text-left shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#007a87]/60 hover:bg-[#183437]/90"
                     >
                       <div className="mb-2 flex items-center gap-2.5">
                         <span
@@ -103,7 +108,7 @@ export default function About() {
                           {item.title}
                         </h4>
                       </div>
-                      <p className="font-sans text-sm sm:text-[15px] leading-relaxed text-[#9EB2AE]">
+                      <p className="font-sans text-sm sm:text-[15px] leading-relaxed text-[#9EB2AE] text-justify">
                         {item.desc}
                       </p>
                     </div>

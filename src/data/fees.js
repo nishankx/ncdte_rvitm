@@ -20,6 +20,6 @@ export const FEES_DATA = {
     { text: "Extra team member: ₹200" },
     { text: "One registration kit will be provided per registration" },
     { text: "Accepted and presented papers published in relevant ISSN journals indexed in doi, Google Scholar, publons, CiteFactor, Semantic Scholar, Academia.edu" },
-    { text: "Selected papers, after extension to full-length versions, published in a Scopus-indexed book series" },
+    { text: "Publication in the Scopus-indexed book series will be reserved exclusively for the most exceptional extended papers, subject to rigorous quality evaluation" },
   ],
 };

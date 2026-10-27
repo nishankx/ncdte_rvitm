@@ -48,7 +48,7 @@ export default function DeadlinePopup() {
                 <p className="mt-1 text-sm text-center font-semibold text-slate-800 sm:text-[15px] leading-snug">
                   Please submit your papers on or before{" "}
                   <span className="inline-block my-1 rounded-md bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 px-2 py-0.5 font-black text-white shadow-sm ring-1 ring-rose-400/30">
-                    10 Nov, 2026
+                    15 Nov, 2026
                   </span>
                 </p>
 

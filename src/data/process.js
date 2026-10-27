@@ -2,13 +2,13 @@ export const SUBMISSION_PROCESS_DATA = [
   {
     step: "01",
     title: "Prepare",
-    desc: "Format your paper using the prescribed conference template. Papers must be original and unpublished with similarity / AI plagiarism level below 15%.",
+    desc: "Format your paper using the prescribed conference template. Papers must be original and unpublished with similarity and AI plagiarism level below 10%.",
     hasTemplateLink: true,
   },
   {
     step: "02",
     title: "Submit & Register",
-    desc: "Submit your research paper and author details through the official Google Form on or before 10 November 2026.",
+    desc: "Submit your research paper and author details through the official Google Form on or before 15 November 2026.",
     hasFormLink: true,
   },
   {
@@ -29,6 +29,6 @@ export const SUBMISSION_PROCESS_DATA = [
   {
     step: "06",
     title: "Presentation & Publication",
-    desc: "Present on 4 December 2026. Accepted & presented papers published in relevant ISSN journals; selected papers in Scopus-indexed book series.",
+    desc: "Present on 4 December 2026. Accepted & presented papers published in relevant ISSN journals; exceptional extended papers considered for the Scopus-indexed book series.",
   },
 ];

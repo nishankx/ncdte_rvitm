@@ -46,7 +46,7 @@ export default function Tracks() {
           </SectionHeading>
 
           <Reveal delay={0.08} className="mx-auto mb-8 max-w-[72ch] sm:mb-10">
-            <p className="text-small font-normal leading-relaxed text-white/80 sm:text-[16px]">
+            <p className="text-small font-normal leading-relaxed text-white/80 sm:text-[16px] text-justify">
               {CALL_FOR_PAPERS_INTRO}
             </p>
           </Reveal>

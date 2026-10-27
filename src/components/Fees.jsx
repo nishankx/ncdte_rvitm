@@ -92,10 +92,10 @@ export default function Fees({ onOpenModal }) {
               </div>
 
               {/* Kit Note & Deadline Note */}
-              <div className="mx-auto max-w-[54ch] space-y-2 pt-4 text-small text-[#9EB2AE]">
-                <p className="font-medium text-white/95">{FEES_DATA.note}</p>
-                <p className="font-medium text-[#d6fb00]">{FEES_DATA.deadlineNotice}</p>
-                <p className="text-caption text-[#9EB2AE] pt-1">
+              <div className="mx-auto max-w-[54ch] space-y-2 pt-4 text-small text-[#9EB2AE] text-justify">
+                <p className="font-medium text-white/95 text-justify">{FEES_DATA.note}</p>
+                <p className="font-medium text-[#d6fb00] text-justify">{FEES_DATA.deadlineNotice}</p>
+                <p className="text-caption text-[#9EB2AE] pt-1 text-justify">
                   Complete your registration via Google Form. Payment procedures will be sent directly to your registered email address following review.
                 </p>
               </div>
@@ -105,7 +105,7 @@ export default function Fees({ onOpenModal }) {
             <Reveal delay={0.15} className="w-full">
               <Card
                 onDark
-                className="flex w-full flex-col items-center space-y-8 !p-8 text-center sm:!p-10"
+                className="flex w-full flex-col items-center space-y-8 !p-5 sm:!p-8 text-center sm:!p-10"
               >
                 <div className="w-full text-left">
                   <span className="mb-2 block text-left text-eyebrow uppercase tracking-widest text-white/50">
@@ -126,7 +126,7 @@ export default function Fees({ onOpenModal }) {
                         aria-hidden="true"
                         className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gradient-to-r from-aurora-cyan via-aurora-azure to-aurora-violet shadow-[0_0_8px_#d6fb00]"
                       />
-                      <span>{item.text}</span>
+                      <span className="text-justify">{item.text}</span>
                     </li>
                   ))}
                 </ul>

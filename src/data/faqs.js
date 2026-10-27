@@ -21,13 +21,13 @@ export const FAQS_DATA = [
     id: "faq-4",
     question: "What are the important deadlines?",
     answer:
-      "• Submission Deadline: 10 November 2026\n• Notification of Acceptance: 20 November 2026\n• Registration Deadline: 25 November 2026\n• Conference Date: 4 December 2026",
+      "• Submission Deadline: 15 November 2026\n• Notification of Acceptance: 20 November 2026\n• Registration Deadline: 25 November 2026\n• Conference Date: 4 December 2026",
   },
   {
     id: "faq-5",
     question: "What are the paper submission guidelines?",
     answer:
-      "• Papers must be original and unpublished, and not under consideration for publication elsewhere.\n• Follow the prescribed conference paper template, available on the conference website.\n• Similarity / AI plagiarism level of the paper must be below 15%.\n• Authors of accepted papers must register using the designated registration link.",
+      "• Papers must be original and unpublished, and not under consideration for publication elsewhere.\n• Follow the prescribed conference paper template, available on the conference website.\n• Similarity and AI plagiarism level of the paper must be below 10%.\n• Authors of accepted papers must register using the designated registration link.",
   },
   {
     id: "faq-6",
@@ -39,7 +39,7 @@ export const FAQS_DATA = [
     id: "faq-7",
     question: "Where will accepted papers be published?",
     answer:
-      "• Accepted and presented papers will be published in relevant ISSN journals indexed in: doi, Google Scholar, publons, CiteFactor, Semantic Scholar, and Academia.edu.\n• Selected papers, after extension to full-length versions, will be published in a Scopus-indexed book series (Elsevier Scopus).",
+      "• Accepted and presented papers will be published in relevant ISSN journals indexed in: doi, Google Scholar, publons, CiteFactor, Semantic Scholar, and Academia.edu.\n• Publication in the Scopus-indexed book series will be reserved exclusively for the most exceptional extended papers, subject to rigorous quality evaluation.",
   },
   {
     id: "faq-8",

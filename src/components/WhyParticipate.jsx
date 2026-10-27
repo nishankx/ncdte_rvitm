@@ -113,7 +113,7 @@ export default function WhyParticipate() {
               color="aurora"
             />
 
-            <div className="relative z-10 grid w-full auto-rows-fr grid-cols-1 items-stretch justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="relative z-10 grid w-full auto-rows-fr grid-cols-1 items-stretch justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {WHY_PARTICIPATE_DATA.map((item, idx) => (
                 <Reveal key={item.id} delay={idx * 0.08} className="h-full w-full">
                   <Card
@@ -129,7 +129,7 @@ export default function WhyParticipate() {
                         {item.title}
                       </h3>
 
-                      <p className="w-full text-small leading-relaxed text-graphite">{item.desc}</p>
+                      <p className="w-full text-small leading-relaxed text-graphite text-justify">{item.desc}</p>
                     </div>
 
                     <div className="mt-6 flex justify-start pt-6">

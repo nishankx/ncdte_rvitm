@@ -45,7 +45,9 @@ export default function Footer() {
               <p className="font-medium text-white/90">
                 RV Institute of Technology and Management®
               </p>
-              <p className="text-white/80">Coordinated by Department of Computer Science and Engineering</p>
+              <p className="text-white/80">
+                Organized by Department of Computer Science and Engineering - CSE Cluster
+              </p>
               <p className="text-caption text-white/60">
                 Sy. No. 171/5, Kothanur, 8th Phase, JP Nagar, Bengaluru - 560076, Karnataka, India
               </p>
@@ -90,15 +92,27 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-              {CONFIG.BROCHURE_URL && CONFIG.BROCHURE_URL.trim() !== "" && (
+              {CONFIG.BROCHURE_1_URL && (
                 <li>
                   <a
-                    href={CONFIG.BROCHURE_URL}
+                    href={CONFIG.BROCHURE_1_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-[#d6fb00] transition-colors hover:text-white"
                   >
-                    Download Brochure ↗
+                    Brochure 1 ↗
+                  </a>
+                </li>
+              )}
+              {CONFIG.BROCHURE_2_URL && (
+                <li>
+                  <a
+                    href={CONFIG.BROCHURE_2_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-[#d6fb00] transition-colors hover:text-white"
+                  >
+                    Brochure 2 ↗
                   </a>
                 </li>
               )}

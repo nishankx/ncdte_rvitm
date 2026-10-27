@@ -52,7 +52,7 @@ export default function PersonCard({ member, isChief = false }) {
       </h4>
 
       {/* Designation */}
-      <p className="mt-0.5 text-[10.5px] sm:text-[11.5px] leading-snug text-graphite line-clamp-3">
+      <p className="mt-0.5 text-[10.5px] sm:text-[11.5px] leading-snug text-center text-graphite line-clamp-3">
         {member.designation}
       </p>
     </motion.article>

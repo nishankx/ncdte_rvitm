@@ -12,7 +12,7 @@ export default function Guidelines({ onOpenModal }) {
   const paperGuidelines = [
     "Papers must be original and unpublished, and not under consideration for publication elsewhere.",
     "Follow the prescribed conference paper template, available on the conference website.",
-    "Similarity / AI plagiarism level of the paper must be below 15%.",
+    "Similarity and AI plagiarism level of the paper must be below 10%.",
     "Authors of accepted papers must register using the designated registration link.",
   ];
 
@@ -20,7 +20,7 @@ export default function Guidelines({ onOpenModal }) {
     "Acceptance status will be communicated by email after the peer-review process.",
     "At least one author of each accepted paper or poster must register by paying the applicable fee on or before 25 November 2026.",
     "Accepted and presented papers will be published in relevant ISSN journals indexed in recognized databases.",
-    "Selected papers, after extension to full-length versions, will be published in a Scopus-indexed book series.",
+    "Publication in the Scopus-indexed book series will be reserved exclusively for the most exceptional extended papers, subject to rigorous quality evaluation.",
   ];
 
   const indexingPartners = [
@@ -59,8 +59,8 @@ export default function Guidelines({ onOpenModal }) {
 
           {/* Guidelines Two-Column Card */}
           <Reveal delay={0.1} className="w-full">
-            <Card onWhite={false} className="w-full !p-8 md:!p-12 lg:!p-14">
-              <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+            <Card onWhite={false} className="w-full !p-5 sm:!p-8 md:!p-12 lg:!p-14">
+              <div className="grid grid-cols-1 items-start gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16">
                 {/* Column 1: Paper Presentation */}
                 <div className="flex flex-col items-start space-y-6 text-left">
                   <span className="block text-left text-eyebrow uppercase tracking-widest text-graphite">
@@ -80,7 +80,7 @@ export default function Guidelines({ onOpenModal }) {
                           aria-hidden="true"
                           className="mt-[0.6em] size-2 shrink-0 rounded-sm bg-[#00545f]"
                         />
-                        <span>{item}</span>
+                        <span className="text-justify">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -113,7 +113,7 @@ export default function Guidelines({ onOpenModal }) {
                           aria-hidden="true"
                           className="mt-[0.6em] size-2 shrink-0 rounded-sm bg-[#00545f]"
                         />
-                        <span>{item}</span>
+                        <span className="text-justify">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -125,7 +125,7 @@ export default function Guidelines({ onOpenModal }) {
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
                   {/* Left: ISSN Journals */}
                   <div className="lg:col-span-8">
-                    <p className="text-small font-medium text-ink/90">
+                    <p className="text-small font-medium text-ink/90 text-justify">
                       Accepted and presented papers will be published in relevant ISSN journals indexed in:
                     </p>
                     <div className="mt-5 flex flex-wrap items-center gap-3.5">
@@ -150,8 +150,8 @@ export default function Guidelines({ onOpenModal }) {
 
                   {/* Right: Scopus-indexed book series */}
                   <div className="lg:col-span-4 lg:border-l lg:border-[#EBE2CE] lg:pl-8">
-                    <p className="text-small font-medium text-[#0F2F31]/90">
-                      Selected papers, after extension to full-length versions, will be published in a Scopus-indexed book series:
+                    <p className="text-small font-medium text-[#0F2F31]/90 text-justify">
+                      Publication in the Scopus-indexed book series will be reserved exclusively for the most exceptional extended papers, subject to rigorous quality evaluation:
                     </p>
                     <div className="mt-5 inline-flex h-12 items-center gap-3 rounded-xl border border-[#E9AA3D]/50 bg-[#EBE2CE]/50 px-4 py-2 shadow-soft backdrop-blur-sm transition-all hover:bg-white/90">
                       <img

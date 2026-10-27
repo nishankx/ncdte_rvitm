@@ -2,10 +2,10 @@ export const department = {
   id: "cse",
   name: "Department of Computer Science & Engineering",
   short: "CSE Department",
-  institution: "RV Institute of Technology and Management®, Bengaluru",
+  institution: "RV Institute of Technology and Management, Bengaluru",
   hod: "Dr. Hema M S",
-  hodRole: "Professor & Head, Department of CSE, RVITM",
-  desc: "The Department of Computer Science & Engineering at RV Institute of Technology and Management (RVITM) is committed to academic rigor, cutting-edge technical innovation, and preparing globally competent professionals equipped for impactful computing careers.",
+  hodRole: "Professor & Head, Dept. of CSE, RVITM",
+  desc: "Established in 2019, the Department of Computer Science and Engineering offers a VTU-affiliated, AICTE-approved B.E. programme with industry-aligned, experiential learning in modern laboratories, focusing on AI, software engineering, data science and cloud technologies.",
   vision:
     "To be at the frontier of Computer Science and Engineering with a focus on research, innovation, industry needs and to produce global professionals contributing to society.",
   mission: [

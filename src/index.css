@@ -39,6 +39,16 @@
     outline-offset: 3px;
   }
 
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
   /* the only outline allowed */
 }
 

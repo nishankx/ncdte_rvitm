@@ -98,7 +98,7 @@ export default function ImportantDates() {
                     {/* 3. Description: Clean readable graphite copy */}
                     <div className="md:col-span-4 lg:col-span-3">
                       {item.description && (
-                        <p className="text-xs sm:text-sm text-graphite leading-relaxed">
+                        <p className="text-xs sm:text-sm text-graphite leading-relaxed text-justify">
                           {item.description}
                         </p>
                       )}

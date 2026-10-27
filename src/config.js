@@ -9,6 +9,10 @@ export const CONFIG = {
   CONFERENCE_WEBSITE: "",
   EMAIL: "national_conference.rvitm@rvei.edu.in",
   BROCHURE_URL: "/POSTER.pdf",
+  BROCHURE_1_URL: "/POSTER.pdf",
+  BROCHURE_1_NAME: "Brochure 1",
+  BROCHURE_2_URL: "/REVISED_BROCHURE.pdf",
+  BROCHURE_2_NAME: "Brochure 2",
   MAP_URL:
     "https://www.google.com/maps/search/?api=1&query=RV+Institute+of+Technology+and+Management+Kothanur+JP+Nagar+Bengaluru+560076",
   CONTACT_PHONES: ["9902028279", "7200575617", "9739981676"],

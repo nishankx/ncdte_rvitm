@@ -33,7 +33,7 @@ export default function Department() {
             Department of Computer Science &amp; Engineering
           </SectionHeading>
 
-          <p className="mb-10 max-w-[65ch] text-small sm:text-body text-graphite leading-relaxed">
+          <p className="mb-10 max-w-[65ch] text-small sm:text-body text-graphite leading-relaxed text-justify">
             {department.desc}
           </p>
 
@@ -43,7 +43,7 @@ export default function Department() {
             <Reveal className="h-full lg:col-span-5">
               <Card
                 onWhite={false}
-                className="flex h-full flex-col justify-between p-6 sm:p-8"
+                className="flex h-full flex-col justify-between p-5 sm:p-8"
               >
                 <div>
                   <div className="mb-4 flex items-center gap-2">
@@ -53,11 +53,11 @@ export default function Department() {
                     </span>
                   </div>
 
-                  <div className="relative rounded-2xl bg-gradient-to-br from-[#00545f]/8 via-[#ecffb6]/25 to-transparent p-5 sm:p-6 border border-[#00545f]/15">
+                  <div className="relative rounded-2xl bg-gradient-to-br from-[#00545f]/8 via-[#ecffb6]/25 to-transparent p-4 sm:p-6 border border-[#00545f]/15">
                     <span className="font-serif text-4xl text-[#00545f]/40 leading-none select-none block mb-1">
                       “
                     </span>
-                    <p className="font-serif text-[2rem] italic leading-relaxed text-ink -mt-3">
+                    <p className="font-serif text-[2rem] italic leading-relaxed text-ink -mt-3 text-justify">
                       {department.vision}
                     </p>
                   </div>
@@ -84,7 +84,7 @@ export default function Department() {
             <Reveal delay={0.1} className="h-full lg:col-span-7">
               <Card
                 onWhite={false}
-                className="flex h-full flex-col justify-between p-6 sm:p-8"
+                className="flex h-full flex-col justify-between p-5 sm:p-8"
               >
                 <div>
                   <div className="mb-4 flex items-center gap-2">
@@ -98,13 +98,13 @@ export default function Department() {
                     {department.mission.map((item) => (
                       <div
                         key={item.code}
-                        className="group flex items-start gap-3.5 rounded-xl border border-[#00545f]/10 bg-white/70 p-4 transition-all duration-200 hover:bg-white hover:border-[#00545f]/25 hover:shadow-soft"
+                        className="group flex items-start gap-3 rounded-xl border border-[#00545f]/10 bg-white/70 p-3.5 sm:p-4 transition-all duration-200 hover:bg-white hover:border-[#00545f]/25 hover:shadow-soft"
                       >
                         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#00545f] text-white font-sans text-xs font-bold tracking-wider shadow-sm transition-transform duration-200 group-hover:scale-105">
                           {item.code}
                         </span>
                         <div className="flex-1">
-                          <p className="text-small text-ink/90 leading-relaxed">
+                          <p className="text-small text-ink/90 leading-relaxed text-justify">
                             {item.text}
                           </p>
                         </div>

@@ -47,7 +47,7 @@ export default function FAQ() {
               const isOpen = openId === faq.id;
               return (
                 <Reveal key={faq.id} delay={index * 0.03}>
-                  <div className="rounded-lg bg-white px-7 py-6 shadow-soft transition-all duration-200">
+                  <div className="rounded-lg bg-white px-5 py-4 sm:px-7 sm:py-6 shadow-soft transition-all duration-200">
                     <button
                       type="button"
                       aria-expanded={isOpen}
@@ -86,8 +86,8 @@ export default function FAQ() {
                           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                           className="overflow-hidden"
                         >
-                          <div className="w-full whitespace-pre-line pt-4 text-body font-normal text-graphite">
-                            <p>{faq.answer}</p>
+                          <div className="w-full whitespace-pre-line pt-4 text-body font-normal text-graphite text-justify">
+                            <p className="text-justify">{faq.answer}</p>
                             {faq.hasMapLink && (
                               <div className="mt-3 flex justify-start">
                                 <a
