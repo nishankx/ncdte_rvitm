@@ -2,8 +2,8 @@ export const IMPORTANT_DATES = [
   {
     id: "submission",
     title: "Submission Deadline",
-    dateDisplay: "10 November 2026",
-    isoDate: "2026-11-10T23:59:59+05:30",
+    dateDisplay: "15 November 2026",
+    isoDate: "2026-11-15T23:59:59+05:30",
     description: "Final date for research paper submissions through the designated portal.",
     visible: true,
   },

@@ -146,6 +146,12 @@ export default function Hero({ onOpenModal }) {
                   </motion.span>
                 </span>
                 <span className="mt-1 inline-block bg-gradient-to-r from-[#00545f] via-[#007b89] to-[#d6fb00] bg-clip-text font-sans text-[80px] font-black leading-[0.88] tracking-tighter text-transparent drop-shadow-[0_10px_30px_rgba(0,84,95,0.20)]">2026</span>
+                  <motion.div
+                    variants={lineVariants}
+                    className="relative bg-gradient-to-r from-[#ff0000] via-[#ff8c00] to-[#ffff00] bg-clip-text font-sans text-[clamp(2rem,7vw,3rem)] font-black leading-[0.88] tracking-tighter text-transparent drop-shadow-[0_10px_30px_rgba(255,69,0,0.20)]"
+                  >
+                     [ HYBRID MODE ]
+                  </motion.div>
               </motion.h1>
 
               {/* Date and Venue: Two Stacked Lines */}
