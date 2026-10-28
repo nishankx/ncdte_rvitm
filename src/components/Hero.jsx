@@ -230,6 +230,16 @@ export default function Hero({ onOpenModal }) {
                     Brochure 2
                   </Button>
                 )}
+                {CONFIG.PAPER_TEMPLATE_URL && (
+                  <Button
+                    variant="soft"
+                    href={CONFIG.PAPER_TEMPLATE_URL}
+                    download={CONFIG.PAPER_TEMPLATE_NAME || "IJSRP-paper-submission-format-single-column.docx"}
+                    className="h-10 px-4 text-xs sm:h-11 sm:text-sm border border-ink/15"
+                  >
+                    Paper Submission Format
+                  </Button>
+                )}
               </div>
             </div>
           </div>

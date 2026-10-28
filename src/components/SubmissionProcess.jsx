@@ -79,11 +79,10 @@ export default function SubmissionProcess({ onOpenModal }) {
                   <div className="flex justify-center pt-2">
                     <a
                       href={CONFIG.PAPER_TEMPLATE_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      download={CONFIG.PAPER_TEMPLATE_NAME || "IJSRP-paper-submission-format-single-column.docx"}
                       className="text-caption font-semibold uppercase tracking-wider text-[#d6fb00] underline underline-offset-4 transition-colors hover:text-white"
                     >
-                      Download Template ↗
+                      Download Paper Format ↓
                     </a>
                   </div>
                 )}

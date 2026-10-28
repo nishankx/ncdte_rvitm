@@ -87,8 +87,12 @@ export default function Guidelines({ onOpenModal }) {
 
                   {CONFIG.PAPER_TEMPLATE_URL && CONFIG.PAPER_TEMPLATE_URL.trim() !== "" && (
                     <div className="pt-2">
-                      <Button variant="primary" href={CONFIG.PAPER_TEMPLATE_URL} target="_blank">
-                        Download Paper Template
+                      <Button
+                        variant="primary"
+                        href={CONFIG.PAPER_TEMPLATE_URL}
+                        download={CONFIG.PAPER_TEMPLATE_NAME || "IJSRP-paper-submission-format-single-column.docx"}
+                      >
+                        Paper Submission Format
                       </Button>
                     </div>
                   )}

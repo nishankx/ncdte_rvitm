@@ -116,6 +116,17 @@ export default function Footer() {
                   </a>
                 </li>
               )}
+              {CONFIG.PAPER_TEMPLATE_URL && (
+                <li>
+                  <a
+                    href={CONFIG.PAPER_TEMPLATE_URL}
+                    download={CONFIG.PAPER_TEMPLATE_NAME || "IJSRP-paper-submission-format-single-column.docx"}
+                    className="block text-[#d6fb00] transition-colors hover:text-white"
+                  >
+                    Paper Submission Format ↓
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
 

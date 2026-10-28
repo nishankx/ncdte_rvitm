@@ -10,10 +10,12 @@ export default function Button({
   type = "button",
   target,
   rel,
+  download,
   showArrow = true,
   ...props
 }) {
   const shouldReduceMotion = useReducedMotion();
+  const isDownload = Boolean(download);
 
   const baseStyles =
     "inline-flex items-center justify-center font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-aurora-azure focus-visible:outline-offset-2 rounded-pill text-sm cursor-pointer select-none group";
@@ -39,8 +41,14 @@ export default function Button({
     <>
       <span>{children}</span>
       {showArrow && (
-        <span className="ml-1.5 inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-          ↗
+        <span
+          className={`ml-1.5 inline-block transition-transform duration-200 ${
+            isDownload
+              ? "group-hover:translate-y-0.5"
+              : "group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          }`}
+        >
+          {isDownload ? "↓" : "↗"}
         </span>
       )}
     </>
@@ -50,6 +58,7 @@ export default function Button({
     return (
       <motion.a
         href={href}
+        download={download}
         target={target}
         rel={target === "_blank" ? rel || "noopener noreferrer" : rel}
         onClick={onClick}

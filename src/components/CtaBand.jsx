@@ -51,28 +51,6 @@ export default function CtaBand({ onOpenModal }) {
               >
                 Submit your paper
               </Button>
-
-              {/* Two Brochure Links */}
-              {CONFIG.BROCHURE_1_URL && (
-                <a
-                  href={CONFIG.BROCHURE_1_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-2 text-caption font-semibold uppercase tracking-wider text-[#d6fb00] underline underline-offset-4 transition-colors hover:text-white"
-                >
-                  Brochure 1 ↗
-                </a>
-              )}
-              {CONFIG.BROCHURE_2_URL && (
-                <a
-                  href={CONFIG.BROCHURE_2_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-2 text-caption font-semibold uppercase tracking-wider text-white/70 underline underline-offset-4 transition-colors hover:text-white"
-                >
-                  Brochure 2 ↗
-                </a>
-              )}
             </div>
           </Reveal>
         </div>
