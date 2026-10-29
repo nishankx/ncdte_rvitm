@@ -51,7 +51,7 @@ export default function Tracks() {
             <p className="text-small font-normal leading-relaxed text-white/80 sm:text-[16px] text-justify">
               {CALL_FOR_PAPERS_INTRO}
             </p>
-            {CONFIG.PAPER_TEMPLATE_URL && (
+            {/* {CONFIG.PAPER_TEMPLATE_URL && (
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <Button
                   variant="onDark"
@@ -62,7 +62,7 @@ export default function Tracks() {
                   Paper Submission Format
                 </Button>
               </div>
-            )}
+            )} */}
           </Reveal>
 
           {/* Panel List: Matching the brochure's Track badges and descriptions */}

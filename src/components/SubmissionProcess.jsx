@@ -75,7 +75,7 @@ export default function SubmissionProcess({ onOpenModal }) {
                 </p>
 
                 {/* Action Links */}
-                {stepItem.hasTemplateLink && CONFIG.PAPER_TEMPLATE_URL && (
+                {stepItem.hasTemplateLink && !CONFIG.PAPER_TEMPLATE_URL && (
                   <div className="flex justify-center pt-2">
                     <a
                       href={CONFIG.PAPER_TEMPLATE_URL}

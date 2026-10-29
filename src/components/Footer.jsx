@@ -116,7 +116,7 @@ export default function Footer() {
                   </a>
                 </li>
               )}
-              {CONFIG.PAPER_TEMPLATE_URL && (
+              {!CONFIG.PAPER_TEMPLATE_URL && (
                 <li>
                   <a
                     href={CONFIG.PAPER_TEMPLATE_URL}
