@@ -116,7 +116,7 @@ export default function Footer() {
                   </a>
                 </li>
               )}
-              {!CONFIG.PAPER_TEMPLATE_URL && (
+              {CONFIG.PAPER_TEMPLATE_URL && (
                 <li>
                   <a
                     href={CONFIG.PAPER_TEMPLATE_URL}
@@ -165,12 +165,36 @@ export default function Footer() {
                   </a>
                 ))}
               </div>
+              <div className="flex flex-col items-center pt-10 space-y-4 ">
+              <span className="block text-eyebrow uppercase tracking-widest text-white/40">
+              Developed & Maintained by
+              </span>
+              <a
+                href="https://nishankashyap.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Developer Nishan Kashyap"
+                className="group inline-block  transition-all duration-300 ease-out   hover:-translate-y-1.5 hover:scale-105  active:scale-95"
+              >
+                  <img
+                    src="/developer/devCard.png"
+                    alt="Developed by Nishan Kashyap"
+                    width={220}
+                    height={195}
+                    className="h-auto w-44 sm:w-52 rounded-sm shadow-lg transition-shadow duration-300 group-hover:shadow-[0_12px_30px_-6px_rgba(0,122,135,0.35)]"
+                    loading="lazy"
+                  />
+              </a>
+              </div>
             </div>
           </div>
         </div>
-        {/* Copyright Line */}
-        <div className="text-center text-caption font-normal text-white/40">
-          © 2026 RV Institute of Technology and Management. All Rights Reserved.
+        {/* Bottom Section: Developer Card & Copyright */}
+        <div className="flex flex-col items-center justify-center gap-6 border-t border-white/10 pt-10">
+          {/* Copyright Line */}
+          <div className="text-center text-caption font-normal text-white/40">
+            © 2026 RV Institute of Technology and Management. All Rights Reserved.
+          </div>
         </div>
       </Container>
     </footer>

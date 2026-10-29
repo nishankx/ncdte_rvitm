@@ -85,7 +85,7 @@ export default function Guidelines({ onOpenModal }) {
                     ))}
                   </ul>
 
-                  {/* {CONFIG.PAPER_TEMPLATE_URL && CONFIG.PAPER_TEMPLATE_URL.trim() !== "" && (
+                  {CONFIG.PAPER_TEMPLATE_URL && CONFIG.PAPER_TEMPLATE_URL.trim() !== "" && (
                     <div className="pt-2">
                       <Button
                         variant="primary"
@@ -95,7 +95,7 @@ export default function Guidelines({ onOpenModal }) {
                         Paper Submission Format
                       </Button>
                     </div>
-                  )} */}
+                  )}
                 </div>
 
                 {/* Column 2: Important notes */}

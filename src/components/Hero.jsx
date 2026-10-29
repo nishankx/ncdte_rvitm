@@ -230,7 +230,7 @@ export default function Hero({ onOpenModal }) {
                     Brochure 2
                   </Button>
                 )}
-                {/*  {CONFIG.PAPER_TEMPLATE_URL && (
+                {CONFIG.PAPER_TEMPLATE_URL && (
                   <Button
                     variant="soft"
                     href={CONFIG.PAPER_TEMPLATE_URL}
@@ -239,7 +239,7 @@ export default function Hero({ onOpenModal }) {
                   >
                     Paper Submission Format
                   </Button>
-                )} */}
+                )}
               </div>
             </div>
           </div>
