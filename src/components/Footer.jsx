@@ -100,7 +100,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="block text-[#d6fb00] transition-colors hover:text-white"
                   >
-                    Brochure 1 ↗
+                    Poster ↗
                   </a>
                 </li>
               )}
@@ -112,7 +112,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="block text-[#d6fb00] transition-colors hover:text-white"
                   >
-                    Brochure 2 ↗
+                    Brochure ↗
                   </a>
                 </li>
               )}
