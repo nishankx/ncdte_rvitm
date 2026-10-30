@@ -216,7 +216,7 @@ export default function Hero({ onOpenModal }) {
                     rel="noopener noreferrer"
                     className="h-10 px-4 text-xs sm:h-11 sm:text-sm border border-ink/15"
                   >
-                    Brochure 1
+                    Poster
                   </Button>
                 )}
                 {CONFIG.BROCHURE_2_URL && (
@@ -227,7 +227,7 @@ export default function Hero({ onOpenModal }) {
                     rel="noopener noreferrer"
                     className="h-10 px-4 text-xs sm:h-11 sm:text-sm border border-ink/15"
                   >
-                    Brochure 2
+                    Brochure
                   </Button>
                 )}
                 {CONFIG.PAPER_TEMPLATE_URL && (
