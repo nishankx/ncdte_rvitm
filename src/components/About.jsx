@@ -77,12 +77,12 @@ export default function About() {
                   <div className="flex flex-wrap items-center gap-3 pt-2">
                     {CONFIG.BROCHURE_1_URL && (
                       <Button variant="onDark" href={CONFIG.BROCHURE_1_URL} target="_blank">
-                        Brochure 1
+                        Poster
                       </Button>
                     )}
                     {CONFIG.BROCHURE_2_URL && (
                       <Button variant="ghostDark" href={CONFIG.BROCHURE_2_URL} target="_blank">
-                        Brochure 2
+                        Brochure
                       </Button>
                     )}
                   </div>
