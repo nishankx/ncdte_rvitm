@@ -70,19 +70,41 @@ export default function ImportantDates() {
                 <li className="group py-6 sm:py-8 lg:py-9 transition-colors duration-200 hover:bg-white/40 px-3 sm:px-5 rounded-2xl">
                   <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-3 sm:gap-4 lg:gap-6 w-full text-left">
                     {/* 1. Date: Large, bold & responsive */}
-                    <div className="md:col-span-5 lg:col-span-4 flex items-center justify-between md:block">
-                      <span
-                        className={`font-sans text-4xl font-extrabold tracking-tight leading-none ${
-                          isNext ? "text-aurora" : "text-ink"
-                        }`}
-                      >
-                        {item.dateDisplay}
-                      </span>
+                    <div className="md:col-span-5 lg:col-span-5 flex items-center justify-between md:block">
+                      {item.isExtended ? (
+                        <div className="flex flex-col items-start gap-1">
+                          <span className="font-sans text-2xl sm:text-3xl font-extrabold tracking-tight text-ink/40 line-through decoration-rose-500 decoration-[3px]">
+                            {item.dateDisplay}
+                          </span>
+                          <span className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight leading-none fancy-gradient-text">
+                            {item.newDateDisplay || "18 November 2026"}
+                          </span>
+                          <div className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-rose-500/10 via-amber-500/15 to-emerald-500/10 px-2.5 py-1 border border-rose-500/30 shadow-sm mt-0.5">
+                            <span className="relative flex h-2 w-2 shrink-0">
+                              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-500 opacity-80" />
+                              <span className="relative inline-flex h-2 w-2 rounded-full bg-rose-500 shadow-sm" />
+                            </span>
+                            <span className="font-sans text-xs sm:text-sm font-black tracking-tight fancy-gradient-text">
+                              {item.extendedDateText || "Date extended to 18th November"}
+                            </span>
+                          </div>
+                        </div>
+                      ) : (
+                        <span
+                          className={`font-sans text-4xl font-extrabold tracking-tight leading-none ${isNext ? "text-aurora" : "text-ink"
+                            }`}
+                        >
+                          {item.dateDisplay}
+                        </span>
+                      )}
                       {/* Badge shown next to date on mobile screens */}
                       <span
-                        className={`md:hidden inline-flex items-center rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider shrink-0 ${
-                          isNext ? "bg-ink text-white shadow-sm" : "bg-white/90 text-graphite border border-ink/10"
-                        }`}
+                        className={`md:hidden inline-flex items-center rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider shrink-0 ${item.isExtended
+                            ? "bg-gradient-to-r from-rose-600 to-amber-500 text-white shadow-sm font-black"
+                            : isNext
+                              ? "bg-ink text-white shadow-sm"
+                              : "bg-white/90 text-graphite border border-ink/10"
+                          }`}
                       >
                         {item.status}
                       </span>
@@ -96,7 +118,7 @@ export default function ImportantDates() {
                     </div>
 
                     {/* 3. Description: Clean readable graphite copy */}
-                    <div className="md:col-span-4 lg:col-span-3">
+                    <div className="md:col-span-4 lg:col-span-2">
                       {item.description && (
                         <p className="text-xs sm:text-sm text-graphite leading-relaxed text-justify">
                           {item.description}
@@ -107,9 +129,12 @@ export default function ImportantDates() {
                     {/* 4. Status Badge on md+ */}
                     <div className="hidden md:flex md:col-span-12 lg:col-span-2 items-center md:justify-start lg:justify-end">
                       <span
-                        className={`inline-flex items-center rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider whitespace-nowrap shadow-sm ${
-                          isNext ? "bg-ink text-white shadow-ink/20" : "bg-white/90 text-graphite border border-ink/10"
-                        }`}
+                        className={`inline-flex items-center rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider whitespace-nowrap shadow-sm ${item.isExtended
+                            ? "bg-gradient-to-r from-rose-600 via-pink-600 to-amber-500 text-white shadow-rose-500/20 font-black animate-pulse"
+                            : isNext
+                              ? "bg-ink text-white shadow-ink/20"
+                              : "bg-white/90 text-graphite border border-ink/10"
+                          }`}
                       >
                         {item.status}
                       </span>

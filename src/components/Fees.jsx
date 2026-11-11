@@ -52,22 +52,6 @@ export default function Fees({ onOpenModal }) {
             Registration <span className="text-aurora">Fee</span>
           </SectionHeading>
 
-          {/* Bold Announcement Notice with Aggressive Flicker */}
-          <Reveal delay={0.05} className="mb-8 sm:mb-10 w-full max-w-2xl">
-            <div className="flex items-center justify-center gap-3.5 rounded-2xl border-2 border-[#d6fb00] bg-gradient-to-r from-[#00545f]/80 via-[#142A2C] to-[#00545f]/80 px-6 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.4)] backdrop-blur-md animate-flicker">
-              <span className="relative flex h-3.5 w-3.5 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#d6fb00] opacity-90" />
-                <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-[#d6fb00] shadow-[0_0_14px_#d6fb00]" />
-              </span>
-              <p className="font-sans text-sm sm:text-base md:text-lg font-extrabold tracking-tight text-white">
-                <span className="text-[#d6fb00] font-black uppercase tracking-wider underline decoration-[#d6fb00] decoration-2 underline-offset-4 mr-1.5">
-                  Important Notice:
-                </span>{" "}
-                Registrations will commence after paper acceptance.
-              </p>
-            </div>
-          </Reveal>
-
           {/* Single centered axis: Price block on top, Card beneath */}
           <div className="mx-auto flex w-full max-w-3xl flex-col items-center space-y-10 text-center">
             {/* Top Block: Giant Fee Numbers & Details matching brochure banner */}
@@ -89,6 +73,19 @@ export default function Fees({ onOpenModal }) {
               {/* Extra Team Members */}
               <div className="inline-flex rounded-full border border-[#007a87]/50 bg-[#00545f]/40 px-5 py-2 font-sans text-base font-semibold text-[#d6fb00] shadow-sm sm:text-lg">
                 {FEES_DATA.extraMembersNote}
+              </div>
+
+              {/* Registration Fee Action Button */}
+              <div className="pt-2 flex justify-center">
+                <Button
+                  variant="onDark"
+                  href={CONFIG.REGISTRATION_FEE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-12 px-8 text-base font-extrabold bg-gradient-to-r from-[#d6fb00] via-[#ecffb6] to-[#d6fb00] !text-[#00545f] border-0 shadow-[0_0_30px_rgba(214,251,0,0.45)] hover:shadow-[0_0_45px_rgba(214,251,0,0.7)] hover:scale-105 transition-all duration-300"
+                >
+                  Registration Fee
+                </Button>
               </div>
 
               {/* Kit Note & Deadline Note */}

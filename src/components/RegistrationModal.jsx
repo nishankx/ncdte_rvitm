@@ -134,6 +134,17 @@ export default function RegistrationModal({ isOpen, onClose }) {
                 <p className="mt-2 text-small leading-relaxed text-graphite pl-10 text-justify">
                   Once your submission is reviewed, our conference team will send the applicable fee payment procedures (₹1,300 for UG/PG Students &amp; Academicians, ₹200 for extra members) directly to your registered email address.
                 </p>
+                <div className="mt-3 pl-10">
+                  <Button
+                    variant="primary"
+                    href={CONFIG.REGISTRATION_FEE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-bold bg-[#d6fb00] !text-ink hover:bg-[#cbf000]"
+                  >
+                    Registration Fee
+                  </Button>
+                </div>
               </div>
 
               {/* Notice with Aggressive Flicker Highlight Animation */}

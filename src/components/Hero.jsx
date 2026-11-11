@@ -197,8 +197,21 @@ export default function Hero({ onOpenModal }) {
                 </div>
               </div>
 
+              {/* Notice just above the buttons */}
+              <div className="mt-4 flex items-center justify-center sm:mt-5">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#00545f]/25 bg-white/80 px-3.5 py-1 shadow-sm backdrop-blur-md">
+                  <span className="relative flex h-2 w-2 shrink-0">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-80" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 shadow-sm" />
+                  </span>
+                  <span className="font-sans text-xs sm:text-sm font-semibold text-[#00545f]">
+                    Registration has been opened for selected paper submissions
+                  </span>
+                </div>
+              </div>
+
               {/* Centered Action buttons */}
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-3 sm:mt-5 sm:gap-4">
+              <div className="mt-3.5 flex flex-wrap items-center justify-center gap-3 sm:mt-4 sm:gap-4">
                 <Button
                   variant="primary"
                   href={CONFIG.REGISTRATION_FORM_URL}
@@ -207,6 +220,15 @@ export default function Hero({ onOpenModal }) {
                   className="h-10 px-6 text-sm sm:h-11"
                 >
                   Submit your paper
+                </Button>
+                <Button
+                  variant="primary"
+                  href={CONFIG.REGISTRATION_FEE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-10 px-6 text-sm sm:h-11 bg-gradient-to-r from-[#00545f] via-[#007a87] to-[#00545f] !text-[#d6fb00] ring-2 ring-[#d6fb00]/60 font-bold shadow-md hover:brightness-110"
+                >
+                  Registration Fee
                 </Button>
                 {CONFIG.BROCHURE_1_URL && (
                   <Button

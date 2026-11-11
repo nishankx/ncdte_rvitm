@@ -8,7 +8,7 @@ export const SUBMISSION_PROCESS_DATA = [
   {
     step: "02",
     title: "Submit & Register",
-    desc: "Submit your research paper and author details through the official Google Form on or before 15 November 2026.",
+    desc: "Submit your research paper and author details through the official Google Form on or before 18 November 2026 (Extended from 15 November).",
     hasFormLink: true,
   },
   {

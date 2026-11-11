@@ -21,7 +21,7 @@ export const FAQS_DATA = [
     id: "faq-4",
     question: "What are the important deadlines?",
     answer:
-      "• Submission Deadline: 15 November 2026\n• Notification of Acceptance: 20 November 2026\n• Registration Deadline: 25 November 2026\n• Conference Date: 4 December 2026",
+      "• Submission Deadline: 18 November 2026 (Extended from 15 November)\n• Notification of Acceptance: 20 November 2026\n• Registration Deadline: 25 November 2026\n• Conference Date: 4 December 2026",
   },
   {
     id: "faq-5",

@@ -21,16 +21,22 @@ export default function DatesTimelineStrip() {
 
               return (
                 <div key={item.id || index} className="flex h-7 items-end justify-center pb-1 text-center">
-                  <span
-                    className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-tight transition-transform duration-200 hover:-translate-y-0.5 sm:px-2.5 sm:text-[11px] ${isSubmission
-                        ? "bg-rose-500/10 text-rose-600 ring-1 ring-rose-500/30"
-                        : isConference
+                  {isSubmission ? (
+                    <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-tight transition-transform duration-200 hover:-translate-y-0.5 sm:px-2 sm:text-[11px] bg-rose-500/10 ring-1 ring-rose-500/30">
+                      <span className="line-through text-graphite/50 decoration-rose-500">15 Nov</span>
+                      <span className="fancy-gradient-text font-black">18 Nov</span>
+                    </span>
+                  ) : (
+                    <span
+                      className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-tight transition-transform duration-200 hover:-translate-y-0.5 sm:px-2.5 sm:text-[11px] ${
+                        isConference
                           ? "bg-[#00545f] text-[#d6fb00] shadow-sm"
                           : "bg-[#00545f]/8 text-[#00545f]"
                       }`}
-                  >
-                    {item.dateDisplay.replace(" 2026", "")}
-                  </span>
+                    >
+                      {item.dateDisplay.replace(" 2026", "")}
+                    </span>
+                  )}
                 </div>
               );
             })}
@@ -100,6 +106,9 @@ export default function DatesTimelineStrip() {
                       <>
                         <span className="block sm:hidden">Submission Due</span>
                         <span className="hidden sm:inline">Submission Deadline</span>
+                        <span className="fancy-gradient-text font-black text-[9px] sm:text-[10px] block mt-0.5">
+                          Ext. to 18th Nov
+                        </span>
                       </>
                     ) : (
                       item.title
