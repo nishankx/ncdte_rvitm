@@ -206,7 +206,7 @@ export default function Navbar({ onOpenModal }) {
             })}
           </nav>
 
-          {/* Right: Registration Fee + Submit Button + Mobile Hamburger (below lg) */}
+          {/* Right: Registration Link + Submit Button + Mobile Hamburger (below lg) */}
           <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2 lg:gap-2 xl:gap-3">
             <Button
               variant="onDark"
@@ -215,7 +215,7 @@ export default function Navbar({ onOpenModal }) {
               rel="noopener noreferrer"
               className="inline-flex !h-8 !px-3 text-xs font-bold sm:!h-9 sm:!px-3.5 lg:!h-9 lg:!px-3.5 xl:!h-10 xl:!px-4 xl:text-sm whitespace-nowrap bg-gradient-to-r from-[#d6fb00] to-[#b6ee00] !text-ink shadow-[0_0_15px_rgba(214,251,0,0.3)] hover:brightness-105"
             >
-              Registration Fee
+              Registration Link
             </Button>
 
             <Button
@@ -295,7 +295,7 @@ export default function Navbar({ onOpenModal }) {
                   onClick={() => setIsOpen(false)}
                   className="h-11 w-full text-[15px] font-bold bg-[#d6fb00] !text-ink"
                 >
-                  Registration Fee
+                  Registration Link
                 </Button>
                 <Button
                   variant="onDark"

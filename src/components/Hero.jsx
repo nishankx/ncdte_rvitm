@@ -228,7 +228,7 @@ export default function Hero({ onOpenModal }) {
                   rel="noopener noreferrer"
                   className="h-10 px-6 text-sm sm:h-11 bg-gradient-to-r from-[#00545f] via-[#007a87] to-[#00545f] !text-[#d6fb00] ring-2 ring-[#d6fb00]/60 font-bold shadow-md hover:brightness-110"
                 >
-                  Registration Fee
+                  Registration Link
                 </Button>
                 {CONFIG.BROCHURE_1_URL && (
                   <Button

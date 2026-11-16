@@ -142,7 +142,7 @@ export default function RegistrationModal({ isOpen, onClose }) {
                     rel="noopener noreferrer"
                     className="text-sm font-bold bg-[#d6fb00] !text-ink hover:bg-[#cbf000]"
                   >
-                    Registration Fee
+                    Registration Link
                   </Button>
                 </div>
               </div>

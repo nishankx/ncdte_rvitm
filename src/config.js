@@ -5,6 +5,8 @@ export const CONFIG = {
     "https://forms.gle/eiaKEdM4THR2dBe16",
   REGISTRATION_FEE_URL:
     "https://forms.gle/eiaKEdM4THR2dBe16",
+  REGISTRATION_LINK_URL:
+    "https://forms.gle/eiaKEdM4THR2dBe16",
   REGISTRATION_FORM_URL:
     "https://docs.google.com/forms/d/e/1FAIpQLSdNOU6DmwyIOC94b-UIRu2Kw4BGqFOmzzVkcpz6GPXwHmL03w/viewform?usp=send_form",
   PAPER_TEMPLATE_URL: "/ncdte26.docx",

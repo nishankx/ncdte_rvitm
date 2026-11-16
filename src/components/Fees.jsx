@@ -75,7 +75,7 @@ export default function Fees({ onOpenModal }) {
                 {FEES_DATA.extraMembersNote}
               </div>
 
-              {/* Registration Fee Action Button */}
+              {/* Registration Link Action Button */}
               <div className="pt-2 flex justify-center">
                 <Button
                   variant="onDark"
@@ -84,7 +84,7 @@ export default function Fees({ onOpenModal }) {
                   rel="noopener noreferrer"
                   className="h-12 px-8 text-base font-extrabold bg-gradient-to-r from-[#d6fb00] via-[#ecffb6] to-[#d6fb00] !text-[#00545f] border-0 shadow-[0_0_30px_rgba(214,251,0,0.45)] hover:shadow-[0_0_45px_rgba(214,251,0,0.7)] hover:scale-105 transition-all duration-300"
                 >
-                  Registration Fee
+                  Registration Link
                 </Button>
               </div>
 

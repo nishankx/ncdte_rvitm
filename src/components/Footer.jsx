@@ -11,7 +11,7 @@ export default function Footer() {
     { name: "About Conference", href: "#about" },
     { name: "Call for Papers", href: "#tracks" },
     { name: "Submission Guidelines", href: "#guidelines" },
-    { name: "Registration Fee", href: "#registration" },
+    { name: "Registration Link", href: "#registration" },
     { name: "Organizing Committee", href: "#committee" },
     { name: "FAQ", href: "#faq" },
   ];
